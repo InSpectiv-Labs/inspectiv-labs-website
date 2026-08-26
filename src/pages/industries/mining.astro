@@ -2,7 +2,31 @@
 import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
 
 export const prerender = true;
+
+const content = {
+  title: "Operational Intelligence for Mining Companies | Inspective Labs",
+  description: "Ensure mine safety, track environmental impact, and streamline regulatory reporting with our field intelligence.",
+  hero: {
+    headline: "Intelligence for Mining Companies",
+    intro: "Uncompromising operational transparency and safety compliance for global mining operations."
+  },
+  industrySlug: "mining",
+  challenges: [
+    { title: "Mine Safety Monitoring", description: "Identifying structural or operational hazards in highly volatile underground and open-pit environments." },
+    { title: "Environmental Impact", description: "Accurately tracking volumetric changes, subsidence, and emissions to meet sustainability mandates." },
+    { title: "Regulatory Reporting", description: "Compiling massive operational datasets into defensible reports for government oversight agencies." }
+  ],
+  solutions: [
+    { title: "Safety Inspection & Analytics", description: "High-resolution geospatial monitoring to predict structural failures and ensure personnel safety." },
+    { title: "Environmental Impact Tracking", description: "Continuous volumetric and subsidence analysis to accurately quantify and manage ecological footprints." },
+    { title: "Compliance Support", description: "Automated data pipelines that directly feed into your regulatory reporting frameworks." }
+  ],
+  benefits: [
+    "Proactive Risk Management",
+    "Regulatory Confidence",
+    "Operational Transparency"
+  ]
+};
 ---
-<IndustryPageLayout title="Mining Industry Services">
-  <p>Services for mining companies.</p>
-</IndustryPageLayout>
+
+<IndustryPageLayout {...content} />

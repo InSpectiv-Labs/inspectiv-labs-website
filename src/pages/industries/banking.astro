@@ -2,7 +2,31 @@
 import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
 
 export const prerender = true;
+
+const content = {
+  title: "Risk Assessment for Financial Lenders | Inspective Labs",
+  description: "Secure, compliant infrastructure intelligence and due diligence reporting for financial lenders.",
+  hero: {
+    headline: "Intelligence for Financial Lenders",
+    intro: "Rigorous due diligence and ongoing asset monitoring to secure your multi-million dollar investments."
+  },
+  industrySlug: "banking",
+  challenges: [
+    { title: "Assessing Collateral Risk", description: "Difficulty verifying the true condition and value of physical assets or mining operations prior to lending." },
+    { title: "Compliance Verification", description: "Ensuring financed projects adhere strictly to environmental and operational regulations." },
+    { title: "Ongoing Monitoring", description: "Lack of transparency into the operational health of financed assets post-disbursement." }
+  ],
+  solutions: [
+    { title: "Pre-Lending Risk Assessment", description: "Comprehensive on-site capability audits and asset condition reporting to inform lending decisions." },
+    { title: "Continuous Inspection Services", description: "Scheduled, high-fidelity monitoring of financed operations to detect early warning signs of distress." },
+    { title: "Compliance Insights", description: "Regulatory gap analysis providing assurance that your capital is deployed responsibly." }
+  ],
+  benefits: [
+    "Informed Lending Decisions",
+    "Reduced Default Exposure",
+    "Audit-Ready Documentation"
+  ]
+};
 ---
-<IndustryPageLayout title="Banking & Financial Lenders Services">
-  <p>Services for financial lenders.</p>
-</IndustryPageLayout>
+
+<IndustryPageLayout {...content} />

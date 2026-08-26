@@ -2,7 +2,32 @@
 import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
 
 export const prerender = true;
+
+const content = {
+  title: "Services for Insurance Companies | Inspective Labs",
+  description: "Advanced risk assessment, claims verification, and compliance data for modern insurance providers.",
+  hero: {
+    headline: "Intelligence for Insurance Companies",
+    intro: "Defensible data and accelerated claims verification to minimize fraud and optimize asset assessment workflows."
+  },
+  industrySlug: "insurance",
+  challenges: [
+    { title: "Claims Verification Accuracy", description: "Inconsistent field data leads to disputed claims and inaccurate payouts." },
+    { title: "Fraud Risk", description: "Exposure to fabricated or exaggerated claims due to lack of verifiable site intelligence." },
+    { title: "Assessment Turnaround", description: "Slow property and asset assessment cycles negatively impact customer satisfaction." },
+    { title: "Regulatory Compliance", description: "Increasingly heavy burdens in maintaining audit-ready documentation." }
+  ],
+  solutions: [
+    { title: "Precision Inspection Reporting", description: "High-resolution, verifiable visual data collected rapidly to support exact claims adjustments." },
+    { title: "Predictive Risk Assessment", description: "Proprietary models analyzing asset health to proactively price risk and mitigate exposure." },
+    { title: "Automated Documentation", description: "End-to-end audit trails generated for every inspection, streamlining your compliance processes." }
+  ],
+  benefits: [
+    "Faster Claims Cycles",
+    "Reduced Fraud Exposure",
+    "Defensible Documentation"
+  ]
+};
 ---
-<IndustryPageLayout title="Insurance Industry Services">
-  <p>Services for insurance companies.</p>
-</IndustryPageLayout>
+
+<IndustryPageLayout {...content} />
