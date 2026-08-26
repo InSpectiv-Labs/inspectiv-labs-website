@@ -1,0 +1,28 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  alignment?: 'left' | 'center';
+  className?: string;
+}
+
+const { eyebrow, title, description, alignment = 'left', className = '' } = Astro.props;
+
+const alignClasses = alignment === 'center' ? 'text-center mx-auto' : 'text-left';
+---
+<div class={`max-w-3xl ${alignClasses} ${className}`}>
+  {eyebrow && (
+    <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">
+      {eyebrow}
+    </span>
+  )}
+  <h2 class="text-3xl sm:text-4xl font-heading font-bold text-slate-900 mb-4">
+    {title}
+  </h2>
+  {description && (
+    <p class="text-lg text-slate-600">
+      {description}
+    </p>
+  )}
+</div>
