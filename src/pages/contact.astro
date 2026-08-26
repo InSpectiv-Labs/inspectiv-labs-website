@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// This page is NOT prerendered to handle form submissions via API endpoint
+if (Astro.request.method === "POST") {
+  // Handle form
+}
+---
+<BaseLayout title="Contact Us - Inspective Labs">
+  <h1>Contact Us</h1>
+  <form method="POST">
+    <button type="submit">Submit</button>
+  </form>
+</BaseLayout>
