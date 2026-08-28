@@ -1,0 +1,57 @@
+---
+import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
+
+const challenges = [
+  {
+    title: "Urban Subsidence",
+    description: "Rapid urbanization and groundwater extraction are causing significant land subsidence in major metropolitan areas."
+  },
+  {
+    title: "Utility Disruption",
+    description: "Ground movement threatens underground utilities, metro systems, and essential city services."
+  },
+  {
+    title: "Zoning & Compliance",
+    description: "City planners need accurate geological stability data to inform safe zoning and enforce building compliance."
+  },
+  {
+    title: "Climate Resilience",
+    description: "Building resilient cities requires continuous ground intelligence to mitigate the impacts of flooding and sea-level rise."
+  }
+];
+
+const solutions = [
+  {
+    title: "City-Wide Monitoring",
+    description: "Monitor land subsidence across entire metropolitan areas with millimeter-level accuracy to inform urban planning."
+  },
+  {
+    title: "Proactive Infrastructure Management",
+    description: "Detect risks near metros, utilities, and high-rise buildings before they lead to structural damage or service disruption."
+  },
+  {
+    title: "Strategic Zoning Intelligence",
+    description: "Provide city planners with historical and ongoing ground stability data to support intelligent zoning and compliance."
+  }
+];
+
+const benefits = [
+  "Resilient City Planning",
+  "Protected Urban Utilities",
+  "Data-Driven Compliance"
+];
+---
+
+<IndustryPageLayout
+  title="Urban Development | InSpectiv Labs"
+  description="Build resilient cities with continuous ground intelligence."
+  image="/images/industry_urban.png"
+  hero={{
+    headline: "Urban Development & Smart Cities",
+    intro: "Build resilient cities with continuous ground intelligence. Monitor land subsidence, support zoning, and protect urban utilities."
+  }}
+  industrySlug="urban-development"
+  challenges={challenges}
+  solutions={solutions}
+  benefits={benefits}
+/>

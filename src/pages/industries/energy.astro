@@ -1,0 +1,57 @@
+---
+import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
+
+const challenges = [
+  {
+    title: "Pipeline Integrity",
+    description: "Vast pipeline networks are vulnerable to ground movement, landslides, and subsidence which can lead to catastrophic leaks."
+  },
+  {
+    title: "Well Pad Stability",
+    description: "Extraction activities can induce local subsidence, affecting well pad stability and nearby infrastructure."
+  },
+  {
+    title: "Environmental Risks",
+    description: "Unmonitored ground instability can result in severe environmental contamination and operational shutdowns."
+  },
+  {
+    title: "Asset Lifecycle Management",
+    description: "Understanding ground dynamics is crucial for planning the lifecycle and decommissioning of large-scale energy assets."
+  }
+];
+
+const solutions = [
+  {
+    title: "Network-Wide Pipeline Tracking",
+    description: "Monitor thousands of kilometers of pipelines for early signs of ground movement or landslide activity."
+  },
+  {
+    title: "Induced Subsidence Detection",
+    description: "Track ground deformation around extraction sites and well pads to manage risks proactively."
+  },
+  {
+    title: "Environmental Protection",
+    description: "Utilize our continuous monitoring service to reduce environmental risks and ensure safe operational continuity."
+  }
+];
+
+const benefits = [
+  "Reduced Environmental Risk",
+  "Improved Asset Integrity",
+  "Proactive Leak Prevention"
+];
+---
+
+<IndustryPageLayout
+  title="Oil, Gas & Energy | InSpectiv Labs"
+  description="Monitor ground movement around energy assets."
+  image="/images/industry_energy.png"
+  hero={{
+    headline: "Oil, Gas & Energy",
+    intro: "Monitor ground movement around energy assets. Detect subsidence early, monitor pipelines, and reduce operational risks."
+  }}
+  industrySlug="energy"
+  challenges={challenges}
+  solutions={solutions}
+  benefits={benefits}
+/>

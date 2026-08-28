@@ -2,12 +2,15 @@ import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 const blog = defineCollection({
-  // Use glob loader for Astro v5
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/blog" }),
-  schema: z.object({
+  schema: ({ image }) => z.object({
     title: z.string(),
-    description: z.string().optional(),
-    pubDate: z.coerce.date(),
+    description: z.string(),
+    publishDate: z.coerce.date(),
+    author: z.string().optional(),
+    heroImage: image().optional(),
+    industry: z.enum(['insurance', 'banking', 'geotech', 'mining', 'general']).optional(),
+    draft: z.boolean().default(false),
   }),
 });
 

@@ -1,32 +1,57 @@
 ---
 import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
 
-export const prerender = true;
-
-const content = {
-  title: "Operational Intelligence for Mining Companies | Inspective Labs",
-  description: "Ensure mine safety, track environmental impact, and streamline regulatory reporting with our field intelligence.",
-  hero: {
-    headline: "Intelligence for Mining Companies",
-    intro: "Uncompromising operational transparency and safety compliance for global mining operations."
+const challenges = [
+  {
+    title: "Slope Instability & Highwall Movement",
+    description: "Detecting minute ground displacement early is critical to preventing catastrophic failures in open-pit environments."
   },
-  industrySlug: "mining",
-  challenges: [
-    { title: "Mine Safety Monitoring", description: "Identifying structural or operational hazards in highly volatile underground and open-pit environments." },
-    { title: "Environmental Impact", description: "Accurately tracking volumetric changes, subsidence, and emissions to meet sustainability mandates." },
-    { title: "Regulatory Reporting", description: "Compiling massive operational datasets into defensible reports for government oversight agencies." }
-  ],
-  solutions: [
-    { title: "Safety Inspection & Analytics", description: "High-resolution geospatial monitoring to predict structural failures and ensure personnel safety." },
-    { title: "Environmental Impact Tracking", description: "Continuous volumetric and subsidence analysis to accurately quantify and manage ecological footprints." },
-    { title: "Compliance Support", description: "Automated data pipelines that directly feed into your regulatory reporting frameworks." }
-  ],
-  benefits: [
-    "Proactive Risk Management",
-    "Regulatory Confidence",
-    "Operational Transparency"
-  ]
-};
+  {
+    title: "Tailings Dam Integrity",
+    description: "Continuous monitoring of tailings dams, dumps, and embankments is required to prevent failures and environmental disasters."
+  },
+  {
+    title: "Unplanned Downtime",
+    description: "Unexpected ground movement halts production and puts personnel at risk, drastically affecting overall mine productivity."
+  },
+  {
+    title: "DGMS Compliance & Reporting",
+    description: "Meeting stringent regulatory requirements demands continuous, verifiable data on ground stability across the entire footprint."
+  }
+];
+
+const solutions = [
+  {
+    title: "Zero-Infra Intelligence",
+    description: "Monitor slope stability and ground movement remotely using satellite radar, removing the need to dispatch survey teams into actively hazardous areas."
+  },
+  {
+    title: "Comprehensive Embankment Tracking",
+    description: "Deploy our continuous monitoring service to track structural changes across all tailings dams and embankments, identifying risks early."
+  },
+  {
+    title: "Automated Compliance Support",
+    description: "Access our advanced analytics platform to generate the verifiable, objective data required for DGMS and other regulatory reporting."
+  }
+];
+
+const benefits = [
+  "Improved Safety & Zero Staff Risk",
+  "Reduced Unplanned Downtime",
+  "Automated Compliance & Reporting"
+];
 ---
 
-<IndustryPageLayout {...content} />
+<IndustryPageLayout
+  title="Mining Operations | InSpectiv Labs"
+  description="Zero-Infra safety intelligence for safer, more productive mines."
+  image="/images/industry_mining.png"
+  hero={{
+    headline: "Mining Operations",
+    intro: "Zero-Infra safety intelligence for safer, more productive mines. Detect slope instability, monitor tailings dams, and support DGMS compliance."
+  }}
+  industrySlug="mining"
+  challenges={challenges}
+  solutions={solutions}
+  benefits={benefits}
+/>

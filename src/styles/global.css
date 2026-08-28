@@ -1,27 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary-50: #f0f4f8;
-  --color-primary-100: #d9e2ec;
-  --color-primary-500: #102a43;
-  --color-primary-600: #0B1E36;
-  --color-primary-700: #0a192f;
-  --color-primary-800: #081221;
-  --color-primary-900: #050914;
-  --color-primary: var(--color-primary-600);
+  --color-primary-50: #f0f7ff;
+  --color-primary-100: #e0effe;
+  --color-primary-200: #bae0fd;
+  --color-primary-300: #7dc5fb;
+  --color-primary-400: #38a5f8;
+  --color-primary-500: #0e8be5;
+  --color-primary-600: #026fb8;
+  --color-primary-700: #035994;
+  --color-primary-800: #064b7a;
+  --color-primary-900: #0a3f65;
   
-  --color-secondary-50: #f0fdfa;
-  --color-secondary-100: #ccfbf1;
-  --color-secondary-400: #2dd4bf;
-  --color-secondary-500: #14b8a6;
-  --color-secondary-600: #0d9488;
-  --color-secondary: var(--color-secondary-600);
-
-  --font-sans: "Inter", sans-serif;
-  --font-heading: "Outfit", sans-serif;
-
-  --radius-xl: 1rem;
-  --radius-2xl: 1.5rem;
+  --font-sans: 'Proxima Nova', 'Inter', sans-serif;
+  --font-heading: 'Proxima Nova', 'Space Grotesk', sans-serif;
+  
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-2xl: 0;
+  --radius-full: 9999px;
 }
 
 html {
@@ -30,10 +29,12 @@ html {
 
 body {
   font-family: var(--font-sans);
-  @apply text-slate-800 bg-white;
+  background-color: #ffffff;
+  color: #333333;
+  -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  @apply font-semibold;
+/* Base link styles */
+a {
+  text-decoration: none;
 }

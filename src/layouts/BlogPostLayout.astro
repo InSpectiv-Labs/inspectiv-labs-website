@@ -1,18 +1,105 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import  from 'astro:assets';
 
 interface Props {
   title: string;
-  description?: string;
-  date?: Date;
+  description: string;
+  date: Date;
+  author?: string;
+  heroImage?: ImageMetadata;
+  industry?: string;
 }
 
-const { title, description, date } = Astro.props;
+const  = Astro.props;
+
+// Rough reading time calculation based on word count
+// Note: Since Astro doesn't natively expose raw body content easily in the layout 
+// without passing it as a prop, we'll use a static placeholder or simple string for now.
+// For a production app, you can write a remark plugin to inject reading time into frontmatter.
+const readingTime = "4 min read"; 
 ---
-<BaseLayout title={title} description={description}>
-  <article>
-    <h1>{title}</h1>
-    {date && <time>{date.toLocaleDateString()}</time>}
-    <slot />
+<BaseLayout 
+  title= 
+  description=
+  ogImage=
+>
+  <article class="bg-gray-50 min-h-screen pb-24">
+    
+    
+    <header class="pt-40 pb-16 bg-[#000f2c] text-white">
+      <div class="max-w-[800px] mx-auto px-6">
+        
+        {industry && (
+          <div class="mb-8">
+            <span class="px-3 py-1 bg-[#1d4ed8] text-white text-[11px] font-bold uppercase tracking-wider">
+              
+            </span>
+          </div>
+        )}
+        
+        <h1 class="text-4xl md:text-5xl font-light mb-8 leading-tight tracking-wide">
+          
+        </h1>
+        
+        <div class="flex items-center gap-6 text-gray-400 text-sm font-light">
+          {author && (
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center text-white font-semibold text-xs">
+                
+              </div>
+              <span class="text-gray-200"></span>
+            </div>
+          )}
+          <time class="flex items-center gap-2">
+            <i class="bx bx-calendar text-[16px]"></i>
+            {date.toLocaleDateString('en-US', {
+              month: 'long',
+              day: 'numeric',
+              year: 'numeric'
+            })}
+          </time>
+          <span class="flex items-center gap-2">
+            <i class="bx bx-time-five text-[16px]"></i>
+            
+          </span>
+        </div>
+      </div>
+    </header>
+
+    
+    {heroImage && (
+      <div class="max-w-[1000px] mx-auto px-6 -mt-10 mb-16 relative z-10">
+        <div class="aspect-video w-full overflow-hidden shadow-lg border border-gray-200 bg-white">
+          <Image 
+            src= 
+            alt= 
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    )}
+    
+    
+
+    
+    <div class="max-w-[1000px] mx-auto px-6">
+      <div class="prose prose-lg prose-slate max-w-none 
+                  prose-headings:text-[#000f2c] prose-headings:font-light 
+                  prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 
+                  prose-h3:text-2xl prose-h3:mt-8 
+                  prose-p:text-gray-700 prose-p:font-light prose-p:leading-relaxed 
+                  prose-a:text-[#1d4ed8] hover:prose-a:text-[#000f2c] prose-a:transition-colors
+                  prose-li:text-gray-700 prose-li:font-light">
+        <slot />
+      </div>
+      
+      
+      <div class="mt-16 pt-8 border-t border-gray-200 flex items-center justify-between">
+        <a href="/blog" class="text-[#1d4ed8] text-sm font-bold uppercase tracking-wider hover:text-[#000f2c] transition-colors flex items-center gap-2">
+          <span class="text-xl leading-none rotate-180">›</span> Back to Blog
+        </a>
+      </div>
+    </div>
   </article>
 </BaseLayout>

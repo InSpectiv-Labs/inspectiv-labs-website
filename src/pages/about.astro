@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About Us | InSpectiv Labs" description="Specialists in satellite-based ground monitoring solutions for mining, infrastructure, insurance, and energy sectors.">
+  
+  {/* 1. Enhanced Hero Section */}
+  <section class="relative pt-32 pb-12 bg-[#000f2c] text-white overflow-hidden flex items-end min-h-[35vh]">
+    <div class="absolute inset-0 z-0">
+      <img src="/images/satellite_hero.jpg" alt="Satellite over Earth" class="w-full h-full object-cover grayscale mix-blend-screen opacity-20" />
+      <div class="absolute inset-0 bg-gradient-to-b from-[#000f2c] via-[#000f2c]/80 to-[#000f2c]"></div>
+    </div>
+    
+    <div class="relative z-10 max-w-[1400px] mx-auto px-6 w-full mt-12">
+      <h1 class="text-4xl md:text-5xl lg:text-7xl font-light leading-tight tracking-tight text-white mb-4 uppercase">
+        About Us
+      </h1>
+      <p class="text-xl md:text-2xl text-cyan-400 font-light max-w-3xl italic leading-relaxed border-l-2 border-cyan-400 pl-4 mb-8">
+        "Precision Earth Monitoring with InSAR."
+      </p>
+    </div>
+  </section>
+
+  {/* 2. Core Capabilities */}
+  <section class="py-16 md:py-24 bg-white border-b border-gray-200">
+    <div class="max-w-[1400px] mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+        
+        {/* Left: Statement */}
+        <div class="lg:col-span-5 lg:sticky lg:top-32">
+          <p class="text-3xl md:text-4xl text-[#000f2c] font-light leading-snug tracking-tight">
+            <strong class="font-semibold">InSpectiv Labs</strong> specializes in satellite-based ground monitoring solutions for the mining, infrastructure, insurance, and energy sectors.
+          </p>
+        </div>
+
+        {/* Right: Pillars */}
+        <div class="lg:col-span-7 flex flex-col">
+          
+          <div class="border-t border-gray-200 py-8 first:border-t-0 lg:first:border-t lg:first:pt-8 lg:first:mt-0 first:pt-0">
+            <div class="flex gap-6 items-start">
+              <i class="bx bx-radar text-2xl text-[#1d4ed8] mt-1 shrink-0"></i>
+              <div>
+                <h3 class="text-lg font-semibold text-[#000f2c] uppercase tracking-wide mb-3">Advanced InSAR</h3>
+                <p class="text-gray-600 font-light leading-relaxed text-base">
+                  We use orbital radar technology to detect and track ground deformation with unprecedented millimeter precision.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="border-t border-gray-200 py-8">
+            <div class="flex gap-6 items-start">
+              <i class="bx bx-shield-quarter text-2xl text-[#1d4ed8] mt-1 shrink-0"></i>
+              <div>
+                <h3 class="text-lg font-semibold text-[#000f2c] uppercase tracking-wide mb-3">Risk Management</h3>
+                <p class="text-gray-600 font-light leading-relaxed text-base">
+                  Helping organizations proactively manage geotechnical risk and ensure operational safety at all times.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="border-y border-gray-200 py-8">
+            <div class="flex gap-6 items-start">
+              <i class="bx bx-buildings text-2xl text-[#1d4ed8] mt-1 shrink-0"></i>
+              <div>
+                <h3 class="text-lg font-semibold text-[#000f2c] uppercase tracking-wide mb-3">Asset Protection</h3>
+                <p class="text-gray-600 font-light leading-relaxed text-base">
+                  Protect high-value critical infrastructure and assets before structural failure or catastrophic collapse occurs.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* 3. The Problem & Our Solution */}
+  <section class="py-24 md:py-32 bg-[#000f2c] text-white overflow-hidden border-b border-gray-800">
+    <div class="max-w-[1400px] mx-auto px-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 relative">
+        
+        {/* Divider line for desktop */}
+        <div class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-white/10 -translate-x-1/2"></div>
+        
+        {/* The Problem */}
+        <div class="flex flex-col relative z-10 lg:pr-12">
+          <div class="mb-12 items-start gap-3">
+             <h2 class="text-3xl md:text-4xl font-semibold uppercase tracking-tighter text-red-400 mb-6">THE PROBLEM</h2>
+             <h3 class="text-xl text-gray-200 font-light leading-relaxed">
+               Constant geotechnical risks leading to catastrophic failures.
+             </h3>
+          </div>
+          
+          <ul class="flex-grow pl-8 mb-12">
+            <li class="flex flex-col gap-1.5 relative pb-8 last:pb-0 before:absolute before:-left-[35px] before:top-2.5 before:w-1.5 before:h-1.5 before:bg-red-500 before:rounded-full before:z-10 after:absolute after:-left-[32px] after:top-2.5 after:-bottom-2.5 after:w-px after:bg-white/10 last:after:hidden after:z-0">
+              <span class="text-white font-semibold tracking-wide">Slope instability</span>
+              <span class="text-gray-400 text-sm font-light leading-relaxed">Critical risk in open-cast mining operations.</span>
+            </li>
+            <li class="flex flex-col gap-1.5 relative pb-8 last:pb-0 before:absolute before:-left-[35px] before:top-2.5 before:w-1.5 before:h-1.5 before:bg-red-500 before:rounded-full before:z-10 after:absolute after:-left-[32px] after:top-2.5 after:-bottom-2.5 after:w-px after:bg-white/10 last:after:hidden after:z-0">
+              <span class="text-white font-semibold tracking-wide">Tailings dam failure</span>
+              <span class="text-gray-400 text-sm font-light leading-relaxed">Devastating environmental and structural consequences.</span>
+            </li>
+            <li class="flex flex-col gap-1.5 relative pb-8 last:pb-0 before:absolute before:-left-[35px] before:top-2.5 before:w-1.5 before:h-1.5 before:bg-red-500 before:rounded-full before:z-10 after:absolute after:-left-[32px] after:top-2.5 after:-bottom-2.5 after:w-px after:bg-white/10 last:after:hidden after:z-0">
+              <span class="text-white font-semibold tracking-wide">Ground deformation</span>
+              <span class="text-gray-400 text-sm font-light leading-relaxed">Compromising surrounding critical infrastructure and safety.</span>
+            </li>
+          </ul>
+          
+          <div class="mt-auto">
+             <p class="text-red-400/80 text-sm font-light border-t border-white/10 pt-6">
+               Resulting in production loss, safety hazards, and high remediation costs.
+             </p>
+          </div>
+        </div>
+
+        {/* Our Solution */}
+        <div class="flex flex-col relative z-10 lg:pl-12 mt-12 lg:mt-0 pt-12 lg:pt-0 border-t lg:border-t-0 border-white/10">
+          <div class="mb-12 items-start gap-3">
+             <h2 class="text-3xl md:text-4xl font-semibold uppercase tracking-tighter text-cyan-400 mb-6">OUR SOLUTION</h2>
+             <h3 class="text-xl text-gray-200 font-light leading-relaxed">
+               InSAR-based monitoring for early detection and actionable insights.
+             </h3>
+          </div>
+          
+          <ul class="flex-grow pl-8 mb-12">
+            <li class="flex flex-col gap-1.5 relative pb-8 last:pb-0 before:absolute before:-left-[35px] before:top-2.5 before:w-1.5 before:h-1.5 before:bg-cyan-400 before:rounded-full before:z-10 after:absolute after:-left-[32px] after:top-2.5 after:-bottom-2.5 after:w-px after:bg-white/10 last:after:hidden after:z-0">
+              <span class="text-white font-semibold tracking-wide">Early movement detection</span>
+              <span class="text-gray-400 text-sm font-light leading-relaxed">Identifying subtle ground changes before failure occurs.</span>
+            </li>
+            <li class="flex flex-col gap-1.5 relative pb-8 last:pb-0 before:absolute before:-left-[35px] before:top-2.5 before:w-1.5 before:h-1.5 before:bg-cyan-400 before:rounded-full before:z-10 after:absolute after:-left-[32px] after:top-2.5 after:-bottom-2.5 after:w-px after:bg-white/10 last:after:hidden after:z-0">
+              <span class="text-white font-semibold tracking-wide">Continuous wide-area scanning</span>
+              <span class="text-gray-400 text-sm font-light leading-relaxed">Monitoring massive and remote geographic areas automatically.</span>
+            </li>
+            <li class="flex flex-col gap-1.5 relative pb-8 last:pb-0 before:absolute before:-left-[35px] before:top-2.5 before:w-1.5 before:h-1.5 before:bg-cyan-400 before:rounded-full before:z-10 after:absolute after:-left-[32px] after:top-2.5 after:-bottom-2.5 after:w-px after:bg-white/10 last:after:hidden after:z-0">
+              <span class="text-white font-semibold tracking-wide">Cost reduction</span>
+              <span class="text-gray-400 text-sm font-light leading-relaxed">Minimizing reliance on physical survey teams and site visits.</span>
+            </li>
+          </ul>
+          
+          <div class="mt-auto">
+             <p class="text-cyan-400/80 text-sm font-light border-t border-white/10 pt-6">
+               Delivering early warning, smarter decisions, and safer operations.
+             </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

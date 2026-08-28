@@ -1,58 +1,146 @@
 ---
-import Container from './Container.astro';
 import MobileNav from './react/MobileNav.tsx';
+import { Image } from 'astro:assets';
+import logoImage from '../assets/logo.png';
+import headerImage from '../assets/header.png';
 
 const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'Industries', href: '/#industries' },
-  { label: 'Solutions', href: '#' },
-  { label: 'Insights', href: '/blog' },
+  { label: 'HOME', href: '/' },
+  { 
+    label: 'INDUSTRY', 
+    href: '/#industries',
+    children: [
+      { label: 'Infrastructure & Construction', href: '/industries/infrastructure' },
+      { label: 'Mining & Resources', href: '/industries/mining' },
+      { label: 'Energy & Utilities', href: '/industries/energy' },
+      { label: 'Urban Development', href: '/industries/urban-development' }
+    ]
+  },
+  { 
+    label: 'SOLUTIONS', 
+    href: '/#solutions',
+    children: [
+      { label: 'Mine Operators', href: '/solutions/mine-operators' },
+      { label: 'Geotech Consultants', href: '#' },
+      { label: 'Banks & Financial Lenders', href: '#' },
+      { label: 'Insurance Adjusters', href: '#' },
+      { label: 'Infrastructure Owner and Developers', href: '#' }
+    ]
+  },
+  { label: 'CASE STUDIES', href: '/#case-studies' },
+  { 
+    label: 'COMPANY', 
+    href: '#',
+    children: [
+      { label: 'About Us', href: '/about' },
+      { label: 'Technology', href: '/technology' }
+    ]
+  },
+  { label: 'BLOGS/INSIGHTS', href: '/blog' }
 ];
 ---
 
-<header id="main-header" class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100 transition-all duration-300">
-  <Container>
-    <div class="flex items-center justify-between h-20 transition-all duration-300" id="header-container">
-      {/* Logo */}
-      <a href="/" class="flex items-center gap-2 group">
-        <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center group-hover:bg-primary-700 transition-colors">
-          <span class="text-white font-bold text-xl">IL</span>
-        </div>
-        <span class="font-heading font-bold text-xl text-slate-900 tracking-tight">Inspective<span class="text-primary">Labs</span></span>
-      </a>
+{/* 1. Transparent Header (Shows on Carousel) */}
+<header class="absolute top-0 left-0 right-0 bg-transparent w-full z-40">
+  <div class="max-w-[1600px] mx-auto px-6 h-32 flex items-center justify-between">
+    
+    {/* Transparent Header Logo */}
+    <a href="/" class="flex items-center gap-4">
+      <Image src={headerImage} alt="InSpectiv Labs" class="h-20 md:h-24 w-auto object-contain drop-shadow-md" />
+    </a>
 
-      {/* Desktop Navigation */}
-      <nav class="hidden md:flex items-center gap-8">
-        {navLinks.map(link => (
-          <a href={link.href} class="text-sm font-medium text-slate-600 hover:text-primary transition-colors">
+    {/* Desktop Navigation */}
+    <nav class="hidden lg:flex items-center gap-6 relative">
+      {navLinks.map(link => (
+        link.children ? (
+          <div class="relative group">
+            <a href={link.href} class="text-white text-[14px] hover:text-cyan-400 transition-colors uppercase tracking-wide drop-shadow-sm font-semibold flex items-center gap-1">
+              {link.label}
+              <i class="bx bx-chevron-down text-lg mt-0.5"></i>
+            </a>
+            <div class="absolute top-full left-0 pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+              <div class="bg-white shadow-xl rounded-sm py-2 flex flex-col border border-gray-100">
+                {link.children.map(child => (
+                  <a href={child.href} class="px-6 py-3 text-sm text-gray-700 hover:bg-slate-50 hover:text-[#1d4ed8] transition-colors border-l-2 border-transparent hover:border-[#1d4ed8] font-semibold">
+                    {child.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <a href={link.href} class="text-white text-[14px] hover:text-cyan-400 transition-colors uppercase tracking-wide drop-shadow-sm font-semibold">
             {link.label}
           </a>
-        ))}
-      </nav>
+        )
+      ))}
+    </nav>
 
-      {/* CTA / Mobile Toggle */}
-      <div class="flex items-center gap-4">
-        <a href="/contact" class="hidden md:inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary-700 transition-colors focus:ring-2 focus:ring-primary focus:outline-none">
-          Contact Us
-        </a>
-        <MobileNav client:load links={navLinks} />
-      </div>
+    {/* Mobile Toggle */}
+    <div class="lg:hidden text-white drop-shadow-sm">
+       <MobileNav client:load links={navLinks} />
     </div>
-  </Container>
+
+  </div>
+</header>
+
+{/* 2. Solid Fixed Header (Slides down on scroll) */}
+<header id="main-header" class="fixed top-0 left-0 right-0 bg-[#000f2c] w-full z-50 transform -translate-y-full transition-transform duration-300 shadow-md">
+  <div class="max-w-[1600px] mx-auto px-6 h-24 flex items-center justify-between">
+    
+    {/* Solid Header Logo */}
+    <a href="/" class="flex items-center gap-4">
+      <Image src={logoImage} alt="InSpectiv Labs" class="h-16 md:h-20 w-auto object-contain" />
+    </a>
+
+    {/* Desktop Navigation */}
+    <nav class="hidden lg:flex items-center gap-6 relative">
+      {navLinks.map(link => (
+        link.children ? (
+          <div class="relative group">
+            <a href={link.href} class="text-white text-[13px] hover:text-cyan-400 transition-colors uppercase tracking-wide flex items-center gap-1">
+              {link.label}
+              <i class="bx bx-chevron-down text-lg mt-0.5"></i>
+            </a>
+            <div class="absolute top-full left-0 pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+              <div class="bg-white shadow-xl rounded-sm py-2 flex flex-col border border-gray-100">
+                {link.children.map(child => (
+                  <a href={child.href} class="px-6 py-3 text-sm text-gray-700 hover:bg-slate-50 hover:text-[#1d4ed8] transition-colors border-l-2 border-transparent hover:border-[#1d4ed8] font-semibold">
+                    {child.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <a href={link.href} class="text-white text-[13px] hover:text-cyan-400 transition-colors uppercase tracking-wide">
+            {link.label}
+          </a>
+        )
+      ))}
+      <a href="/contact" class="ml-2 px-5 py-2 bg-[#1d4ed8] text-white text-[13px] font-semibold uppercase tracking-wider hover:bg-[#1e40af] transition-colors">
+        CONTACT US
+      </a>
+    </nav>
+
+    {/* Mobile Toggle */}
+    <div class="lg:hidden text-white">
+       <MobileNav client:load links={navLinks} />
+    </div>
+
+  </div>
 </header>
 
 <script>
-  // Shrink header on scroll
-  const header = document.getElementById('main-header');
-  const container = document.getElementById('header-container');
-
+  // Show header only after scrolling past the first window height (hero section)
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) {
-      header?.classList.add('shadow-sm');
-      container?.classList.replace('h-20', 'h-16');
+    const header = document.getElementById('main-header');
+    if (window.scrollY > window.innerHeight - 100) {
+      header?.classList.remove('-translate-y-full');
+      header?.classList.add('translate-y-0');
     } else {
-      header?.classList.remove('shadow-sm');
-      container?.classList.replace('h-16', 'h-20');
+      header?.classList.add('-translate-y-full');
+      header?.classList.remove('translate-y-0');
     }
   });
 </script>

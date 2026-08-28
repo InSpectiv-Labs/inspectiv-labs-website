@@ -9,7 +9,7 @@ interface Props {
   description?: string;
 }
 
-const { title = 'Inspective Labs', description = 'A B2B service company targeting insurance companies, financial lenders, geotech consultants, and mining companies.' } = Astro.props;
+const { title = 'InSpectiv Labs', description = 'A B2B service company targeting insurance companies, financial lenders, geotech consultants, and mining companies.' } = Astro.props;
 ---
 <!doctype html>
 <html lang="en" class="scroll-smooth">
@@ -19,9 +19,15 @@ const { title = 'Inspective Labs', description = 'A B2B service company targetin
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Proxima Nova -->
+    <link href="https://fonts.cdnfonts.com/css/proxima-nova-2" rel="stylesheet">
+    
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   </head>
-  <body class="flex flex-col min-h-screen pt-20">
+  <body class="flex flex-col min-h-screen">
     <Header />
     <main class="flex-grow">
       <slot />

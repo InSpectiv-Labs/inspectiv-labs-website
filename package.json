@@ -20,9 +20,16 @@
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.5",
     "astro": "^7.2.7",
+    "clsx": "^2.1.1",
     "framer-motion": "^13.1.1",
+    "lucide-react": "^1.35.0",
+    "maplibre-gl": "^6.6.0",
+    "mdast-util-to-string": "^4.0.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
+    "react-map-gl": "^8.1.2",
+    "reading-time": "^1.5.0",
+    "tailwind-merge": "^3.6.0",
     "tailwindcss": "^4.3.3"
   },
   "allowScripts": {
