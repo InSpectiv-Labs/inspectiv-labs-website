@@ -1,6 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
-import  from 'astro:assets';
+import { Image } from 'astro:assets';
 
 interface Props {
   title: string;
@@ -11,7 +11,7 @@ interface Props {
   industry?: string;
 }
 
-const  = Astro.props;
+const { title, description, date, author, heroImage, industry } = Astro.props;
 
 // Rough reading time calculation based on word count
 // Note: Since Astro doesn't natively expose raw body content easily in the layout 
@@ -20,12 +20,11 @@ const  = Astro.props;
 const readingTime = "4 min read"; 
 ---
 <BaseLayout 
-  title= 
-  description=
-  ogImage=
+  title={title}
+  description={description}
+  ogImage={heroImage?.src}
 >
   <article class="bg-gray-50 min-h-screen pb-24">
-    
     
     <header class="pt-40 pb-16 bg-[#000f2c] text-white">
       <div class="max-w-[800px] mx-auto px-6">
@@ -33,22 +32,22 @@ const readingTime = "4 min read";
         {industry && (
           <div class="mb-8">
             <span class="px-3 py-1 bg-[#1d4ed8] text-white text-[11px] font-bold uppercase tracking-wider">
-              
+              {industry}
             </span>
           </div>
         )}
         
         <h1 class="text-4xl md:text-5xl font-light mb-8 leading-tight tracking-wide">
-          
+          {title}
         </h1>
         
         <div class="flex items-center gap-6 text-gray-400 text-sm font-light">
           {author && (
             <div class="flex items-center gap-2">
               <div class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center text-white font-semibold text-xs">
-                
+                {author.charAt(0)}
               </div>
-              <span class="text-gray-200"></span>
+              <span class="text-gray-200">{author}</span>
             </div>
           )}
           <time class="flex items-center gap-2">
@@ -61,27 +60,23 @@ const readingTime = "4 min read";
           </time>
           <span class="flex items-center gap-2">
             <i class="bx bx-time-five text-[16px]"></i>
-            
+            {readingTime}
           </span>
         </div>
       </div>
     </header>
 
-    
     {heroImage && (
       <div class="max-w-[1000px] mx-auto px-6 -mt-10 mb-16 relative z-10">
         <div class="aspect-video w-full overflow-hidden shadow-lg border border-gray-200 bg-white">
           <Image 
-            src= 
-            alt= 
+            src={heroImage} 
+            alt={title} 
             class="w-full h-full object-cover"
           />
         </div>
       </div>
     )}
-    
-    
-
     
     <div class="max-w-[1000px] mx-auto px-6">
       <div class="prose prose-lg prose-slate max-w-none 
@@ -93,7 +88,6 @@ const readingTime = "4 min read";
                   prose-li:text-gray-700 prose-li:font-light">
         <slot />
       </div>
-      
       
       <div class="mt-16 pt-8 border-t border-gray-200 flex items-center justify-between">
         <a href="/blog" class="text-[#1d4ed8] text-sm font-bold uppercase tracking-wider hover:text-[#000f2c] transition-colors flex items-center gap-2">
