@@ -1,8 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-// This page is NOT prerendered to handle form submissions via API endpoint
-export const prerender = false;
+// This page is currently built statically for AWS hosting. Form handling requires client-side logic or an API endpoint.
 
 let successMessage = "";
 let errorMessage = "";
