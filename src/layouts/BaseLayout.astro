@@ -7,14 +7,15 @@ import SEO from '../components/SEO.astro';
 interface Props {
   title?: string;
   description?: string;
+  ogImage?: string;
 }
 
-const { title = 'InSpectiv Labs', description = 'A B2B service company targeting insurance companies, financial lenders, geotech consultants, and mining companies.' } = Astro.props;
+const { title = 'InSpectiv Labs', description = 'A B2B service company targeting insurance companies, financial lenders, geotech consultants, and mining companies.', ogImage } = Astro.props;
 ---
 <!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
-    <SEO title={title} description={description} />
+    <SEO title={title} description={description} ogImage={ogImage} />
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

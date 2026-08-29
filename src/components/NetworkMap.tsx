@@ -37,17 +37,17 @@ export default function NetworkMap() {
       >
         <MapControls position="bottom-right" />
         
-        <MapMarker longitude={-74.006} latitude={40.7128} color="#1d4ed8" />
-        <MapMarker longitude={-0.1276} latitude={51.5072} color="#1d4ed8" />
-        <MapMarker longitude={139.6917} latitude={35.6895} color="#1d4ed8" />
+        <MapMarker longitude={-74.006} latitude={40.7128} color="#1d4ed8"><div/></MapMarker>
+        <MapMarker longitude={-0.1276} latitude={51.5072} color="#1d4ed8"><div/></MapMarker>
+        <MapMarker longitude={139.6917} latitude={35.6895} color="#1d4ed8"><div/></MapMarker>
         
         <MapMarker longitude={78.4867} latitude={17.3850} color="#1d4ed8">
           <MarkerLabel>Hyderabad, India</MarkerLabel>
         </MapMarker>
 
-        <MapMarker longitude={151.2093} latitude={-33.8688} color="#1d4ed8" />
-        <MapMarker longitude={-70.6693} latitude={-33.4489} color="#1d4ed8" />
-        <MapMarker longitude={28.0473} latitude={-26.2041} color="#1d4ed8" />
+        <MapMarker longitude={151.2093} latitude={-33.8688} color="#1d4ed8"><div/></MapMarker>
+        <MapMarker longitude={-70.6693} latitude={-33.4489} color="#1d4ed8"><div/></MapMarker>
+        <MapMarker longitude={28.0473} latitude={-26.2041} color="#1d4ed8"><div/></MapMarker>
       </Map>
     </div>
   );

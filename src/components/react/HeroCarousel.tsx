@@ -43,7 +43,7 @@ export default function HeroCarousel() {
         <div
           key={index}
           className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === currentSlide ? 'opacity-100 z-0' : 'opacity-0 -z-10'
+            index === currentSlide ? 'opacity-100 z-0' : 'opacity-0 pointer-events-none'
           }`}
         >
           <img
@@ -86,12 +86,6 @@ export default function HeroCarousel() {
             className="px-8 py-3 bg-[#2563eb] text-white text-sm uppercase tracking-wider font-semibold hover:bg-[#1d4ed8] transition-colors shadow-sm inline-block text-center"
           >
             EXPLORE SOLUTIONS
-          </a>
-          <a
-            href="/contact"
-            className="px-8 py-3 border border-white text-white hover:bg-white hover:text-[#000f2c] transition-colors text-sm uppercase tracking-wider font-semibold shadow-sm inline-block text-center"
-          >
-            BOOK A CONSULTATION
           </a>
         </div>
         <div className="flex gap-3">
