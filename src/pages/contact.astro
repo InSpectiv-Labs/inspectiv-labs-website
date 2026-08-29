@@ -2,13 +2,221 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 // This page is NOT prerendered to handle form submissions via API endpoint
+export const prerender = false;
+
+let successMessage = "";
+let errorMessage = "";
+
 if (Astro.request.method === "POST") {
-  // Handle form
+  try {
+    const data = await Astro.request.formData();
+    const name = data.get("name");
+    const email = data.get("email");
+    const subject = data.get("subject");
+    const message = data.get("message");
+    
+    // Basic validation
+    if (typeof name === "string" && name.trim().length > 0 &&
+        typeof email === "string" && email.trim().length > 0 &&
+        typeof message === "string" && message.trim().length > 0) {
+      
+      // Simulate form processing
+      successMessage = "Thank you for reaching out! We've received your message and will get back to you shortly.";
+    } else {
+      errorMessage = "Please fill in all required fields.";
+    }
+  } catch (error) {
+    errorMessage = "An error occurred while submitting the form. Please try again later.";
+  }
 }
 ---
-<BaseLayout title="Contact Us - InSpectiv Labs">
-  <h1>Contact Us</h1>
-  <form method="POST">
-    <button type="submit">Submit</button>
-  </form>
+<BaseLayout title="Contact Us - InSpectiv Labs" description="Get in touch with InSpectiv Labs. We're here to help with your infrastructure monitoring and data intelligence needs.">
+  
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-16 md:pt-36 md:pb-20 bg-[#000f2c] text-white overflow-hidden">
+    <div class="absolute inset-0 opacity-30">
+      <img src="/images/satellite_hero.png" class="w-full h-full object-cover" alt="Contact Us Background" />
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-[#000f2c] via-transparent to-transparent opacity-80"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-[#000f2c] via-[#000f2c]/50 to-transparent opacity-90"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-heading mb-6 tracking-tight">
+          Let's Start a Conversation
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 font-light mb-8 max-w-2xl leading-relaxed">
+          Whether you have a question about our technology, need a demo, or want to explore a partnership, our team is ready to help.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row gap-12 lg:gap-20">
+        
+        <!-- Contact Information -->
+        <div class="lg:w-5/12 flex flex-col space-y-12">
+          <div>
+            <h2 class="text-3xl font-bold font-heading text-gray-900 mb-4">Get in Touch</h2>
+            <p class="text-gray-600 text-lg leading-relaxed">
+              Fill out the form and our team will get back to you within 24 hours. Alternatively, you can reach us using the information below.
+            </p>
+          </div>
+
+          <div class="space-y-8">
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-12 h-12 bg-primary-50 flex items-center justify-center text-primary-600 text-2xl">
+                <i class='bx bx-map'></i>
+              </div>
+              <div class="ml-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Headquarters</h3>
+                <p class="text-gray-600 leading-relaxed">
+                  Hyderabad, India
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-12 h-12 bg-primary-50 flex items-center justify-center text-primary-600 text-2xl">
+                <i class='bx bx-envelope'></i>
+              </div>
+              <div class="ml-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Email Us</h3>
+                <div class="space-y-2">
+                  <p class="text-gray-600">
+                    <span class="font-medium text-gray-900">General:</span> 
+                    <a href="mailto:connect@inspectivlabs.com" class="text-primary-600 hover:text-primary-800 transition-colors">connect@inspectivlabs.com</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Social Links -->
+          <div class="pt-8 border-t border-gray-100">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">Follow Us</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="w-10 h-10 bg-gray-100 hover:bg-primary-600 hover:text-white text-gray-600 flex items-center justify-center transition-all duration-300">
+                <i class='bx bxl-linkedin text-xl'></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-gray-100 hover:bg-primary-600 hover:text-white text-gray-600 flex items-center justify-center transition-all duration-300">
+                <i class='bx bxl-twitter text-xl'></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="lg:w-7/12">
+          <div class="bg-gray-50 p-8 md:p-12 border border-gray-100 shadow-sm relative">
+            <div class="absolute top-0 left-0 w-full h-1 bg-primary-600"></div>
+            
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">Send us a message</h3>
+            
+            {successMessage && (
+              <div class="mb-8 p-4 bg-green-50 border border-green-200 text-green-800 flex items-start">
+                <i class='bx bx-check-circle text-xl mr-3 mt-0.5'></i>
+                <p>{successMessage}</p>
+              </div>
+            )}
+            
+            {errorMessage && (
+              <div class="mb-8 p-4 bg-red-50 border border-red-200 text-red-800 flex items-start">
+                <i class='bx bx-error-circle text-xl mr-3 mt-0.5'></i>
+                <p>{errorMessage}</p>
+              </div>
+            )}
+
+            <form method="POST" class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label for="name" class="block text-sm font-medium text-gray-700">Full Name <span class="text-red-500">*</span></label>
+                  <input 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    required 
+                    class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                    placeholder="John Doe"
+                  />
+                </div>
+                
+                <div class="space-y-2">
+                  <label for="email" class="block text-sm font-medium text-gray-700">Work Email <span class="text-red-500">*</span></label>
+                  <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    required 
+                    class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                    placeholder="john@company.com"
+                  />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label for="company" class="block text-sm font-medium text-gray-700">Company Name</label>
+                  <input 
+                    type="text" 
+                    id="company" 
+                    name="company" 
+                    class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                    placeholder="Company Inc."
+                  />
+                </div>
+                
+                <div class="space-y-2">
+                  <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
+                  <select 
+                    id="subject" 
+                    name="subject" 
+                    class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors appearance-none"
+                  >
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="sales">Sales Inquiry</option>
+                    <option value="demo">Request a Demo</option>
+                    <option value="partnership">Partnership Opportunity</option>
+                    <option value="support">Technical Support</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <label for="message" class="block text-sm font-medium text-gray-700">How can we help? <span class="text-red-500">*</span></label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  rows="5" 
+                  required 
+                  class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors resize-y"
+                  placeholder="Tell us about your project or inquiry..."
+                ></textarea>
+              </div>
+
+              <div class="pt-4">
+                <button 
+                  type="submit" 
+                  class="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-4 px-8 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 flex justify-center items-center group"
+                >
+                  Send Message
+                  <i class='bx bx-right-arrow-alt text-xl ml-2 group-hover:translate-x-1 transition-transform'></i>
+                </button>
+              </div>
+              
+              <p class="text-xs text-gray-500 text-center mt-6">
+                By submitting this form, you agree to our <a href="/privacy-policy" class="text-primary-600 hover:underline">Privacy Policy</a> and <a href="/terms" class="text-primary-600 hover:underline">Terms of Service</a>.
+              </p>
+            </form>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>

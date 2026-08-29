@@ -2,17 +2,17 @@ import React, { useState, useEffect } from 'react';
 
 const slides = [
   {
-    image: '/images/hero_bg.png',
+    image: '/images/insar_satellite_scan.png',
     title: 'Precision Inspection & Risk Intelligence for Industry',
     subtitle: 'Ground-truth risk intelligence mapped, verified, and automated'
   },
   {
-    image: '/images/hero_bg_2.png',
+    image: '/images/earth_bg.png',
     title: 'Monitor Critical Infrastructure With Confidence',
     subtitle: 'Millimeter-scale displacement monitoring for dams, slopes, and civil engineering'
   },
   {
-    image: '/images/hero_bg_3.png',
+    image: '/images/infrastructure_monitoring.png',
     title: 'Global Asset Protection & Financial De-Risking',
     subtitle: 'Independent verification for massive capital projects and port facilities'
   }
@@ -29,9 +29,16 @@ export default function HeroCarousel() {
     return () => clearInterval(timer);
   }, []);
 
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
   return (
     <div className="relative w-full h-full">
-      {/* Background Images */}
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -47,14 +54,24 @@ export default function HeroCarousel() {
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
       ))}
-
-      {/* Content Container */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 p-2 text-white/50 hover:text-white transition-colors cursor-pointer"
+        aria-label="Previous slide"
+      >
+        <i className="bx bx-chevron-left text-5xl drop-shadow-md"></i>
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 p-2 text-white/50 hover:text-white transition-colors cursor-pointer"
+        aria-label="Next slide"
+      >
+        <i className="bx bx-chevron-right text-5xl drop-shadow-md"></i>
+      </button>
       <div className="relative z-10 w-full h-full flex flex-col justify-end text-left px-8 pb-32 max-w-[1600px] mx-auto">
         <h1 className="text-4xl md:text-5xl font-light tracking-wide mb-2 text-white uppercase drop-shadow-sm transition-all duration-700 transform">
           InSpectiv Labs
         </h1>
-        
-        {/* Animated Text Block */}
         <div className="min-h-[120px] md:min-h-[100px] flex items-start justify-start mb-4">
             <h2 
               key={currentSlide}
@@ -63,8 +80,6 @@ export default function HeroCarousel() {
               {slides[currentSlide].title}
             </h2>
         </div>
-
-        {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 mb-8">
           <a
             href="#industries"
@@ -79,8 +94,6 @@ export default function HeroCarousel() {
             BOOK A CONSULTATION
           </a>
         </div>
-
-        {/* Navigation Dots */}
         <div className="flex gap-3">
           {slides.map((_, index) => (
             <button
@@ -94,13 +107,9 @@ export default function HeroCarousel() {
           ))}
         </div>
       </div>
-
-      {/* Down Arrow */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-white animate-bounce pointer-events-none">
         <i className="bx bx-chevron-down text-4xl"></i>
       </div>
-
-      {/* Add custom keyframe animation for fade-in-up if not in tailwind config */}
       <style>{`
         @keyframes fadeInUp {
           from {
