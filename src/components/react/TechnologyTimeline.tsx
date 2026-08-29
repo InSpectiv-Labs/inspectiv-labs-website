@@ -114,8 +114,11 @@ export default function TechnologyTimeline() {
                 </div>
                 
                 <div 
-                  className={`pl-14 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${activeStep === step.id ? 'max-h-40 opacity-100 mt-4' : 'max-h-0 opacity-0 mt-0'}`}
+                  className={`pl-14 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${activeStep === step.id ? 'max-h-[500px] opacity-100 mt-4' : 'max-h-0 opacity-0 mt-0'}`}
                 >
+                  <div className="block lg:hidden w-full h-48 mb-6 overflow-hidden rounded border border-gray-200">
+                    <img src={step.image} alt={step.title} className="w-full h-full object-cover grayscale mix-blend-multiply opacity-80" />
+                  </div>
                   <p className="text-base text-gray-600 font-light leading-relaxed mb-6">
                     {step.description}
                   </p>

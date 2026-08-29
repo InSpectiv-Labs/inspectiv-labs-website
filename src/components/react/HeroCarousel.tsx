@@ -55,7 +55,7 @@ export default function HeroCarousel() {
         </h1>
         
         {/* Animated Text Block */}
-        <div className="h-[120px] md:h-[100px] flex items-start justify-start mb-4">
+        <div className="min-h-[120px] md:min-h-[100px] flex items-start justify-start mb-4">
             <h2 
               key={currentSlide}
               className="text-2xl md:text-4xl font-light leading-tight text-white drop-shadow-md animate-fade-in-up"
