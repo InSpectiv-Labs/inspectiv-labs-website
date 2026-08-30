@@ -123,7 +123,7 @@ export default function MobileNav({ links }: MobileNavProps) {
           >
             <a 
               href="/contact" 
-              className="flex items-center justify-center w-full px-6 py-4 text-sm font-semibold tracking-widest text-white uppercase bg-[#1d4ed8] hover:bg-[#1e40af] hover:shadow-[0_0_20px_rgba(29,78,216,0.4)] transition-all duration-300 group"
+              className="flex items-center justify-center w-full px-4 py-4 text-sm font-semibold tracking-widest text-white uppercase bg-[#1d4ed8] hover:bg-[#1e40af] hover:shadow-[0_0_20px_rgba(29,78,216,0.4)] transition-all duration-300 group"
               onClick={() => setIsOpen(false)}
             >
               CONTACT US

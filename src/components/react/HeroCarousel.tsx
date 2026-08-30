@@ -68,7 +68,7 @@ export default function HeroCarousel() {
       >
         <i className="bx bx-chevron-right text-5xl drop-shadow-md"></i>
       </button>
-      <div className="relative z-10 w-full h-full flex flex-col justify-end text-left px-8 pb-32 max-w-[1600px] mx-auto">
+      <div className="relative z-10 w-full h-full flex flex-col justify-end text-left px-4 pb-20 max-w-[95vw] mx-auto">
         <h1 className="text-4xl md:text-5xl font-light tracking-wide mb-2 text-white uppercase drop-shadow-sm transition-all duration-700 transform">
           InSpectiv Labs
         </h1>

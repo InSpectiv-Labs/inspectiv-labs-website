@@ -42,7 +42,7 @@ export default function TechnologyTimeline() {
   const [activeStep, setActiveStep] = useState(1);
   const [progress, setProgress] = useState(0);
 
-  // Auto-advance logic
+
   useEffect(() => {
     const timer = setInterval(() => {
       setProgress((prev) => {
@@ -63,9 +63,9 @@ export default function TechnologyTimeline() {
   };
 
   return (
-    <div className="w-full max-w-[1400px] mx-auto">
+    <div className="w-full max-w-[95vw] mx-auto">
       
-      {/* Hallmark Header (Removed since it's now in the page layout) */}
+
       
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
         

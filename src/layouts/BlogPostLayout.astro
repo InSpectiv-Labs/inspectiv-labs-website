@@ -13,10 +13,7 @@ interface Props {
 
 const { title, description, date, author, heroImage, industry } = Astro.props;
 
-// Rough reading time calculation based on word count
-// Note: Since Astro doesn't natively expose raw body content easily in the layout 
-// without passing it as a prop, we'll use a static placeholder or simple string for now.
-// For a production app, you can write a remark plugin to inject reading time into frontmatter.
+
 const readingTime = "4 min read"; 
 ---
 <BaseLayout 
@@ -27,7 +24,7 @@ const readingTime = "4 min read";
   <article class="bg-gray-50 min-h-screen pb-24">
     
     <header class="pt-40 pb-16 bg-[#000f2c] text-white">
-      <div class="max-w-[800px] mx-auto px-6">
+      <div class="max-w-[800px] mx-auto px-4">
         
         {industry && (
           <div class="mb-8">
@@ -67,7 +64,7 @@ const readingTime = "4 min read";
     </header>
 
     {heroImage && (
-      <div class="max-w-[1000px] mx-auto px-6 -mt-10 mb-16 relative z-10">
+      <div class="max-w-[1000px] mx-auto px-4 -mt-10 mb-16 relative z-10">
         <div class="aspect-video w-full overflow-hidden shadow-lg border border-gray-200 bg-white">
           <Image 
             src={heroImage} 
@@ -78,7 +75,7 @@ const readingTime = "4 min read";
       </div>
     )}
     
-    <div class="max-w-[1000px] mx-auto px-6">
+    <div class="max-w-[1000px] mx-auto px-4">
       <div class="prose prose-lg prose-slate max-w-none 
                   prose-headings:text-[#000f2c] prose-headings:font-light 
                   prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 

@@ -8,14 +8,14 @@ import headerImage from '../assets/header.png';
   <!-- Subtle Background Glow -->
   <div class="absolute -top-[150px] left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-cyan-500 rounded-[100%] blur-[120px] opacity-[0.05] pointer-events-none"></div>
 
-  <div class="max-w-[1600px] mx-auto px-6 relative z-10">
+  <div class="max-w-[95vw] mx-auto px-4 relative z-10">
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
       
       <!-- Brand & Tagline (Left Column) -->
-      <div class="lg:col-span-4 flex flex-col items-start">
+      <div class="lg:col-span-3 flex flex-col items-start">
         <a href="/" class="inline-block mb-6">
-          <Image src={headerImage} alt="InSpectiv Labs" class="h-16 w-auto object-contain" />
+          <Image src={headerImage} alt="InSpectiv Labs" class="h-24 w-auto object-contain" />
         </a>
         <p class="text-sm font-light leading-relaxed text-gray-400 max-w-sm mb-8">
           Transforming raw satellite radar data into actionable, millimeter-accurate ground deformation intelligence for the world's most demanding sectors.
@@ -36,15 +36,34 @@ import headerImage from '../assets/header.png';
       </div>
 
       <!-- Links Columns (Right Columns) -->
-      <div class="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-8">
+      <div class="lg:col-span-9 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
         
+        <div>
+          <h4 class="text-xs font-bold mb-6 tracking-widest text-white uppercase opacity-90">Industry</h4>
+          <ul class="space-y-4">
+            <li><a href="/industries/infrastructure" class="text-sm font-light text-gray-400 hover:text-cyan-400 transition-colors">Infrastructure & Construction</a></li>
+            <li><a href="/industries/mining" class="text-sm font-light text-gray-400 hover:text-cyan-400 transition-colors">Mining & Resources</a></li>
+            <li><a href="/industries/energy" class="text-sm font-light text-gray-400 hover:text-cyan-400 transition-colors">Energy & Utilities</a></li>
+            <li><a href="/industries/urban-development" class="text-sm font-light text-gray-400 hover:text-cyan-400 transition-colors">Urban Development</a></li>
+          </ul>
+        </div>
+
         <div>
           <h4 class="text-xs font-bold mb-6 tracking-widest text-white uppercase opacity-90">Solutions</h4>
           <ul class="space-y-4">
-            <li><a href="/industries/mining" class="text-sm font-light text-gray-400 hover:text-cyan-400 transition-colors">Mining Operations</a></li>
-            <li><a href="/industries/infrastructure" class="text-sm font-light text-gray-400 hover:text-cyan-400 transition-colors">Infrastructure</a></li>
-            <li><a href="/industries/energy" class="text-sm font-light text-gray-400 hover:text-cyan-400 transition-colors">Energy & Utilities</a></li>
-            <li><a href="/industries/urban-development" class="text-sm font-light text-gray-400 hover:text-cyan-400 transition-colors">Urban Development</a></li>
+            <li><a href="/solutions/mine-operators" class="text-sm font-light text-gray-400 hover:text-cyan-400 transition-colors">Mine Operators</a></li>
+            <li><a href="#!" class="text-sm font-light text-gray-400 hover:text-cyan-400 transition-colors">Geotech Consultants</a></li>
+            <li><a href="#!" class="text-sm font-light text-gray-400 hover:text-cyan-400 transition-colors">Banks & Financial Lenders</a></li>
+            <li><a href="#!" class="text-sm font-light text-gray-400 hover:text-cyan-400 transition-colors">Insurance Adjusters</a></li>
+            <li><a href="#!" class="text-sm font-light text-gray-400 hover:text-cyan-400 transition-colors">Infrastructure Owner and Developers</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold mb-6 tracking-widest text-white uppercase opacity-90">Services</h4>
+          <ul class="space-y-4">
+            <li><a href="/services/historical-analysis" class="text-sm font-light text-gray-400 hover:text-cyan-400 transition-colors">Historical Analysis</a></li>
+            <li><a href="/services/continuous-monitoring" class="text-sm font-light text-gray-400 hover:text-cyan-400 transition-colors">Continuous Monitoring</a></li>
           </ul>
         </div>
 
@@ -76,10 +95,6 @@ import headerImage from '../assets/header.png';
     <!-- Bottom Bar -->
     <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
       <div class="flex items-center gap-3 text-[12px] font-medium text-gray-500">
-         <div class="flex gap-1.5 opacity-60">
-           <div class="w-1.5 h-1.5 rounded-full bg-cyan-400"></div>
-           <div class="w-1.5 h-1.5 rounded-full bg-[#1d4ed8]"></div>
-         </div>
          <span>&copy; {new Date().getFullYear()} InSpectiv Labs Private Limited. All rights reserved.</span>
       </div>
       <div class="flex items-center gap-6 text-[11px] font-medium tracking-wider text-gray-500 uppercase">
