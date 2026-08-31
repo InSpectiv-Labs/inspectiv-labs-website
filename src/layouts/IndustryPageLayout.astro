@@ -15,6 +15,8 @@ export interface Props {
   title: string;
   description: string;
   image?: string;
+  insarImage?: string;
+  graphImage?: string;
   hero: {
     headline: string;
     intro: string;
@@ -25,7 +27,7 @@ export interface Props {
   benefits: string[];
 }
 
-const { title, description, image, hero, industrySlug, challenges, solutions, benefits } = Astro.props;
+const { title, description, image, insarImage, graphImage, hero, industrySlug, challenges, solutions, benefits } = Astro.props;
 ---
 <BaseLayout title={title} description={description}>
   
@@ -48,12 +50,53 @@ const { title, description, image, hero, industrySlug, challenges, solutions, be
   <section class="py-24 bg-gray-50 border-b border-gray-200">
     <div class="max-w-[95vw] mx-auto px-4">
       <div class="text-center mb-16">
+        <h2 class="text-3xl text-[#1d4ed8] font-normal mb-4 uppercase">VISUAL INTELLIGENCE</h2>
+        <h3 class="text-2xl text-gray-800 font-light">From macro context to millimeter precision</h3>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {image && (
+          <div class="bg-white border border-gray-100 p-2 shadow-sm rounded-sm">
+            <div class="h-64 overflow-hidden relative">
+              <img src={image} alt="Site Context" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="text-sm font-semibold text-[#000f2c] uppercase">Site Context</h4>
+            </div>
+          </div>
+        )}
+        {(insarImage || "/images/insar_interferogram.png") && (
+          <div class="bg-white border border-gray-100 p-2 shadow-sm rounded-sm">
+            <div class="h-64 overflow-hidden relative">
+              <img src={insarImage || "/images/insar_interferogram.png"} alt="InSAR Analysis" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="text-sm font-semibold text-[#000f2c] uppercase">InSAR Analysis</h4>
+            </div>
+          </div>
+        )}
+        {(graphImage || "/images/time_series.png") && (
+          <div class="bg-white border border-gray-100 p-2 shadow-sm rounded-sm">
+            <div class="h-64 overflow-hidden relative">
+              <img src={graphImage || "/images/time_series.png"} alt="Deformation Tracking" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="text-sm font-semibold text-[#000f2c] uppercase">Deformation Tracking</h4>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-white border-b border-gray-200">
+    <div class="max-w-[95vw] mx-auto px-4">
+      <div class="text-center mb-16">
         <h2 class="text-3xl text-[#1d4ed8] font-normal mb-4 uppercase">THE LANDSCAPE</h2>
         <h3 class="text-2xl text-gray-800 font-light">Key Industry Challenges</h3>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {challenges.map((challenge, index) => (
-          <div class="bg-white border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow relative">
+          <div class="bg-gray-50 border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow relative">
             <div class="absolute top-0 left-0 w-full h-1 bg-[#2563eb]"></div>
             <div class="text-4xl font-light text-gray-200 mb-6">0{index + 1}</div>
             <h4 class="text-lg font-semibold text-[#000f2c] uppercase mb-4">{challenge.title}</h4>
@@ -113,19 +156,6 @@ const { title, description, image, hero, industrySlug, challenges, solutions, be
     </div>
   </section>
 
-  <section class="py-24 bg-gray-50 border-y border-gray-200">
-    <div class="max-w-[95vw] mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl text-[#1d4ed8] font-normal mb-4 uppercase">PROVEN SUCCESS</h2>
-        <h3 class="text-2xl text-gray-800 font-light">Case Studies</h3>
-      </div>
-      <div class="p-16 border border-dashed border-gray-300 rounded-sm text-center bg-white max-w-3xl mx-auto">
-        <i class="bx bx-book-open text-gray-300 text-5xl mb-4"></i>
-        <h4 class="text-lg font-semibold text-gray-600 uppercase tracking-widest mb-2">Coming Soon</h4>
-        <p class="text-gray-500 font-light max-w-lg mx-auto">We are currently compiling comprehensive case studies detailing our specific impact in this sector. Check back shortly for detailed success stories.</p>
-      </div>
-    </div>
-  </section>
 
   <section class="py-32 bg-white text-center">
     <div class="max-w-[95vw] mx-auto px-4">
