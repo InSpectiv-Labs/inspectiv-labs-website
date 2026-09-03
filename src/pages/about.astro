@@ -5,25 +5,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout title="About Us | InSpectiv Labs" description="Specialists in satellite-based ground monitoring solutions for mining, infrastructure, insurance, and energy sectors.">
   
   {/* 1. Enhanced Hero Section */}
-  <section class="relative pt-32 pb-12 bg-[#000f2c] text-white overflow-hidden flex items-end min-h-[35vh]">
-    <div class="absolute inset-0 z-0">
-      <img src="/images/satellite_hero.jpg" alt="Satellite over Earth" class="w-full h-full object-cover grayscale mix-blend-screen opacity-20" />
-      <div class="absolute inset-0 bg-gradient-to-b from-[#000f2c] via-[#000f2c]/80 to-[#000f2c]"></div>
+  <section class="relative pt-40 pb-32 bg-[#000f2c] text-white">
+    <div class="absolute inset-0 opacity-30">
+      <img src="/images/satellite_hero.png" alt="About Us" class="w-full h-full object-cover" />
     </div>
     
-    <div class="relative z-10 max-w-[95vw] mx-auto px-4 w-full mt-12">
-      <h1 class="text-4xl md:text-5xl lg:text-7xl font-light leading-tight tracking-tight text-white mb-4 uppercase">
+    <div class="relative z-10 max-w-[90vw] mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight tracking-wide">
         About Us
       </h1>
-      <p class="text-xl md:text-2xl text-cyan-400 font-light max-w-3xl italic leading-relaxed border-l-2 border-cyan-400 pl-4 mb-8">
-        "Precision Earth Monitoring with InSAR."
+      <p class="text-xl text-gray-300 font-light leading-relaxed max-w-3xl mx-auto">
+        Precision Earth Monitoring with InSAR.
       </p>
     </div>
   </section>
 
   {/* 2. Core Capabilities */}
   <section class="py-16 md:py-24 bg-white border-b border-gray-200">
-    <div class="max-w-[95vw] mx-auto px-4">
+    <div class="max-w-[90vw] mx-auto px-6">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
         
         {/* Left: Statement */}

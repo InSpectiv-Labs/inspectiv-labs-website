@@ -1,579 +1,1100 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import HeroCarousel from '../components/react/HeroCarousel.tsx';
-import NetworkMap from '../components/NetworkMap.tsx';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroCarousel from "../components/react/HeroCarousel.tsx";
+import NetworkMap from "../components/NetworkMap.tsx";
 ---
 
 <BaseLayout title="InSpectiv Labs | Risk Intelligence Platform">
-  
-  
   <section class="relative h-screen w-full">
     <HeroCarousel client:load />
   </section>
 
-  
-  <section id="overview" class="py-16 md:py-24 bg-white border-b border-gray-200 overflow-hidden">
-    <div class="max-w-[90vw] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-      
-      
+  <section
+    id="overview"
+    class="py-16 md:py-24 bg-white border-b border-gray-200 overflow-hidden"
+  >
+    <div
+      class="max-w-[90vw] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+    >
       <div class="flex flex-col items-start text-left">
         <h2 class="text-3xl text-[#1d4ed8] font-normal mb-4 uppercase">
           OVERVIEW
         </h2>
-        <h3 class="text-2xl text-gray-800 font-light mb-4">Protecting assets globally</h3>
+        <h3 class="text-2xl text-gray-800 font-light mb-4">
+          Protecting assets globally
+        </h3>
         <p class="text-gray-600 text-lg font-light leading-relaxed">
-          InSpectiv Labs provides an advanced Risk Intelligence platform built for the world’s most demanding sectors. By combining automated monitoring, predictive analytics, and secure data pipelines, we deliver actionable intelligence that protects assets, optimizes operations, and ensures regulatory compliance across your entire portfolio.
+          InSpectiv Labs provides an advanced Risk Intelligence platform built
+          for the world’s most demanding sectors. By combining automated
+          monitoring, predictive analytics, and secure data pipelines, we
+          deliver actionable intelligence that protects assets, optimizes
+          operations, and ensures regulatory compliance across your entire
+          portfolio.
         </p>
       </div>
 
-      
-      <div class="relative w-full max-w-lg mx-auto lg:ml-auto lg:mr-0 mt-12 lg:mt-0">
-        
-        
-        <div class="absolute left-[31px] top-8 bottom-8 w-0.5 bg-gray-100"></div>
-        
+      <div
+        class="relative w-full max-w-lg mx-auto lg:ml-auto lg:mr-0 mt-12 lg:mt-0"
+      >
+        <div class="absolute left-[31px] top-8 bottom-8 w-0.5 bg-gray-100">
+        </div>
+
         <div class="flex flex-col gap-12 relative z-10">
-          
-          
           <div class="group flex items-start gap-8">
-            <div class="relative z-10 w-16 h-16 shrink-0 rounded-xl bg-white border border-gray-200 shadow-sm flex items-center justify-center text-[#1d4ed8] group-hover:border-[#1d4ed8] group-hover:shadow-md group-hover:shadow-[#1d4ed8]/10 transition-all duration-300">
-              <i class="bx bx-target-lock text-3xl transition-transform duration-300 group-hover:scale-110"></i>
+            <div
+              class="relative z-10 w-16 h-16 shrink-0 rounded-xl bg-white border border-gray-200 shadow-sm flex items-center justify-center text-[#1d4ed8] group-hover:border-[#1d4ed8] group-hover:shadow-md group-hover:shadow-[#1d4ed8]/10 transition-all duration-300"
+            >
+              <i
+                class="bx bx-target-lock text-3xl transition-transform duration-300 group-hover:scale-110"
+              ></i>
             </div>
             <div class="pt-1">
-              <h3 class="text-xl font-semibold text-[#000f2c] mb-2 tracking-tight transition-colors duration-300 group-hover:text-[#1d4ed8]">Precision First</h3>
-              <p class="text-gray-500 font-light leading-relaxed">We deliver verified, ground-truth data with uncompromised accuracy, ensuring absolute certainty across your operations.</p>
+              <h3
+                class="text-xl font-semibold text-[#000f2c] mb-2 tracking-tight transition-colors duration-300 group-hover:text-[#1d4ed8]"
+              >
+                Precision First
+              </h3>
+              <p class="text-gray-500 font-light leading-relaxed">
+                We deliver verified, ground-truth data with uncompromised
+                accuracy, ensuring absolute certainty across your operations.
+              </p>
             </div>
           </div>
 
-          
           <div class="group flex items-start gap-8">
-            <div class="relative z-10 w-16 h-16 shrink-0 rounded-xl bg-white border border-gray-200 shadow-sm flex items-center justify-center text-[#1d4ed8] group-hover:border-[#1d4ed8] group-hover:shadow-md group-hover:shadow-[#1d4ed8]/10 transition-all duration-300">
-              <i class="bx bx-shield-quarter text-3xl transition-transform duration-300 group-hover:scale-110"></i>
+            <div
+              class="relative z-10 w-16 h-16 shrink-0 rounded-xl bg-white border border-gray-200 shadow-sm flex items-center justify-center text-[#1d4ed8] group-hover:border-[#1d4ed8] group-hover:shadow-md group-hover:shadow-[#1d4ed8]/10 transition-all duration-300"
+            >
+              <i
+                class="bx bx-shield-quarter text-3xl transition-transform duration-300 group-hover:scale-110"
+              ></i>
             </div>
             <div class="pt-1">
-              <h3 class="text-xl font-semibold text-[#000f2c] mb-2 tracking-tight transition-colors duration-300 group-hover:text-[#1d4ed8]">Risk Mitigation</h3>
-              <p class="text-gray-500 font-light leading-relaxed">Proactive threat identification and automated alerting systems designed to protect financial and structural assets.</p>
+              <h3
+                class="text-xl font-semibold text-[#000f2c] mb-2 tracking-tight transition-colors duration-300 group-hover:text-[#1d4ed8]"
+              >
+                Risk Mitigation
+              </h3>
+              <p class="text-gray-500 font-light leading-relaxed">
+                Proactive threat identification and automated alerting systems
+                designed to protect financial and structural assets.
+              </p>
             </div>
           </div>
 
-          
           <div class="group flex items-start gap-8">
-            <div class="relative z-10 w-16 h-16 shrink-0 rounded-xl bg-white border border-gray-200 shadow-sm flex items-center justify-center text-[#1d4ed8] group-hover:border-[#1d4ed8] group-hover:shadow-md group-hover:shadow-[#1d4ed8]/10 transition-all duration-300">
-              <i class="bx bx-badge-check text-3xl transition-transform duration-300 group-hover:scale-110"></i>
+            <div
+              class="relative z-10 w-16 h-16 shrink-0 rounded-xl bg-white border border-gray-200 shadow-sm flex items-center justify-center text-[#1d4ed8] group-hover:border-[#1d4ed8] group-hover:shadow-md group-hover:shadow-[#1d4ed8]/10 transition-all duration-300"
+            >
+              <i
+                class="bx bx-badge-check text-3xl transition-transform duration-300 group-hover:scale-110"
+              ></i>
             </div>
             <div class="pt-1">
-              <h3 class="text-xl font-semibold text-[#000f2c] mb-2 tracking-tight transition-colors duration-300 group-hover:text-[#1d4ed8]">Trusted Partner</h3>
-              <p class="text-gray-500 font-light leading-relaxed">Built on transparency and reliability, we act as a foundational pillar for your organization's intelligence.</p>
+              <h3
+                class="text-xl font-semibold text-[#000f2c] mb-2 tracking-tight transition-colors duration-300 group-hover:text-[#1d4ed8]"
+              >
+                Trusted Partner
+              </h3>
+              <p class="text-gray-500 font-light leading-relaxed">
+                Built on transparency and reliability, we act as a foundational
+                pillar for your organization's intelligence.
+              </p>
             </div>
           </div>
-
         </div>
       </div>
-
     </div>
   </section>
 
-  
-  <section id="industries" class="py-16 md:py-24 bg-slate-100 border-b border-gray-200">
+  <section
+    id="industries"
+    class="py-16 md:py-24 bg-slate-100 border-b border-gray-200"
+  >
     <div class="max-w-[90vw] mx-auto px-6 text-center">
-      <h2 class="text-3xl text-[#1d4ed8] font-normal mb-4 uppercase">INDUSTRY</h2>
-      <h3 class="text-2xl text-gray-800 font-light mb-16">Tailored for high-risk environments</h3>
-      
+      <h2 class="text-3xl text-[#1d4ed8] font-normal mb-4 uppercase">
+        INDUSTRY
+      </h2>
+      <h3 class="text-2xl text-gray-800 font-light mb-16">
+        Tailored for high-risk environments
+      </h3>
+
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        
-        
-        <div class="flex flex-col group bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-left overflow-hidden">
+        <div
+          class="flex flex-col group bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-left overflow-hidden"
+        >
           <div class="w-full h-48 overflow-hidden relative">
-            <img src="/images/industry_mining.png" alt="Mining Operations" class="w-full h-full object-cover brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-[#000f2c]/90 via-[#000f2c]/40 to-transparent"></div>
+            <img
+              src="/images/industry_mining.png"
+              alt="Mining Operations"
+              class="w-full h-full object-cover brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#000f2c]/90 via-[#000f2c]/40 to-transparent"
+            >
+            </div>
             <div class="absolute bottom-4 left-6 flex items-center gap-3">
               <i class="bx bx-hard-hat text-2xl text-cyan-400"></i>
-              <h3 class="text-[15px] font-semibold text-white uppercase tracking-wider">MINING OPERATIONS</h3>
+              <h3
+                class="text-[15px] font-semibold text-white uppercase tracking-wider"
+              >
+                MINING OPERATIONS
+              </h3>
             </div>
           </div>
           <div class="p-6 flex flex-col flex-grow">
-            <p class="text-gray-600 text-sm font-semibold leading-relaxed mb-6 border-b border-gray-100 pb-4 h-[60px]">
+            <p
+              class="text-gray-600 text-sm font-semibold leading-relaxed mb-6 border-b border-gray-100 pb-4 h-[60px]"
+            >
               Zero-Infra safety intelligence for safer, more productive mines.
             </p>
-            <ul class="space-y-3 mb-8 text-sm font-light text-gray-600 flex-grow">
-              <li class="flex items-start gap-2"><span class="text-[#1d4ed8] mt-0.5">✓</span> Detect slope instability & highwall movement</li>
-              <li class="flex items-start gap-2"><span class="text-[#1d4ed8] mt-0.5">✓</span> Monitor tailings dams, dumps & embankments</li>
-              <li class="flex items-start gap-2"><span class="text-[#1d4ed8] mt-0.5">✓</span> Improve safety & reduce unplanned downtime</li>
-              <li class="flex items-start gap-2"><span class="text-[#1d4ed8] mt-0.5">✓</span> Support DGMS compliance & reporting</li>
+            <ul
+              class="space-y-3 mb-8 text-sm font-light text-gray-600 flex-grow"
+            >
+              <li class="flex items-start gap-2">
+                <span class="text-[#1d4ed8] mt-0.5">✓</span> Detect slope instability
+                & highwall movement
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#1d4ed8] mt-0.5">✓</span> Monitor tailings dams,
+                dumps & embankments
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#1d4ed8] mt-0.5">✓</span> Improve safety & reduce
+                unplanned downtime
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#1d4ed8] mt-0.5">✓</span> Support DGMS compliance
+                & reporting
+              </li>
             </ul>
-            <a href="/industries/mining" class="mt-auto px-4 py-3 border border-[#2563eb] text-[#2563eb] text-xs uppercase tracking-wider font-semibold hover:bg-[#2563eb] hover:text-white transition-colors w-full text-center">
+            <a
+              href="/industries/mining"
+              class="mt-auto px-4 py-3 border border-[#2563eb] text-[#2563eb] text-xs uppercase tracking-wider font-semibold hover:bg-[#2563eb] hover:text-white transition-colors w-full text-center"
+            >
               LEARN MORE <span class="ml-1">›</span>
             </a>
           </div>
         </div>
 
-        
-        <div class="flex flex-col group bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-left overflow-hidden">
+        <div
+          class="flex flex-col group bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-left overflow-hidden"
+        >
           <div class="w-full h-48 overflow-hidden relative">
-            <img src="/images/industry_infrastructure.png" alt="Infrastructure & Construction" class="w-full h-full object-cover brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-[#000f2c]/90 via-[#000f2c]/40 to-transparent"></div>
+            <img
+              src="/images/industry_infrastructure.png"
+              alt="Infrastructure & Construction"
+              class="w-full h-full object-cover brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#000f2c]/90 via-[#000f2c]/40 to-transparent"
+            >
+            </div>
             <div class="absolute bottom-4 left-6 flex items-center gap-3">
               <i class="bx bx-building-house text-2xl text-cyan-400"></i>
-              <h3 class="text-[15px] font-semibold text-white uppercase tracking-wider">INFRASTRUCTURE</h3>
+              <h3
+                class="text-[15px] font-semibold text-white uppercase tracking-wider"
+              >
+                INFRASTRUCTURE
+              </h3>
             </div>
           </div>
           <div class="p-6 flex flex-col flex-grow">
-            <p class="text-gray-600 text-sm font-semibold leading-relaxed mb-6 border-b border-gray-100 pb-4 h-[60px]">
+            <p
+              class="text-gray-600 text-sm font-semibold leading-relaxed mb-6 border-b border-gray-100 pb-4 h-[60px]"
+            >
               Protect critical infrastructure across its lifecycle.
             </p>
-            <ul class="space-y-3 mb-8 text-sm font-light text-gray-600 flex-grow">
-              <li class="flex items-start gap-2"><span class="text-[#1d4ed8] mt-0.5">✓</span> Monitor bridges, highways, rail corridors</li>
-              <li class="flex items-start gap-2"><span class="text-[#1d4ed8] mt-0.5">✓</span> Track settlement & subsidence near structures</li>
-              <li class="flex items-start gap-2"><span class="text-[#1d4ed8] mt-0.5">✓</span> De-risk tunneling, metro & deep excavations</li>
-              <li class="flex items-start gap-2"><span class="text-[#1d4ed8] mt-0.5">✓</span> Ensure long-term structural health</li>
+            <ul
+              class="space-y-3 mb-8 text-sm font-light text-gray-600 flex-grow"
+            >
+              <li class="flex items-start gap-2">
+                <span class="text-[#1d4ed8] mt-0.5">✓</span> Monitor bridges, highways,
+                rail corridors
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#1d4ed8] mt-0.5">✓</span> Track settlement & subsidence
+                near structures
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#1d4ed8] mt-0.5">✓</span> De-risk tunneling, metro
+                & deep excavations
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#1d4ed8] mt-0.5">✓</span> Ensure long-term structural
+                health
+              </li>
             </ul>
-            <a href="/industries/infrastructure" class="mt-auto px-4 py-3 border border-[#2563eb] text-[#2563eb] text-xs uppercase tracking-wider font-semibold hover:bg-[#2563eb] hover:text-white transition-colors w-full text-center">
+            <a
+              href="/industries/infrastructure"
+              class="mt-auto px-4 py-3 border border-[#2563eb] text-[#2563eb] text-xs uppercase tracking-wider font-semibold hover:bg-[#2563eb] hover:text-white transition-colors w-full text-center"
+            >
               LEARN MORE <span class="ml-1">›</span>
             </a>
           </div>
         </div>
 
-        
-        <div class="flex flex-col group bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-left overflow-hidden">
+        <div
+          class="flex flex-col group bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-left overflow-hidden"
+        >
           <div class="w-full h-48 overflow-hidden relative">
-            <img src="/images/industry_energy.png" alt="Oil, Gas & Energy" class="w-full h-full object-cover brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-[#000f2c]/90 via-[#000f2c]/40 to-transparent"></div>
+            <img
+              src="/images/industry_energy.png"
+              alt="Oil, Gas & Energy"
+              class="w-full h-full object-cover brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#000f2c]/90 via-[#000f2c]/40 to-transparent"
+            >
+            </div>
             <div class="absolute bottom-4 left-6 flex items-center gap-3">
               <i class="bx bxs-bolt text-2xl text-cyan-400"></i>
-              <h3 class="text-[15px] font-semibold text-white uppercase tracking-wider">OIL, GAS & ENERGY</h3>
+              <h3
+                class="text-[15px] font-semibold text-white uppercase tracking-wider"
+              >
+                OIL, GAS & ENERGY
+              </h3>
             </div>
           </div>
           <div class="p-6 flex flex-col flex-grow">
-            <p class="text-gray-600 text-sm font-semibold leading-relaxed mb-6 border-b border-gray-100 pb-4 h-[60px]">
+            <p
+              class="text-gray-600 text-sm font-semibold leading-relaxed mb-6 border-b border-gray-100 pb-4 h-[60px]"
+            >
               Monitor ground movement around energy assets.
             </p>
-            <ul class="space-y-3 mb-8 text-sm font-light text-gray-600 flex-grow">
-              <li class="flex items-start gap-2"><span class="text-[#1d4ed8] mt-0.5">✓</span> Monitor well pads, pipelines & compressor stations</li>
-              <li class="flex items-start gap-2"><span class="text-[#1d4ed8] mt-0.5">✓</span> Detect subsidence & ground instability early</li>
-              <li class="flex items-start gap-2"><span class="text-[#1d4ed8] mt-0.5">✓</span> Reduce environmental & operational risks</li>
-              <li class="flex items-start gap-2"><span class="text-[#1d4ed8] mt-0.5">✓</span> Improve asset integrity & lifecycle planning</li>
+            <ul
+              class="space-y-3 mb-8 text-sm font-light text-gray-600 flex-grow"
+            >
+              <li class="flex items-start gap-2">
+                <span class="text-[#1d4ed8] mt-0.5">✓</span> Monitor well pads, pipelines
+                & compressor stations
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#1d4ed8] mt-0.5">✓</span> Detect subsidence & ground
+                instability early
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#1d4ed8] mt-0.5">✓</span> Reduce environmental
+                & operational risks
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#1d4ed8] mt-0.5">✓</span> Improve asset integrity
+                & lifecycle planning
+              </li>
             </ul>
-            <a href="/industries/energy" class="mt-auto px-4 py-3 border border-[#2563eb] text-[#2563eb] text-xs uppercase tracking-wider font-semibold hover:bg-[#2563eb] hover:text-white transition-colors w-full text-center">
+            <a
+              href="/industries/energy"
+              class="mt-auto px-4 py-3 border border-[#2563eb] text-[#2563eb] text-xs uppercase tracking-wider font-semibold hover:bg-[#2563eb] hover:text-white transition-colors w-full text-center"
+            >
               LEARN MORE <span class="ml-1">›</span>
             </a>
           </div>
         </div>
 
-        
-        <div class="flex flex-col group bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-left overflow-hidden">
+        <div
+          class="flex flex-col group bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-left overflow-hidden"
+        >
           <div class="w-full h-48 overflow-hidden relative">
-            <img src="/images/industry_urban.png" alt="Urban Development & Smart Cities" class="w-full h-full object-cover brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-[#000f2c]/90 via-[#000f2c]/40 to-transparent"></div>
+            <img
+              src="/images/industry_urban.png"
+              alt="Urban Development & Smart Cities"
+              class="w-full h-full object-cover brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#000f2c]/90 via-[#000f2c]/40 to-transparent"
+            >
+            </div>
             <div class="absolute bottom-4 left-6 flex items-center gap-3">
               <i class="bx bx-buildings text-2xl text-cyan-400"></i>
-              <h3 class="text-[15px] font-semibold text-white uppercase tracking-wider">URBAN DEVELOPMENT</h3>
+              <h3
+                class="text-[15px] font-semibold text-white uppercase tracking-wider"
+              >
+                URBAN DEVELOPMENT
+              </h3>
             </div>
           </div>
           <div class="p-6 flex flex-col flex-grow">
-            <p class="text-gray-600 text-sm font-semibold leading-relaxed mb-6 border-b border-gray-100 pb-4 h-[60px]">
+            <p
+              class="text-gray-600 text-sm font-semibold leading-relaxed mb-6 border-b border-gray-100 pb-4 h-[60px]"
+            >
               Build resilient cities with continuous ground intelligence.
             </p>
-            <ul class="space-y-3 mb-8 text-sm font-light text-gray-600 flex-grow">
-              <li class="flex items-start gap-2"><span class="text-[#1d4ed8] mt-0.5">✓</span> Monitor land subsidence in urban areas</li>
-              <li class="flex items-start gap-2"><span class="text-[#1d4ed8] mt-0.5">✓</span> Support zoning, planning & compliance</li>
-              <li class="flex items-start gap-2"><span class="text-[#1d4ed8] mt-0.5">✓</span> Detect risks near metros, utilities & buildings</li>
-              <li class="flex items-start gap-2"><span class="text-[#1d4ed8] mt-0.5">✓</span> Enable proactive infrastructure management</li>
+            <ul
+              class="space-y-3 mb-8 text-sm font-light text-gray-600 flex-grow"
+            >
+              <li class="flex items-start gap-2">
+                <span class="text-[#1d4ed8] mt-0.5">✓</span> Monitor land subsidence
+                in urban areas
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#1d4ed8] mt-0.5">✓</span> Support zoning, planning
+                & compliance
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#1d4ed8] mt-0.5">✓</span> Detect risks near metros,
+                utilities & buildings
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#1d4ed8] mt-0.5">✓</span> Enable proactive infrastructure
+                management
+              </li>
             </ul>
-            <a href="/industries/urban-development" class="mt-auto px-4 py-3 border border-[#2563eb] text-[#2563eb] text-xs uppercase tracking-wider font-semibold hover:bg-[#2563eb] hover:text-white transition-colors w-full text-center">
+            <a
+              href="/industries/urban-development"
+              class="mt-auto px-4 py-3 border border-[#2563eb] text-[#2563eb] text-xs uppercase tracking-wider font-semibold hover:bg-[#2563eb] hover:text-white transition-colors w-full text-center"
+            >
               LEARN MORE <span class="ml-1">›</span>
             </a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  
-  <section id="solutions" class="py-16 md:py-24 bg-white border-b border-gray-200">
+  <section
+    id="solutions"
+    class="py-16 md:py-24 bg-white border-b border-gray-200"
+  >
     <div class="max-w-[90vw] mx-auto px-6">
-      
       <div class="text-center mb-16">
-        <h2 class="text-3xl text-[#1d4ed8] font-normal mb-4 uppercase tracking-wider">OUR SOLUTIONS</h2>
-        <h3 class="text-2xl text-gray-800 font-light mb-4">Tailored Intelligence for Your Needs.</h3>
+        <h2
+          class="text-3xl text-[#1d4ed8] font-normal mb-4 uppercase tracking-wider"
+        >
+          OUR SOLUTIONS
+        </h2>
+        <h3 class="text-2xl text-gray-800 font-light mb-4">
+          Tailored Intelligence for Your Needs.
+        </h3>
         <p class="text-gray-600 text-lg font-light max-w-2xl mx-auto">
-          Empowering different stakeholders with precise, actionable insights. From mine operations to financial lending, we provide complete intelligence.
+          Empowering different stakeholders with precise, actionable insights.
+          From mine operations to financial lending, we provide complete
+          intelligence.
         </p>
       </div>
 
       <div class="flex flex-wrap justify-center gap-6">
-        
-        <div class="flex-grow-0 flex-shrink-0 basis-full md:basis-[calc(50%-12px)] lg:basis-[calc(33.333%-16px)] flex flex-col bg-white border border-gray-100 p-8 rounded-2xl hover:border-blue-200 hover:shadow-lg transition-all duration-300 group">
+        <div
+          class="flex-grow-0 flex-shrink-0 basis-full md:basis-[calc(50%-12px)] lg:basis-[calc(33.333%-16px)] flex flex-col bg-white border border-gray-100 p-8 rounded-2xl hover:border-blue-200 hover:shadow-lg transition-all duration-300 group"
+        >
           <div class="flex flex-col gap-4 mb-6">
-            <svg class="w-16 h-16 mb-2 group-hover:-translate-y-1 transition-transform duration-300" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M32 12L4 48H60L32 12Z" fill="#1d4ed8" fill-opacity="0.1"/>
-              <path d="M32 20L16 48H48L32 20Z" fill="#3b82f6" fill-opacity="0.4"/>
-              <path d="M32 32L24 48H40L32 32Z" fill="#1d4ed8"/>
-              <circle cx="32" cy="12" r="4" fill="#2563eb"/>
+            <svg
+              class="w-16 h-16 mb-2 group-hover:-translate-y-1 transition-transform duration-300"
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M32 12L4 48H60L32 12Z" fill="#1d4ed8" fill-opacity="0.1"
+              ></path>
+              <path d="M32 20L16 48H48L32 20Z" fill="#3b82f6" fill-opacity="0.4"
+              ></path>
+              <path d="M32 32L24 48H40L32 32Z" fill="#1d4ed8"></path>
+              <circle cx="32" cy="12" r="4" fill="#2563eb"></circle>
             </svg>
-            <h3 class="text-lg font-semibold text-gray-900 uppercase">Mine Operators</h3>
+            <h3 class="text-lg font-semibold text-gray-900 uppercase">
+              Mine Operators
+            </h3>
           </div>
-          <p class="text-gray-600 text-sm font-light mb-8 flex-grow leading-relaxed">
-            Enhance safety and productivity with continuous monitoring of highwalls, slopes, and tailings dams. Proactively manage risks.
+          <p
+            class="text-gray-600 text-sm font-light mb-8 flex-grow leading-relaxed"
+          >
+            Enhance safety and productivity with continuous monitoring of
+            highwalls, slopes, and tailings dams. Proactively manage risks.
           </p>
-          <a href="/solutions/mine-operators" class="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-[#1d4ed8] hover:text-blue-800 uppercase tracking-wider group-hover:translate-x-2 transition-transform">
+          <a
+            href="/solutions/mine-operators"
+            class="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-[#1d4ed8] hover:text-blue-800 uppercase tracking-wider group-hover:translate-x-2 transition-transform"
+          >
             Learn More <i class="bx bx-right-arrow-alt text-lg"></i>
           </a>
         </div>
 
-        <div class="flex-grow-0 flex-shrink-0 basis-full md:basis-[calc(50%-12px)] lg:basis-[calc(33.333%-16px)] flex flex-col bg-white border border-gray-100 p-8 rounded-2xl hover:border-blue-200 hover:shadow-lg transition-all duration-300 group">
+        <div
+          class="flex-grow-0 flex-shrink-0 basis-full md:basis-[calc(50%-12px)] lg:basis-[calc(33.333%-16px)] flex flex-col bg-white border border-gray-100 p-8 rounded-2xl hover:border-blue-200 hover:shadow-lg transition-all duration-300 group"
+        >
           <div class="flex flex-col gap-4 mb-6">
-            <svg class="w-16 h-16 mb-2 group-hover:-translate-y-1 transition-transform duration-300" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="32" cy="32" r="24" fill="#1d4ed8" fill-opacity="0.1" stroke="#3b82f6" stroke-width="2"/>
-              <path d="M8 32C8 32 20 20 32 20C44 20 56 32 56 32" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round"/>
-              <path d="M8 32C8 32 20 44 32 44C44 44 56 32 56 32" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round"/>
-              <circle cx="32" cy="32" r="6" fill="#1d4ed8"/>
+            <svg
+              class="w-16 h-16 mb-2 group-hover:-translate-y-1 transition-transform duration-300"
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="32"
+                cy="32"
+                r="24"
+                fill="#1d4ed8"
+                fill-opacity="0.1"
+                stroke="#3b82f6"
+                stroke-width="2"></circle>
+              <path
+                d="M8 32C8 32 20 20 32 20C44 20 56 32 56 32"
+                stroke="#1d4ed8"
+                stroke-width="3"
+                stroke-linecap="round"></path>
+              <path
+                d="M8 32C8 32 20 44 32 44C44 44 56 32 56 32"
+                stroke="#1d4ed8"
+                stroke-width="3"
+                stroke-linecap="round"></path>
+              <circle cx="32" cy="32" r="6" fill="#1d4ed8"></circle>
             </svg>
-            <h3 class="text-lg font-semibold text-gray-900 uppercase">Geotech Consultants</h3>
+            <h3 class="text-lg font-semibold text-gray-900 uppercase">
+              Geotech Consultants
+            </h3>
           </div>
-          <p class="text-gray-600 text-sm font-light mb-8 flex-grow leading-relaxed">
-            Leverage ground-truth satellite data to supplement site investigations. Provide clients with comprehensive stability verification.
+          <p
+            class="text-gray-600 text-sm font-light mb-8 flex-grow leading-relaxed"
+          >
+            Leverage ground-truth satellite data to supplement site
+            investigations. Provide clients with comprehensive stability
+            verification.
           </p>
-          <a href="/solutions/geotech-consultants" class="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-[#1d4ed8] hover:text-blue-800 uppercase tracking-wider group-hover:translate-x-2 transition-transform">
+          <a
+            href="/solutions/geotech-consultants"
+            class="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-[#1d4ed8] hover:text-blue-800 uppercase tracking-wider group-hover:translate-x-2 transition-transform"
+          >
             Learn More <i class="bx bx-right-arrow-alt text-lg"></i>
           </a>
         </div>
 
-        <div class="flex-grow-0 flex-shrink-0 basis-full md:basis-[calc(50%-12px)] lg:basis-[calc(33.333%-16px)] flex flex-col bg-white border border-gray-100 p-8 rounded-2xl hover:border-blue-200 hover:shadow-lg transition-all duration-300 group">
+        <div
+          class="flex-grow-0 flex-shrink-0 basis-full md:basis-[calc(50%-12px)] lg:basis-[calc(33.333%-16px)] flex flex-col bg-white border border-gray-100 p-8 rounded-2xl hover:border-blue-200 hover:shadow-lg transition-all duration-300 group"
+        >
           <div class="flex flex-col gap-4 mb-6">
-            <svg class="w-16 h-16 mb-2 group-hover:-translate-y-1 transition-transform duration-300" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="12" y="24" width="12" height="32" rx="2" fill="#3b82f6" fill-opacity="0.4"/>
-              <rect x="40" y="16" width="12" height="40" rx="2" fill="#1d4ed8" fill-opacity="0.1"/>
-              <rect x="24" y="8" width="16" height="48" rx="2" fill="#1d4ed8"/>
-              <rect x="28" y="16" width="8" height="4" fill="white" fill-opacity="0.5"/>
-              <rect x="28" y="24" width="8" height="4" fill="white" fill-opacity="0.5"/>
+            <svg
+              class="w-16 h-16 mb-2 group-hover:-translate-y-1 transition-transform duration-300"
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="12"
+                y="24"
+                width="12"
+                height="32"
+                rx="2"
+                fill="#3b82f6"
+                fill-opacity="0.4"></rect>
+              <rect
+                x="40"
+                y="16"
+                width="12"
+                height="40"
+                rx="2"
+                fill="#1d4ed8"
+                fill-opacity="0.1"></rect>
+              <rect x="24" y="8" width="16" height="48" rx="2" fill="#1d4ed8"
+              ></rect>
+              <rect
+                x="28"
+                y="16"
+                width="8"
+                height="4"
+                fill="white"
+                fill-opacity="0.5"></rect>
+              <rect
+                x="28"
+                y="24"
+                width="8"
+                height="4"
+                fill="white"
+                fill-opacity="0.5"></rect>
             </svg>
-            <h3 class="text-lg font-semibold text-gray-900 uppercase leading-tight">Infrastructure</h3>
+            <h3
+              class="text-lg font-semibold text-gray-900 uppercase leading-tight"
+            >
+              Infrastructure
+            </h3>
           </div>
-          <p class="text-gray-600 text-sm font-light mb-8 flex-grow leading-relaxed">
-            Monitor settlement, track structural health, and protect long-term asset integrity for bridges, highways, and critical urban developments.
+          <p
+            class="text-gray-600 text-sm font-light mb-8 flex-grow leading-relaxed"
+          >
+            Monitor settlement, track structural health, and protect long-term
+            asset integrity for bridges, highways, and critical urban
+            developments.
           </p>
-          <a href="/solutions/infrastructure-developers" class="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-[#1d4ed8] hover:text-blue-800 uppercase tracking-wider group-hover:translate-x-2 transition-transform">
+          <a
+            href="/solutions/infrastructure-developers"
+            class="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-[#1d4ed8] hover:text-blue-800 uppercase tracking-wider group-hover:translate-x-2 transition-transform"
+          >
             Learn More <i class="bx bx-right-arrow-alt text-lg"></i>
           </a>
         </div>
 
-        <div class="flex-grow-0 flex-shrink-0 basis-full md:basis-[calc(50%-12px)] lg:basis-[calc(33.333%-16px)] flex flex-col bg-white border border-gray-100 p-8 rounded-2xl hover:border-blue-200 hover:shadow-lg transition-all duration-300 group">
+        <div
+          class="flex-grow-0 flex-shrink-0 basis-full md:basis-[calc(50%-12px)] lg:basis-[calc(33.333%-16px)] flex flex-col bg-white border border-gray-100 p-8 rounded-2xl hover:border-blue-200 hover:shadow-lg transition-all duration-300 group"
+        >
           <div class="flex flex-col gap-4 mb-6">
-            <svg class="w-16 h-16 mb-2 group-hover:-translate-y-1 transition-transform duration-300" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="8" y="40" width="12" height="16" rx="2" fill="#1d4ed8" fill-opacity="0.2"/>
-              <rect x="26" y="24" width="12" height="32" rx="2" fill="#3b82f6" fill-opacity="0.6"/>
-              <rect x="44" y="8" width="12" height="48" rx="2" fill="#1d4ed8"/>
-              <path d="M8 32L26 16L44 24" stroke="#2563eb" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg
+              class="w-16 h-16 mb-2 group-hover:-translate-y-1 transition-transform duration-300"
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="8"
+                y="40"
+                width="12"
+                height="16"
+                rx="2"
+                fill="#1d4ed8"
+                fill-opacity="0.2"></rect>
+              <rect
+                x="26"
+                y="24"
+                width="12"
+                height="32"
+                rx="2"
+                fill="#3b82f6"
+                fill-opacity="0.6"></rect>
+              <rect x="44" y="8" width="12" height="48" rx="2" fill="#1d4ed8"
+              ></rect>
+              <path
+                d="M8 32L26 16L44 24"
+                stroke="#2563eb"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
             </svg>
-            <h3 class="text-lg font-semibold text-gray-900 uppercase leading-tight">Banks & Lenders</h3>
+            <h3
+              class="text-lg font-semibold text-gray-900 uppercase leading-tight"
+            >
+              Banks & Lenders
+            </h3>
           </div>
-          <p class="text-gray-600 text-sm font-light mb-8 flex-grow leading-relaxed">
-            Verify stability and assess environmental risks before and during capital investments. Ensure projects meet regulatory compliance.
+          <p
+            class="text-gray-600 text-sm font-light mb-8 flex-grow leading-relaxed"
+          >
+            Verify stability and assess environmental risks before and during
+            capital investments. Ensure projects meet regulatory compliance.
           </p>
-          <a href="/solutions/banks-lenders" class="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-[#1d4ed8] hover:text-blue-800 uppercase tracking-wider group-hover:translate-x-2 transition-transform">
+          <a
+            href="/solutions/banks-lenders"
+            class="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-[#1d4ed8] hover:text-blue-800 uppercase tracking-wider group-hover:translate-x-2 transition-transform"
+          >
             Learn More <i class="bx bx-right-arrow-alt text-lg"></i>
           </a>
         </div>
 
-        <div class="flex-grow-0 flex-shrink-0 basis-full md:basis-[calc(50%-12px)] lg:basis-[calc(33.333%-16px)] flex flex-col bg-white border border-gray-100 p-8 rounded-2xl hover:border-blue-200 hover:shadow-lg transition-all duration-300 group">
+        <div
+          class="flex-grow-0 flex-shrink-0 basis-full md:basis-[calc(50%-12px)] lg:basis-[calc(33.333%-16px)] flex flex-col bg-white border border-gray-100 p-8 rounded-2xl hover:border-blue-200 hover:shadow-lg transition-all duration-300 group"
+        >
           <div class="flex flex-col gap-4 mb-6">
-            <svg class="w-16 h-16 mb-2 group-hover:-translate-y-1 transition-transform duration-300" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M32 4L8 12V28C8 44 20 56 32 60C44 56 56 44 56 28V12L32 4Z" fill="#1d4ed8" fill-opacity="0.1" stroke="#3b82f6" stroke-width="2"/>
-              <path d="M32 12L16 18V30C16 40 24 48 32 50C40 48 48 40 48 30V18L32 12Z" fill="#1d4ed8"/>
-              <path d="M24 30L28 34L40 22" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg
+              class="w-16 h-16 mb-2 group-hover:-translate-y-1 transition-transform duration-300"
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32 4L8 12V28C8 44 20 56 32 60C44 56 56 44 56 28V12L32 4Z"
+                fill="#1d4ed8"
+                fill-opacity="0.1"
+                stroke="#3b82f6"
+                stroke-width="2"></path>
+              <path
+                d="M32 12L16 18V30C16 40 24 48 32 50C40 48 48 40 48 30V18L32 12Z"
+                fill="#1d4ed8"></path>
+              <path
+                d="M24 30L28 34L40 22"
+                stroke="white"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
             </svg>
-            <h3 class="text-lg font-semibold text-gray-900 uppercase">Insurance Adjusters</h3>
+            <h3 class="text-lg font-semibold text-gray-900 uppercase">
+              Insurance Adjusters
+            </h3>
           </div>
-          <p class="text-gray-600 text-sm font-light mb-8 flex-grow leading-relaxed">
-            Validate subsidence claims with historical, millimeter-level displacement data. Accurately assess ground movement history.
+          <p
+            class="text-gray-600 text-sm font-light mb-8 flex-grow leading-relaxed"
+          >
+            Validate subsidence claims with historical, millimeter-level
+            displacement data. Accurately assess ground movement history.
           </p>
-          <a href="/solutions/insurance-adjusters" class="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-[#1d4ed8] hover:text-blue-800 uppercase tracking-wider group-hover:translate-x-2 transition-transform">
+          <a
+            href="/solutions/insurance-adjusters"
+            class="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-[#1d4ed8] hover:text-blue-800 uppercase tracking-wider group-hover:translate-x-2 transition-transform"
+          >
             Learn More <i class="bx bx-right-arrow-alt text-lg"></i>
           </a>
         </div>
-
       </div>
-      
-
-      
     </div>
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="py-12 md:py-16 bg-slate-100 border-b border-gray-200">
+  <section
+    id="services"
+    class="py-12 md:py-16 bg-slate-100 border-b border-gray-200"
+  >
     <div class="max-w-[90vw] mx-auto px-6">
-      
       <div class="text-center mb-10">
-        <h2 class="text-2xl text-[#1d4ed8] font-normal mb-2 uppercase">OUR SERVICES</h2>
-        <h3 class="text-xl text-gray-800 font-light mb-4">End-to-End Risk Intelligence</h3>
+        <h2 class="text-2xl text-[#1d4ed8] font-normal mb-2 uppercase">
+          OUR SERVICES
+        </h2>
+        <h3 class="text-xl text-gray-800 font-light mb-4">
+          End-to-End Risk Intelligence
+        </h3>
         <p class="text-gray-600 text-base font-light max-w-2xl mx-auto">
-          From establishing pre-project baselines to delivering continuous operational monitoring, we provide complete visibility into ground movement and structural health.
+          From establishing pre-project baselines to delivering continuous
+          operational monitoring, we provide complete visibility into ground
+          movement and structural health.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mt-10">
         <!-- Service 1: Historical Analysis -->
-        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden group hover:shadow-lg hover:border-[#1d4ed8]/30 transition-all duration-300 flex flex-col h-full">
-          <div class="h-48 overflow-hidden relative shrink-0">
-            <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
-            <img src="/images/insar_interferogram.png" alt="Historical Analysis" class="w-full h-full object-cover brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700" />
+        <div
+          class="bg-white border border-gray-200 rounded-xl overflow-hidden group hover:shadow-lg hover:border-[#1d4ed8]/30 transition-all duration-300 flex flex-col h-full"
+        >
+          <div class="h-64 md:h-80 overflow-hidden relative shrink-0">
+            <div
+              class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"
+            >
+            </div>
+            <img
+              src="/images/historical_analysis.png"
+              alt="Historical Analysis"
+              class="w-full h-full object-cover brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700"
+            />
           </div>
           <div class="p-8 flex flex-col flex-grow">
             <div class="flex items-center gap-4 mb-5">
-              <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-[#1d4ed8]">
+              <div
+                class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-[#1d4ed8]"
+              >
                 <i class="bx bx-history text-xl"></i>
               </div>
-              <h3 class="text-xl font-semibold text-gray-900">Historical Analysis</h3>
+              <h3 class="text-xl font-semibold text-gray-900">
+                Historical Analysis
+              </h3>
             </div>
-            <p class="text-gray-600 text-sm font-light leading-relaxed mb-6 flex-grow">
-              Access years of archived satellite radar data to establish a comprehensive baseline of ground movement. Identify pre-existing subsidence and validate historical stability before you deploy capital or break ground.
+            <p
+              class="text-gray-600 text-sm font-light leading-relaxed mb-6 flex-grow"
+            >
+              Access years of archived satellite radar data to establish a
+              comprehensive baseline of ground movement. Identify pre-existing
+              subsidence and validate historical stability before you deploy
+              capital or break ground.
             </p>
             <ul class="space-y-3">
-              <li class="flex items-start gap-2 text-gray-700 text-sm font-light">
+              <li
+                class="flex items-start gap-2 text-gray-700 text-sm font-light"
+              >
                 <i class="bx bx-check text-[#1d4ed8] text-lg mt-0.5"></i>
                 Establish pre-construction baselines
               </li>
-              <li class="flex items-start gap-2 text-gray-700 text-sm font-light">
+              <li
+                class="flex items-start gap-2 text-gray-700 text-sm font-light"
+              >
                 <i class="bx bx-check text-[#1d4ed8] text-lg mt-0.5"></i>
                 Validate historical asset stability
               </li>
             </ul>
-            <a href="/services/historical-analysis" class="mt-8 px-4 py-3 border border-[#2563eb] text-[#2563eb] text-xs uppercase tracking-wider font-semibold hover:bg-[#2563eb] hover:text-white transition-colors w-full text-center">
+            <a
+              href="/services/historical-analysis"
+              class="mt-8 px-4 py-3 border border-[#2563eb] text-[#2563eb] text-xs uppercase tracking-wider font-semibold hover:bg-[#2563eb] hover:text-white transition-colors w-full text-center"
+            >
               LEARN MORE <span class="ml-1">›</span>
             </a>
           </div>
         </div>
 
         <!-- Service 2: Monitoring -->
-        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden group hover:shadow-lg hover:border-[#1d4ed8]/30 transition-all duration-300 flex flex-col h-full">
-          <div class="h-48 overflow-hidden relative shrink-0">
-            <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
-            <img src="/images/3d_deformation.png" alt="Continuous Monitoring" class="w-full h-full object-cover brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700" />
+        <div
+          class="bg-white border border-gray-200 rounded-xl overflow-hidden group hover:shadow-lg hover:border-[#1d4ed8]/30 transition-all duration-300 flex flex-col h-full"
+        >
+          <div class="h-64 md:h-80 overflow-hidden relative shrink-0">
+            <div
+              class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"
+            >
+            </div>
+            <img
+              src="/images/continuous_monitoring_mockup.png"
+              alt="Continuous Monitoring"
+              class="w-full h-full object-cover brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700"
+            />
           </div>
           <div class="p-8 flex flex-col flex-grow">
             <div class="flex items-center gap-4 mb-5">
-              <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-[#1d4ed8]">
+              <div
+                class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-[#1d4ed8]"
+              >
                 <i class="bx bx-radar text-xl"></i>
               </div>
-              <h3 class="text-xl font-semibold text-gray-900">Continuous Monitoring</h3>
+              <h3 class="text-xl font-semibold text-gray-900">
+                Continuous Monitoring
+              </h3>
             </div>
-            <p class="text-gray-600 text-sm font-light leading-relaxed mb-6 flex-grow">
-              Deploy ongoing, millimeter-scale displacement monitoring for active operations and critical infrastructure. Our automated systems track structural health and provide early warnings for anomalous movement.
+            <p
+              class="text-gray-600 text-sm font-light leading-relaxed mb-6 flex-grow"
+            >
+              Deploy ongoing, millimeter-scale displacement monitoring for
+              active operations and critical infrastructure. Our automated
+              systems track structural health and provide early warnings for
+              anomalous movement.
             </p>
             <ul class="space-y-3">
-              <li class="flex items-start gap-2 text-gray-700 text-sm font-light">
+              <li
+                class="flex items-start gap-2 text-gray-700 text-sm font-light"
+              >
                 <i class="bx bx-check text-[#1d4ed8] text-lg mt-0.5"></i>
                 Millimeter-scale precision monitoring
               </li>
-              <li class="flex items-start gap-2 text-gray-700 text-sm font-light">
+              <li
+                class="flex items-start gap-2 text-gray-700 text-sm font-light"
+              >
                 <i class="bx bx-check text-[#1d4ed8] text-lg mt-0.5"></i>
                 Automated risk alerts for active sites
               </li>
             </ul>
-            <a href="/services/continuous-monitoring" class="mt-8 px-4 py-3 border border-[#2563eb] text-[#2563eb] text-xs uppercase tracking-wider font-semibold hover:bg-[#2563eb] hover:text-white transition-colors w-full text-center">
+            <a
+              href="/services/continuous-monitoring"
+              class="mt-8 px-4 py-3 border border-[#2563eb] text-[#2563eb] text-xs uppercase tracking-wider font-semibold hover:bg-[#2563eb] hover:text-white transition-colors w-full text-center"
+            >
               LEARN MORE <span class="ml-1">›</span>
             </a>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- Case Studies Section -->
-  <section id="case-studies" class="py-16 md:py-24 bg-slate-50 border-b border-gray-200">
+  <section
+    id="case-studies"
+    class="py-16 md:py-24 bg-slate-50 border-b border-gray-200"
+  >
     <div class="max-w-[90vw] mx-auto px-6">
-      
       <div class="text-center mb-16">
-        <h2 class="text-3xl text-[#1d4ed8] font-normal mb-4 uppercase tracking-wider">CASE STUDIES</h2>
-        <h3 class="text-2xl text-gray-800 font-light mb-4">Proven impact in the field.</h3>
+        <h2
+          class="text-3xl text-[#1d4ed8] font-normal mb-4 uppercase tracking-wider"
+        >
+          CASE STUDIES
+        </h2>
+        <h3 class="text-2xl text-gray-800 font-light mb-4">
+          Proven impact in the field.
+        </h3>
         <p class="text-gray-600 text-lg font-light max-w-2xl mx-auto">
-          See how our risk intelligence platform is actively deployed to protect critical assets worldwide.
+          See how our risk intelligence platform is actively deployed to protect
+          critical assets worldwide.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
         <!-- Case Study 1 -->
-        <div class="bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col">
+        <div
+          class="bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col"
+        >
           <div class="h-56 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1541888087525-07ca8d28943f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dam Monitoring" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-            <div class="absolute top-4 left-4 px-3 py-1 bg-[#1d4ed8] text-white text-[11px] font-bold uppercase tracking-wider rounded-sm">
+            <img
+              src="https://images.unsplash.com/photo-1541888087525-07ca8d28943f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Dam Monitoring"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div
+              class="absolute top-4 left-4 px-3 py-1 bg-[#1d4ed8] text-white text-[11px] font-bold uppercase tracking-wider rounded-sm"
+            >
               MINING
             </div>
           </div>
           <div class="p-8 flex flex-col flex-grow">
-            <h4 class="text-xl font-bold text-[#000f2c] mb-3 group-hover:text-[#1d4ed8] transition-colors">Early Detection of Tailings Dam Subsidence</h4>
-            <p class="text-gray-600 text-sm font-light leading-relaxed mb-6 flex-grow">
-              Using continuous InSAR monitoring, we identified a 5mm/month deformation trend on a critical embankment, allowing operators to intervene before failure.
+            <h4
+              class="text-xl font-bold text-[#000f2c] mb-3 group-hover:text-[#1d4ed8] transition-colors"
+            >
+              Early Detection of Tailings Dam Subsidence
+            </h4>
+            <p
+              class="text-gray-600 text-sm font-light leading-relaxed mb-6 flex-grow"
+            >
+              Using continuous InSAR monitoring, we identified a 5mm/month
+              deformation trend on a critical embankment, allowing operators to
+              intervene before failure.
             </p>
-            <a href="#!" class="inline-flex items-center gap-2 text-sm font-semibold text-[#1d4ed8] uppercase tracking-wider group-hover:translate-x-2 transition-transform mt-auto w-max">
+            <a
+              href="#!"
+              class="inline-flex items-center gap-2 text-sm font-semibold text-[#1d4ed8] uppercase tracking-wider group-hover:translate-x-2 transition-transform mt-auto w-max"
+            >
               View Case Study <i class="bx bx-right-arrow-alt text-xl"></i>
             </a>
           </div>
         </div>
 
         <!-- Case Study 2 -->
-        <div class="bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col">
+        <div
+          class="bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col"
+        >
           <div class="h-56 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1545459720-aac8509eb02c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Urban Tunneling" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-            <div class="absolute top-4 left-4 px-3 py-1 bg-[#1d4ed8] text-white text-[11px] font-bold uppercase tracking-wider rounded-sm">
+            <img
+              src="https://images.unsplash.com/photo-1545459720-aac8509eb02c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Urban Tunneling"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div
+              class="absolute top-4 left-4 px-3 py-1 bg-[#1d4ed8] text-white text-[11px] font-bold uppercase tracking-wider rounded-sm"
+            >
               INFRASTRUCTURE
             </div>
           </div>
           <div class="p-8 flex flex-col flex-grow">
-            <h4 class="text-xl font-bold text-[#000f2c] mb-3 group-hover:text-[#1d4ed8] transition-colors">Safeguarding Heritage Sites During Metro Tunneling</h4>
-            <p class="text-gray-600 text-sm font-light leading-relaxed mb-6 flex-grow">
-              Provided millimeter-level settlement tracking for historic buildings located directly above a new underground transit corridor excavation.
+            <h4
+              class="text-xl font-bold text-[#000f2c] mb-3 group-hover:text-[#1d4ed8] transition-colors"
+            >
+              Safeguarding Heritage Sites During Metro Tunneling
+            </h4>
+            <p
+              class="text-gray-600 text-sm font-light leading-relaxed mb-6 flex-grow"
+            >
+              Provided millimeter-level settlement tracking for historic
+              buildings located directly above a new underground transit
+              corridor excavation.
             </p>
-            <a href="#!" class="inline-flex items-center gap-2 text-sm font-semibold text-[#1d4ed8] uppercase tracking-wider group-hover:translate-x-2 transition-transform mt-auto w-max">
+            <a
+              href="#!"
+              class="inline-flex items-center gap-2 text-sm font-semibold text-[#1d4ed8] uppercase tracking-wider group-hover:translate-x-2 transition-transform mt-auto w-max"
+            >
               View Case Study <i class="bx bx-right-arrow-alt text-xl"></i>
             </a>
           </div>
         </div>
 
         <!-- Case Study 3 -->
-        <div class="bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col">
+        <div
+          class="bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col"
+        >
           <div class="h-56 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pipeline Monitoring" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-            <div class="absolute top-4 left-4 px-3 py-1 bg-[#1d4ed8] text-white text-[11px] font-bold uppercase tracking-wider rounded-sm">
+            <img
+              src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Pipeline Monitoring"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div
+              class="absolute top-4 left-4 px-3 py-1 bg-[#1d4ed8] text-white text-[11px] font-bold uppercase tracking-wider rounded-sm"
+            >
               ENERGY
             </div>
           </div>
           <div class="p-8 flex flex-col flex-grow">
-            <h4 class="text-xl font-bold text-[#000f2c] mb-3 group-hover:text-[#1d4ed8] transition-colors">Pipeline Network Integrity Verification</h4>
-            <p class="text-gray-600 text-sm font-light leading-relaxed mb-6 flex-grow">
-              Monitored 500km of midstream pipeline corridors for ground subsidence and landslide risks, reducing physical inspection costs by 40%.
+            <h4
+              class="text-xl font-bold text-[#000f2c] mb-3 group-hover:text-[#1d4ed8] transition-colors"
+            >
+              Pipeline Network Integrity Verification
+            </h4>
+            <p
+              class="text-gray-600 text-sm font-light leading-relaxed mb-6 flex-grow"
+            >
+              Monitored 500km of midstream pipeline corridors for ground
+              subsidence and landslide risks, reducing physical inspection costs
+              by 40%.
             </p>
-            <a href="#!" class="inline-flex items-center gap-2 text-sm font-semibold text-[#1d4ed8] uppercase tracking-wider group-hover:translate-x-2 transition-transform mt-auto w-max">
+            <a
+              href="#!"
+              class="inline-flex items-center gap-2 text-sm font-semibold text-[#1d4ed8] uppercase tracking-wider group-hover:translate-x-2 transition-transform mt-auto w-max"
+            >
               View Case Study <i class="bx bx-right-arrow-alt text-xl"></i>
             </a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
-  
+
   <section class="py-16 md:py-24 bg-white border-b border-gray-200">
     <div class="max-w-[90vw] mx-auto px-6 text-center">
-      <h2 class="text-3xl text-[#1d4ed8] font-normal mb-4 uppercase">LATEST INSIGHTS</h2>
-      <h3 class="text-2xl text-gray-800 font-light mb-4">Discover our recent studies.</h3>
+      <h2 class="text-3xl text-[#1d4ed8] font-normal mb-4 uppercase">
+        LATEST INSIGHTS
+      </h2>
+      <h3 class="text-2xl text-gray-800 font-light mb-4">
+        Discover our recent studies.
+      </h3>
       <p class="text-gray-600 text-lg font-light max-w-2xl mx-auto mb-16">
-        Stay updated with our latest analyses, case studies, and industry intelligence reports.
+        Stay updated with our latest analyses, case studies, and industry
+        intelligence reports.
       </p>
-      
-      
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full max-w-6xl mx-auto mb-16 text-left">
-        
-        
-        <div class="lg:col-span-7 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col">
+
+      <div
+        class="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full max-w-6xl mx-auto mb-16 text-left"
+      >
+        <div
+          class="lg:col-span-7 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col"
+        >
           <div class="h-[250px] sm:h-[350px] relative overflow-hidden shrink-0">
-            <img src="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Mining operation" class="object-cover w-full h-full brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700 ease-out" />
+            <img
+              src="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+              alt="Mining operation"
+              class="object-cover w-full h-full brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700 ease-out"
+            />
           </div>
           <div class="p-8 sm:p-10 flex flex-col flex-grow">
             <div class="flex items-center gap-4 mb-4">
-              <span class="text-sm font-semibold text-[#1d4ed8] uppercase tracking-wider">Mining</span>
+              <span
+                class="text-sm font-semibold text-[#1d4ed8] uppercase tracking-wider"
+                >Mining</span
+              >
               <span class="w-1 h-1 rounded-full bg-gray-300"></span>
               <p class="text-gray-500 text-sm font-light">May 14, 2026</p>
             </div>
-            <h3 class="text-2xl sm:text-3xl font-bold text-[#000f2c] mb-4 group-hover:text-[#1d4ed8] transition-colors leading-tight">Preventing Tailing Dam Failures with Daily InSAR Monitoring</h3>
-            <p class="text-gray-600 text-base font-light leading-relaxed mb-8 flex-grow">
-              How a major copper mine in Chile utilized our daily displacement data to identify a 3mm movement anomaly weeks before visible cracking occurred, saving millions in potential downtime.
+            <h3
+              class="text-2xl sm:text-3xl font-bold text-[#000f2c] mb-4 group-hover:text-[#1d4ed8] transition-colors leading-tight"
+            >
+              Preventing Tailing Dam Failures with Daily InSAR Monitoring
+            </h3>
+            <p
+              class="text-gray-600 text-base font-light leading-relaxed mb-8 flex-grow"
+            >
+              How a major copper mine in Chile utilized our daily displacement
+              data to identify a 3mm movement anomaly weeks before visible
+              cracking occurred, saving millions in potential downtime.
             </p>
-            <a href="/blog/mining-lenders" class="inline-flex items-center gap-2 text-sm font-semibold text-[#1d4ed8] uppercase tracking-wider group-hover:translate-x-2 transition-transform mt-auto w-max">
+            <a
+              href="/blog/mining-lenders"
+              class="inline-flex items-center gap-2 text-sm font-semibold text-[#1d4ed8] uppercase tracking-wider group-hover:translate-x-2 transition-transform mt-auto w-max"
+            >
               Read Full Report <i class="bx bx-right-arrow-alt text-xl"></i>
             </a>
           </div>
         </div>
 
-        
         <div class="lg:col-span-5 flex flex-col gap-8">
-          
-          
-          <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col sm:flex-row h-full">
-            <div class="h-48 sm:h-auto sm:w-2/5 relative overflow-hidden shrink-0">
-              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Urban infrastructure" class="object-cover w-full h-full brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700 ease-out" />
+          <div
+            class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col sm:flex-row h-full"
+          >
+            <div
+              class="h-48 sm:h-auto sm:w-2/5 relative overflow-hidden shrink-0"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                alt="Urban infrastructure"
+                class="object-cover w-full h-full brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700 ease-out"
+              />
             </div>
             <div class="p-6 sm:w-3/5 flex flex-col justify-center">
               <div class="flex items-center gap-3 mb-3">
-                <span class="text-xs font-semibold text-[#1d4ed8] uppercase tracking-wider">Analysis</span>
+                <span
+                  class="text-xs font-semibold text-[#1d4ed8] uppercase tracking-wider"
+                  >Analysis</span
+                >
                 <span class="w-1 h-1 rounded-full bg-gray-300"></span>
                 <p class="text-gray-500 text-xs font-light">April 28, 2026</p>
               </div>
-              <h3 class="text-lg font-bold text-[#000f2c] mb-3 group-hover:text-[#1d4ed8] transition-colors leading-snug">5 Compliance Trends in Geotech Monitoring</h3>
-              <a href="/blog/geotech-compliance" class="inline-flex items-center gap-1 text-xs font-semibold text-gray-500 hover:text-[#1d4ed8] uppercase tracking-wider group-hover:translate-x-1 transition-all mt-auto w-max">
+              <h3
+                class="text-lg font-bold text-[#000f2c] mb-3 group-hover:text-[#1d4ed8] transition-colors leading-snug"
+              >
+                5 Compliance Trends in Geotech Monitoring
+              </h3>
+              <a
+                href="/blog/geotech-compliance"
+                class="inline-flex items-center gap-1 text-xs font-semibold text-gray-500 hover:text-[#1d4ed8] uppercase tracking-wider group-hover:translate-x-1 transition-all mt-auto w-max"
+              >
                 Read Article <i class="bx bx-right-arrow-alt text-base"></i>
               </a>
             </div>
           </div>
 
-          
-          <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col sm:flex-row h-full">
-            <div class="h-48 sm:h-auto sm:w-2/5 relative overflow-hidden shrink-0">
-              <img src="https://images.unsplash.com/photo-1621682337775-40899f57f495?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Technology visualization" class="object-cover w-full h-full brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700 ease-out" />
+          <div
+            class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col sm:flex-row h-full"
+          >
+            <div
+              class="h-48 sm:h-auto sm:w-2/5 relative overflow-hidden shrink-0"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1621682337775-40899f57f495?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                alt="Technology visualization"
+                class="object-cover w-full h-full brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700 ease-out"
+              />
             </div>
             <div class="p-6 sm:w-3/5 flex flex-col justify-center">
               <div class="flex items-center gap-3 mb-3">
-                <span class="text-xs font-semibold text-[#1d4ed8] uppercase tracking-wider">Insurance</span>
+                <span
+                  class="text-xs font-semibold text-[#1d4ed8] uppercase tracking-wider"
+                  >Insurance</span
+                >
                 <span class="w-1 h-1 rounded-full bg-gray-300"></span>
                 <p class="text-gray-500 text-xs font-light">March 15, 2026</p>
               </div>
-              <h3 class="text-lg font-bold text-[#000f2c] mb-3 group-hover:text-[#1d4ed8] transition-colors leading-snug">Automating Subsidence Claims Validation</h3>
-              <a href="/blog/subsidence-claims" class="inline-flex items-center gap-1 text-xs font-semibold text-gray-500 hover:text-[#1d4ed8] uppercase tracking-wider group-hover:translate-x-1 transition-all mt-auto w-max">
+              <h3
+                class="text-lg font-bold text-[#000f2c] mb-3 group-hover:text-[#1d4ed8] transition-colors leading-snug"
+              >
+                Automating Subsidence Claims Validation
+              </h3>
+              <a
+                href="/blog/subsidence-claims"
+                class="inline-flex items-center gap-1 text-xs font-semibold text-gray-500 hover:text-[#1d4ed8] uppercase tracking-wider group-hover:translate-x-1 transition-all mt-auto w-max"
+              >
                 Read Article <i class="bx bx-right-arrow-alt text-base"></i>
               </a>
             </div>
           </div>
-
         </div>
       </div>
-      
-      <a href="/blog" class="inline-flex items-center gap-2 border border-[#1d4ed8] bg-transparent text-[#1d4ed8] px-4 py-3 rounded text-sm font-semibold uppercase tracking-widest hover:bg-[#1d4ed8] hover:text-white transition-colors duration-300 shadow-sm">
+
+      <a
+        href="/blog"
+        class="inline-flex items-center gap-2 border border-[#1d4ed8] bg-transparent text-[#1d4ed8] px-4 py-3 rounded text-sm font-semibold uppercase tracking-widest hover:bg-[#1d4ed8] hover:text-white transition-colors duration-300 shadow-sm"
+      >
         VIEW ALL POSTS
       </a>
     </div>
   </section>
 
-  
   <section class="py-10 md:py-16 bg-slate-100 border-t border-gray-200">
-    <div class="max-w-[90vw] mx-auto px-6 flex flex-col md:flex-row items-center">
-      
+    <div
+      class="max-w-[90vw] mx-auto px-6 flex flex-col md:flex-row items-center"
+    >
       <div class="w-full md:w-1/2 mb-8 md:mb-0 md:pr-12">
-        <h2 class="text-2xl md:text-3xl text-[#1d4ed8] font-normal mb-3 uppercase tracking-widest">PARTNER WITH US</h2>
-        <h3 class="text-xl md:text-2xl text-gray-800 font-light mb-3">Ready to secure your operations?</h3>
-        <p class="text-gray-600 text-base md:text-lg font-light max-w-2xl mx-auto mb-6">
-          Our experts are ready to demonstrate how the InSpectiv Labs platform can integrate with your existing workflows to provide immediate, actionable risk intelligence.
+        <h2
+          class="text-2xl md:text-3xl text-[#1d4ed8] font-normal mb-3 uppercase tracking-widest"
+        >
+          PARTNER WITH US
+        </h2>
+        <h3 class="text-xl md:text-2xl text-gray-800 font-light mb-3">
+          Ready to secure your operations?
+        </h3>
+        <p
+          class="text-gray-600 text-base md:text-lg font-light max-w-2xl mx-auto mb-6"
+        >
+          Our experts are ready to demonstrate how the InSpectiv Labs platform
+          can integrate with your existing workflows to provide immediate,
+          actionable risk intelligence.
         </p>
-        
-        <div class="mb-6 space-y-3">
 
-          <div class="flex items-center gap-3 text-gray-700 font-semibold text-sm">
-            <div class="w-10 h-10 rounded-full bg-blue-50 flex justify-center items-center">
+        <div class="mb-6 space-y-3">
+          <div
+            class="flex items-center gap-3 text-gray-700 font-semibold text-sm"
+          >
+            <div
+              class="w-10 h-10 rounded-full bg-blue-50 flex justify-center items-center"
+            >
               <i class="bx bx-envelope text-xl text-[#1d4ed8]"></i>
             </div>
             connect@inspectivlabs.com
           </div>
-          <div class="flex items-center gap-3 text-gray-700 font-semibold text-sm">
-            <div class="w-10 h-10 rounded-full bg-blue-50 flex justify-center items-center">
+          <div
+            class="flex items-center gap-3 text-gray-700 font-semibold text-sm"
+          >
+            <div
+              class="w-10 h-10 rounded-full bg-blue-50 flex justify-center items-center"
+            >
               <i class="bx bx-map text-xl text-[#1d4ed8]"></i>
             </div>
             Hyderabad, India
           </div>
         </div>
 
-        <a href="/contact" class="inline-block px-4 py-3 bg-[#1d4ed8] text-white text-sm uppercase tracking-wider font-semibold hover:bg-blue-800 transition-colors shadow-sm rounded-sm">
+        <a
+          href="/contact"
+          class="inline-block px-4 py-3 bg-[#1d4ed8] text-white text-sm uppercase tracking-wider font-semibold hover:bg-blue-800 transition-colors shadow-sm rounded-sm"
+        >
           REQUEST A DEMO
         </a>
       </div>
 
-      
-      <div class="w-full md:w-1/2 h-[300px] md:h-[400px] relative flex justify-center md:justify-end items-center">
-         <NetworkMap client:only="react" />
+      <div
+        class="w-full md:w-1/2 h-[300px] md:h-[400px] relative flex justify-center md:justify-end items-center"
+      >
+        <NetworkMap client:only="react" />
       </div>
-
     </div>
   </section>
-
 </BaseLayout>
