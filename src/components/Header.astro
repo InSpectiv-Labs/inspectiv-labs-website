@@ -1,7 +1,6 @@
 ---
 import MobileNav from './react/MobileNav.tsx';
 import { Image } from 'astro:assets';
-import logoImage from '../assets/logo.png';
 import headerImage from '../assets/header.png';
 
 const navLinks = [
@@ -103,7 +102,7 @@ const navLinks = [
     
     {/* Solid Header Logo */}
     <a href="/" class="flex items-center gap-4">
-      <Image src={logoImage} alt="InSpectiv Labs" class="h-16 md:h-20 w-auto object-contain" />
+      <Image src={headerImage} alt="InSpectiv Labs" class="h-16 md:h-20 w-auto object-contain" />
     </a>
 
     {/* Desktop Navigation */}
