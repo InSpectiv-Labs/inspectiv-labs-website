@@ -23,7 +23,7 @@ const readingTime = "4 min read";
 >
   <article class="bg-gray-50 min-h-screen pb-24">
     
-    <header class="pt-40 pb-16 bg-[#000f2c] text-white">
+    <header class="pt-24 md:pt-32 lg:pt-40 pb-16 bg-[#000f2c] text-white">
       <div class="max-w-[800px] mx-auto px-4">
         
         {industry && (
@@ -34,7 +34,7 @@ const readingTime = "4 min read";
           </div>
         )}
         
-        <h1 class="text-4xl md:text-5xl font-light mb-8 leading-tight tracking-wide">
+        <h1 class="text-3xl md:text-4xl md:text-5xl font-light mb-8 leading-tight tracking-wide">
           {title}
         </h1>
         
@@ -64,7 +64,7 @@ const readingTime = "4 min read";
     </header>
 
     {heroImage && (
-      <div class="max-w-[1000px] mx-auto px-4 -mt-10 mb-16 relative z-10">
+      <div class="max-w-[1000px] mx-auto px-4 -mt-10 mb-8 md:mb-12 lg:mb-16 relative z-10">
         <div class="aspect-video w-full overflow-hidden shadow-lg border border-gray-200 bg-white">
           <Image 
             src={heroImage} 
@@ -88,7 +88,7 @@ const readingTime = "4 min read";
       
       <div class="mt-16 pt-8 border-t border-gray-200 flex items-center justify-between">
         <a href="/blog" class="text-[#1d4ed8] text-sm font-bold uppercase tracking-wider hover:text-[#000f2c] transition-colors flex items-center gap-2">
-          <span class="text-xl leading-none rotate-180">›</span> Back to Blog
+          <span class="text-lg md:text-xl leading-none rotate-180">›</span> Back to Blog
         </a>
       </div>
     </div>

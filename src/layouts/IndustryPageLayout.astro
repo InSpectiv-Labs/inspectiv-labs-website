@@ -42,7 +42,7 @@ const {
 ---
 
 <BaseLayout title={title} description={description}>
-  <section class="relative pt-40 pb-32 bg-[#000f2c] text-white">
+  <section class="relative pt-24 md:pt-32 lg:pt-40 pb-16 md:pb-24 lg:pb-32 bg-[#000f2c] text-white">
     {
       image && (
         <div class="absolute inset-0 opacity-30">
@@ -52,25 +52,25 @@ const {
     }
     <div class="relative z-10 max-w-[90vw] mx-auto px-6 text-center">
       <h1
-        class="text-4xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight tracking-wide"
+        class="text-3xl md:text-4xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight tracking-wide"
       >
         {hero.headline}
       </h1>
       <p
-        class="text-xl text-gray-300 font-light leading-relaxed max-w-3xl mx-auto"
+        class="text-lg md:text-xl text-gray-300 font-light leading-relaxed max-w-3xl mx-auto"
       >
         {hero.intro}
       </p>
     </div>
   </section>
 
-  <section class="py-24 bg-gray-50 border-b border-gray-200">
+  <section class="py-12 md:py-16 lg:py-24 bg-gray-50 border-b border-gray-200">
     <div class="max-w-[90vw] mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl text-[#1d4ed8] font-normal mb-4 uppercase">
+      <div class="text-center mb-8 md:mb-12 lg:mb-16">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl text-[#1d4ed8] font-normal mb-4 uppercase">
           VISUAL INTELLIGENCE
         </h2>
-        <h3 class="text-2xl text-gray-800 font-light">
+        <h3 class="text-xl md:text-2xl text-gray-800 font-light">
           From macro context to millimeter precision
         </h3>
       </div>
@@ -133,13 +133,13 @@ const {
     </div>
   </section>
 
-  <section class="py-24 bg-white border-b border-gray-200">
+  <section class="py-12 md:py-16 lg:py-24 bg-white border-b border-gray-200">
     <div class="max-w-[90vw] mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl text-[#1d4ed8] font-normal mb-4 uppercase">
+      <div class="text-center mb-8 md:mb-12 lg:mb-16">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl text-[#1d4ed8] font-normal mb-4 uppercase">
           THE LANDSCAPE
         </h2>
-        <h3 class="text-2xl text-gray-800 font-light">
+        <h3 class="text-xl md:text-2xl text-gray-800 font-light">
           Key Industry Challenges
         </h3>
       </div>
@@ -148,10 +148,10 @@ const {
           challenges.map((challenge, index) => (
             <div class="bg-gray-50 border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow relative">
               <div class="absolute top-0 left-0 w-full h-1 bg-[#2563eb]" />
-              <div class="text-4xl font-light text-gray-200 mb-6">
+              <div class="text-3xl md:text-4xl font-light text-gray-200 mb-6">
                 0{index + 1}
               </div>
-              <h4 class="text-lg font-semibold text-[#000f2c] uppercase mb-4">
+              <h4 class="text-base md:text-lg font-semibold text-[#000f2c] uppercase mb-4">
                 {challenge.title}
               </h4>
               <p class="text-gray-600 text-sm font-light leading-relaxed">
@@ -164,17 +164,17 @@ const {
     </div>
   </section>
 
-  <section class="py-24 bg-white">
+  <section class="py-12 md:py-16 lg:py-24 bg-white">
     <div class="max-w-[90vw] mx-auto px-6">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div>
-          <h2 class="text-3xl text-[#1d4ed8] font-normal mb-4 uppercase">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl text-[#1d4ed8] font-normal mb-4 uppercase">
             OUR APPROACH
           </h2>
-          <h3 class="text-2xl text-gray-800 font-light mb-6">
+          <h3 class="text-xl md:text-2xl text-gray-800 font-light mb-6">
             Tailored Solutions
           </h3>
-          <p class="text-gray-600 text-lg font-light leading-relaxed mb-8">
+          <p class="text-gray-600 text-base md:text-lg font-light leading-relaxed mb-8">
             InSpectiv Labs delivers proprietary methodologies designed
             specifically to address the unique complexities of your sector. We
             deploy targeted services that seamlessly integrate with your
@@ -195,7 +195,7 @@ const {
                   <i class="bx bx-check-circle text-[24px]" />
                 </div>
                 <div>
-                  <h4 class="text-lg font-semibold text-[#000f2c] uppercase mb-2 group-hover:text-[#1d4ed8] transition-colors">
+                  <h4 class="text-base md:text-lg font-semibold text-[#000f2c] uppercase mb-2 group-hover:text-[#1d4ed8] transition-colors">
                     {solution.title}
                   </h4>
                   <p class="text-gray-600 text-sm font-light leading-relaxed">
@@ -210,13 +210,13 @@ const {
     </div>
   </section>
 
-  <section class="py-24 bg-[#000f2c] text-white">
+  <section class="py-12 md:py-16 lg:py-24 bg-[#000f2c] text-white">
     <div class="max-w-[90vw] mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl text-cyan-400 font-normal mb-4 uppercase">
+      <div class="text-center mb-8 md:mb-12 lg:mb-16">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl text-cyan-400 font-normal mb-4 uppercase">
           THE IMPACT
         </h2>
-        <h3 class="text-2xl text-white font-light">Business Outcomes</h3>
+        <h3 class="text-xl md:text-2xl text-white font-light">Business Outcomes</h3>
       </div>
       <div
         class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center max-w-5xl mx-auto"
@@ -227,7 +227,7 @@ const {
               <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-6 text-cyan-400 border border-white/20">
                 <i class="bx bx-trending-up text-[24px]" />
               </div>
-              <p class="text-lg font-light text-gray-200 leading-relaxed">
+              <p class="text-base md:text-lg font-light text-gray-200 leading-relaxed">
                 {benefit}
               </p>
             </div>
@@ -237,12 +237,12 @@ const {
     </div>
   </section>
 
-  <section class="py-32 bg-white text-center">
+  <section class="py-16 md:py-24 lg:py-32 bg-white text-center">
     <div class="max-w-[90vw] mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-light text-[#000f2c] mb-6">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl md:text-4xl font-light text-[#000f2c] mb-6">
         Ready to secure your operations?
       </h2>
-      <p class="text-xl text-gray-600 font-light max-w-2xl mx-auto mb-10">
+      <p class="text-lg md:text-xl text-gray-600 font-light max-w-2xl mx-auto mb-10">
         Speak directly with our specialists about your specific challenges and
         how InSpectiv Labs can help.
       </p>
