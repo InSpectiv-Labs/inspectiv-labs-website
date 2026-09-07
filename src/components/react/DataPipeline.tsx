@@ -45,7 +45,7 @@ export default function DataPipeline() {
       <div className="flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-8">
         {pipelineSteps.map((step, index) => (
           <React.Fragment key={step.id}>
-            <div className="flex flex-col items-center group w-full lg:w-1/5">
+            <div className="flex flex-col items-center group w-full lg:flex-1">
               
               {/* Image Container */}
               <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-white shadow-xl overflow-hidden mb-6 group-hover:scale-105 group-hover:shadow-2xl transition-all duration-500 z-10 bg-white">
@@ -75,7 +75,7 @@ export default function DataPipeline() {
 
             {/* Connector Arrow (Hidden on mobile) */}
             {index < pipelineSteps.length - 1 && (
-              <div className="hidden lg:flex flex-col items-center justify-center flex-grow opacity-50">
+              <div className="hidden lg:flex flex-col items-center justify-center w-8 lg:w-16 shrink-0 opacity-50">
                 <div className="w-full h-[2px] bg-gray-300 relative">
                   <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 border-t-2 border-r-2 border-gray-300 rotate-45 transform translate-x-1/2"></div>
                 </div>

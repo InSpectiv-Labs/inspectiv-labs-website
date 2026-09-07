@@ -7,7 +7,7 @@ const monitoringDomains = [
     description: "Detect slope instability and potential failures.",
     icon: "bx-target-lock",
     image: "/images/industry_mining.png",
-    className: "md:col-span-2 md:row-span-2"
+    className: "md:col-span-1 lg:col-span-3"
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const monitoringDomains = [
     description: "Monitor tailings dam movement, seepage and structural integrity.",
     icon: "bx-water",
     image: "/images/industry_energy.png",
-    className: "md:col-span-2"
+    className: "md:col-span-1 lg:col-span-3"
   },
   {
     id: 3,
@@ -23,7 +23,7 @@ const monitoringDomains = [
     description: "Track movement and settlement over time.",
     icon: "bx-cart",
     image: "/images/hero_bg.png",
-    className: "md:col-span-1"
+    className: "md:col-span-1 lg:col-span-2"
   },
   {
     id: 4,
@@ -31,7 +31,7 @@ const monitoringDomains = [
     description: "Monitor critical infrastructure and linear assets.",
     icon: "bx-buildings",
     image: "/images/infrastructure_monitoring.png",
-    className: "md:col-span-1"
+    className: "md:col-span-1 lg:col-span-2"
   },
   {
     id: 5,
@@ -39,7 +39,7 @@ const monitoringDomains = [
     description: "Wide area monitoring for regional risk assessment.",
     icon: "bx-cloud-drizzle",
     image: "/images/world_map.png",
-    className: "md:col-span-2"
+    className: "md:col-span-2 lg:col-span-2"
   }
 ];
 
@@ -53,7 +53,7 @@ export default function MonitoringGrid() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[250px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 auto-rows-[250px]">
         {monitoringDomains.map((domain) => (
           <div 
             key={domain.id} 
@@ -73,7 +73,7 @@ export default function MonitoringGrid() {
             <div className="absolute inset-0 p-8 flex flex-col justify-end z-10">
               <div className="transform transition-transform duration-500 group-hover:-translate-y-2">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm border border-white/30">
+                  <div className="w-10 h-10 shrink-0 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm border border-white/30">
                     <i className={`bx ${domain.icon} text-white text-xl`}></i>
                   </div>
                   <h3 className="text-lg md:text-xl font-bold text-white tracking-wider">{domain.title}</h3>

@@ -6,7 +6,7 @@ const technologies = [
     title: "Sentinel-1 SAR Data",
     subtitle: "C-BAND SAR IMAGING",
     description: "All-weather, day & night imaging with 6–12 day repeat cycle.",
-    icon: "bx-satellite"
+    icon: "bx-radar"
   },
   {
     id: 2,

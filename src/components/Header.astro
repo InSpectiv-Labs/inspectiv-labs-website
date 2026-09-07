@@ -3,6 +3,12 @@ import MobileNav from './react/MobileNav.tsx';
 import { Image } from 'astro:assets';
 import headerImage from '../assets/header.png';
 
+export interface Props {
+  forceSolid?: boolean;
+}
+
+const { forceSolid = false } = Astro.props;
+
 const navLinks = [
   { label: 'HOME', href: '/' },
   { 
@@ -47,6 +53,7 @@ const navLinks = [
 ---
 
 {/* 1. Transparent Header (Shows on Carousel) */}
+{!forceSolid && (
 <header class="absolute top-0 left-0 right-0 bg-transparent w-full z-40">
   <div class="max-w-[90vw] mx-auto px-6 h-32 flex items-center justify-between">
     
@@ -92,12 +99,12 @@ const navLinks = [
     <div class="lg:hidden text-white">
        <MobileNav client:load links={navLinks} />
     </div>
-
   </div>
 </header>
+)}
 
 {/* 2. Solid Fixed Header (Slides down on scroll) */}
-<header id="main-header" class="fixed top-0 left-0 right-0 bg-[#000f2c] w-full z-50 transform -translate-y-full transition-transform duration-300 shadow-md">
+<header id="main-header" data-force-solid={forceSolid.toString()} class={`fixed top-0 left-0 right-0 bg-[#000f2c] w-full z-50 transition-transform duration-300 shadow-md ${forceSolid ? 'translate-y-0' : 'transform -translate-y-full'}`}>
   <div class="max-w-[90vw] mx-auto px-6 h-24 flex items-center justify-between">
     
     {/* Solid Header Logo */}
@@ -150,6 +157,8 @@ const navLinks = [
   // Show header only after scrolling past the first window height (hero section)
   window.addEventListener('scroll', () => {
     const header = document.getElementById('main-header');
+    if (header?.getAttribute('data-force-solid') === 'true') return;
+    
     if (window.scrollY > window.innerHeight - 100) {
       header?.classList.remove('-translate-y-full');
       header?.classList.add('translate-y-0');

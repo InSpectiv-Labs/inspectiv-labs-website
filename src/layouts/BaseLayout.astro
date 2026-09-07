@@ -8,9 +8,10 @@ interface Props {
   title?: string;
   description?: string;
   ogImage?: string;
+  forceSolidHeader?: boolean;
 }
 
-const { title = 'InSpectiv Labs', description = 'A B2B service company targeting insurance companies, financial lenders, geotech consultants, and mining companies.', ogImage } = Astro.props;
+const { title = 'InSpectiv Labs', description = 'A B2B service company targeting insurance companies, financial lenders, geotech consultants, and mining companies.', ogImage, forceSolidHeader = false } = Astro.props;
 ---
 <!doctype html>
 <html lang="en" class="scroll-smooth">
@@ -29,7 +30,7 @@ const { title = 'InSpectiv Labs', description = 'A B2B service company targeting
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   </head>
   <body class="flex flex-col min-h-screen">
-    <Header />
+    <Header forceSolid={forceSolidHeader} />
     <main class="flex-grow">
       <slot />
     </main>
