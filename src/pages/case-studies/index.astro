@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { caseStudies } from '../../data/caseStudies';
+---
+<BaseLayout title="Case Studies | InSpectiv Labs" description="Explore how InSpectiv Labs' satellite monitoring technology delivers predictive insights and real-world impact across industries.">
+  
+  <!-- Hero Section -->
+  <section class="relative pt-32 lg:pt-48 pb-16 lg:pb-24 bg-[#000f2c] text-white overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-cyan-500 rounded-[100%] blur-[120px] opacity-10 pointer-events-none"></div>
+    
+    <div class="relative z-10 max-w-[90vw] mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-light mb-6 tracking-wide">Case Studies</h1>
+      <p class="text-lg md:text-xl text-cyan-400 font-light max-w-2xl mx-auto">
+        Proven impact in the field. See how our risk intelligence platform protects critical assets worldwide.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="py-16 md:py-24 bg-slate-50 min-h-[50vh]">
+    <div class="max-w-[90vw] mx-auto px-6">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {caseStudies.map((study) => (
+          <div
+            class="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col"
+          >
+            <div class="h-56 overflow-hidden relative">
+              <img
+                src={study.cardImage}
+                alt={study.cardTitle}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            <div class="p-8 flex flex-col flex-grow">
+              <h4
+                class="text-lg md:text-xl font-bold text-[#000f2c] mb-2 group-hover:text-[#1d4ed8] transition-colors"
+              >
+                {study.cardTitle}
+              </h4>
+              {study.cardSubtitle && (
+                <p class="text-xs font-bold text-gray-500 mb-3 uppercase tracking-wider">
+                  {study.cardSubtitle}
+                </p>
+              )}
+              <p
+                class="text-gray-600 text-sm font-light leading-relaxed mb-6 flex-grow"
+              >
+                {study.cardDescription}
+              </p>
+              <a
+                href={study.slug ? `/case-studies/${study.slug}` : "#!"}
+                class="inline-flex items-center gap-2 text-sm font-semibold text-[#1d4ed8] uppercase tracking-wider group-hover:translate-x-2 transition-transform mt-auto w-max"
+              >
+                Read Full Case Study <i class="bx bx-right-arrow-alt text-lg md:text-xl"></i>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
