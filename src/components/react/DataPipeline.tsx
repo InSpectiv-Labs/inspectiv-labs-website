@@ -17,7 +17,7 @@ const pipelineSteps = [
     id: 3,
     title: "UNWRAPPED PHASE",
     subtitle: "Corrected phase (unwrapped)",
-    image: "/images/3d_deformation.png"
+    image: "/images/deformation.png"
   },
   {
     id: 4,

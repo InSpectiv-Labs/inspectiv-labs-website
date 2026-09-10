@@ -20,12 +20,12 @@ import { caseStudies } from '../../data/caseStudies';
   <section class="py-16 md:py-24 bg-slate-50 min-h-[50vh]">
     <div class="max-w-[90vw] mx-auto px-6">
       
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
         {caseStudies.map((study) => (
           <div
             class="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col"
           >
-            <div class="h-56 overflow-hidden relative">
+            <div class="h-48 overflow-hidden relative">
               <img
                 src={study.cardImage}
                 alt={study.cardTitle}

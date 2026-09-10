@@ -20,7 +20,7 @@ const steps = [
     title: "Deformation Analysis",
     description: "Using advanced MintPy workflows and time-series analysis, we convert phase differences into exact, millimeter-level ground deformation maps.",
     icon: "bx-network-chart",
-    image: "/images/3d_deformation.jpg"
+    image: "/images/deformation.png"
   },
   {
     id: 4,
