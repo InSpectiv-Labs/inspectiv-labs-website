@@ -55,21 +55,21 @@ const navLinks = [
 {/* 1. Transparent Header (Shows on Carousel) */}
 {!forceSolid && (
 <header class="absolute top-0 left-0 right-0 bg-transparent w-full z-40">
-  <div class="max-w-[90vw] mx-auto px-6 h-32 flex items-center justify-between">
+  <div class="max-w-full lg:max-w-[95vw] xl:max-w-[90vw] mx-auto px-4 lg:px-4 xl:px-6 h-20 lg:h-24 xl:h-32 flex items-center justify-between gap-2 lg:gap-4">
     
     {/* Transparent Header Logo */}
-    <a href="/" class="flex items-center gap-4">
-      <Image src={headerImage} alt="InSpectiv Labs" class="h-20 md:h-24 w-auto object-contain drop-shadow-md" />
+    <a href="/" class="flex items-center gap-2 lg:gap-4 shrink-0">
+      <Image src={headerImage} alt="InSpectiv Labs" class="h-8 md:h-10 lg:h-12 xl:h-20 w-auto object-contain drop-shadow-md" />
     </a>
 
     {/* Desktop Navigation */}
-    <nav class="hidden lg:flex items-center gap-6 relative">
+    <nav class="hidden md:flex items-center gap-1.5 md:gap-2 lg:gap-3 xl:gap-6 relative shrink-0">
       {navLinks.map(link => (
         link.children ? (
           <div class="relative dropdown-container">
-            <button class="dropdown-button group/link text-white text-[14px] hover:text-cyan-400 transition-colors uppercase tracking-wide drop-shadow-sm font-semibold flex items-center gap-1 relative py-1">
+            <button class="dropdown-button group/link text-white text-[9px] lg:text-[10px] xl:text-[14px] hover:text-cyan-400 transition-colors uppercase tracking-wide drop-shadow-sm font-semibold flex items-center gap-0.5 lg:gap-1 relative py-1">
               {link.label}
-              <i class="bx bx-chevron-down chevron text-base md:text-lg mt-0.5 transition-transform duration-300"></i>
+              <i class="bx bx-chevron-down chevron text-xs md:text-sm xl:text-base mt-0.5 transition-transform duration-300"></i>
               <span class="absolute bottom-0 left-0 w-full h-[2px] bg-cyan-400 transform scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300 origin-left"></span>
             </button>
             <div class="dropdown-menu absolute top-full left-0 pt-4 w-56 opacity-0 invisible transition-all duration-300 transform translate-y-4 z-50">
@@ -83,20 +83,20 @@ const navLinks = [
             </div>
           </div>
         ) : (
-          <a href={link.href} class="group/link text-white text-[14px] hover:text-cyan-400 transition-colors uppercase tracking-wide drop-shadow-sm font-semibold relative py-1">
+          <a href={link.href} class="group/link text-white text-[9px] lg:text-[10px] xl:text-[14px] hover:text-cyan-400 transition-colors uppercase tracking-wide drop-shadow-sm font-semibold relative py-1">
             {link.label}
             <span class="absolute bottom-0 left-0 w-full h-[2px] bg-cyan-400 transform scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300 origin-left"></span>
           </a>
         )
       ))}
-      <a href="/contact" class="ml-4 px-4 py-2.5 bg-cyan-600 text-white text-[13px] font-bold uppercase tracking-widest transition-colors shadow-lg hover:shadow-cyan-500/30 group/btn relative overflow-hidden rounded-sm">
+      <a href="/contact" class="ml-2 lg:ml-3 xl:ml-4 px-2 py-1 lg:px-3 lg:py-1.5 xl:px-4 xl:py-2 bg-cyan-600 text-white text-[8px] lg:text-[9px] xl:text-[13px] font-bold uppercase tracking-widest transition-colors shadow-lg hover:shadow-cyan-500/30 group/btn relative overflow-hidden rounded-sm whitespace-nowrap">
         <span class="relative z-10">CONTACT US</span>
         <div class="absolute inset-0 w-full h-full bg-cyan-500 transform -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-300 ease-out z-0"></div>
       </a>
     </nav>
 
     {/* Mobile Toggle */}
-    <div class="lg:hidden text-white">
+    <div class="md:hidden text-white shrink-0">
        <MobileNav client:load links={navLinks} />
     </div>
   </div>
@@ -105,21 +105,21 @@ const navLinks = [
 
 {/* 2. Solid Fixed Header (Slides down on scroll) */}
 <header id="main-header" data-force-solid={forceSolid.toString()} class={`fixed top-0 left-0 right-0 bg-[#000f2c] w-full z-50 transition-transform duration-300 shadow-md ${forceSolid ? 'translate-y-0' : 'transform -translate-y-full'}`}>
-  <div class="max-w-[90vw] mx-auto px-6 h-24 flex items-center justify-between">
+  <div class="max-w-full lg:max-w-[95vw] xl:max-w-[90vw] mx-auto px-4 lg:px-4 xl:px-6 h-20 lg:h-24 flex items-center justify-between gap-2 lg:gap-4">
     
     {/* Solid Header Logo */}
-    <a href="/" class="flex items-center gap-4">
-      <Image src={headerImage} alt="InSpectiv Labs" class="h-16 md:h-20 w-auto object-contain" />
+    <a href="/" class="flex items-center gap-2 lg:gap-4 shrink-0">
+      <Image src={headerImage} alt="InSpectiv Labs" class="h-8 md:h-10 lg:h-10 xl:h-20 w-auto object-contain" />
     </a>
 
     {/* Desktop Navigation */}
-    <nav class="hidden lg:flex items-center gap-6 relative">
+    <nav class="hidden md:flex items-center gap-1.5 md:gap-2 lg:gap-3 xl:gap-6 relative shrink-0">
       {navLinks.map(link => (
         link.children ? (
           <div class="relative dropdown-container">
-            <button class="dropdown-button group/link text-white text-[13px] hover:text-cyan-400 transition-colors uppercase tracking-wide flex items-center gap-1 relative py-1">
+            <button class="dropdown-button group/link text-white text-[9px] lg:text-[10px] xl:text-[13px] hover:text-cyan-400 transition-colors uppercase tracking-wide flex items-center gap-0.5 lg:gap-1 relative py-1">
               {link.label}
-              <i class="bx bx-chevron-down chevron text-base md:text-lg mt-0.5 transition-transform duration-300"></i>
+              <i class="bx bx-chevron-down chevron text-xs md:text-sm xl:text-base mt-0.5 transition-transform duration-300"></i>
               <span class="absolute bottom-0 left-0 w-full h-[2px] bg-cyan-400 transform scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300 origin-left"></span>
             </button>
             <div class="dropdown-menu absolute top-full left-0 pt-4 w-56 opacity-0 invisible transition-all duration-300 transform translate-y-4 z-50">
@@ -133,20 +133,20 @@ const navLinks = [
             </div>
           </div>
         ) : (
-          <a href={link.href} class="group/link text-white text-[13px] hover:text-cyan-400 transition-colors uppercase tracking-wide relative py-1">
+          <a href={link.href} class="group/link text-white text-[9px] lg:text-[10px] xl:text-[13px] hover:text-cyan-400 transition-colors uppercase tracking-wide relative py-1">
             {link.label}
             <span class="absolute bottom-0 left-0 w-full h-[2px] bg-cyan-400 transform scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300 origin-left"></span>
           </a>
         )
       ))}
-      <a href="/contact" class="ml-2 px-5 py-2 bg-[#1d4ed8] text-white text-[13px] font-semibold uppercase tracking-wider transition-colors group/btn relative overflow-hidden">
+      <a href="/contact" class="ml-2 lg:ml-3 xl:ml-4 px-2 py-1 lg:px-3 lg:py-1.5 xl:px-4 xl:py-2 bg-[#1d4ed8] text-white text-[8px] lg:text-[9px] xl:text-[13px] font-semibold uppercase tracking-wider transition-colors group/btn relative overflow-hidden whitespace-nowrap">
         <span class="relative z-10">CONTACT US</span>
         <div class="absolute inset-0 w-full h-full bg-[#0f2952] transform -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-300 ease-out z-0"></div>
       </a>
     </nav>
 
     {/* Mobile Toggle */}
-    <div class="lg:hidden text-white">
+    <div class="md:hidden text-white shrink-0">
        <MobileNav client:load links={navLinks} />
     </div>
 
