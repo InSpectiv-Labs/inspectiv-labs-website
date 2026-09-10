@@ -9,12 +9,11 @@ interface Props {
   author?: string;
   heroImage?: ImageMetadata;
   industry?: string;
+  readTime?: string;
 }
 
-const { title, description, date, author, heroImage, industry } = Astro.props;
+const { title, description, date, author, heroImage, industry, readTime } = Astro.props;
 
-
-const readingTime = "4 min read"; 
 ---
 <BaseLayout 
   title={title}
@@ -55,10 +54,12 @@ const readingTime = "4 min read";
               year: 'numeric'
             })}
           </time>
-          <span class="flex items-center gap-2">
-            <i class="bx bx-time-five text-[16px]"></i>
-            {readingTime}
-          </span>
+          {readTime && (
+            <span class="flex items-center gap-2">
+              <i class="bx bx-time-five text-[16px]"></i>
+              {readTime}
+            </span>
+          )}
         </div>
       </div>
     </header>

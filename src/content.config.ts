@@ -10,6 +10,7 @@ const blog = defineCollection({
     author: z.string().optional(),
     heroImage: image().optional(),
     industry: z.enum(['insurance', 'banking', 'geotech', 'mining', 'general']).optional(),
+    readTime: z.string().optional(),
     draft: z.boolean().default(false),
   }),
 });

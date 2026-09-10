@@ -11,7 +11,7 @@ const pipelineSteps = [
     id: 2,
     title: "INTERFEROGRAM",
     subtitle: "Phase difference between images",
-    image: "/images/insar_interferogram.png"
+    image: "/images/deformation_map.jpeg"
   },
   {
     id: 3,
@@ -23,7 +23,7 @@ const pipelineSteps = [
     id: 4,
     title: "TIME-SERIES DEFORMATION",
     subtitle: "Millimeter-level deformation over time",
-    image: "/images/time_series.png"
+    image: "/images/time_series_analysis.jpeg"
   },
   {
     id: 5,
