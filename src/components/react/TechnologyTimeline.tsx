@@ -63,14 +63,14 @@ export default function TechnologyTimeline() {
   };
 
   return (
-    <div className="w-full max-w-[90vw] mx-auto">
+    <div className="w-full max-w-[90vw] mx-auto min-h-[750px] lg:min-h-0">
       
 
       
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
         
-        {/* Left: Dynamic Image Display */}
-        <div className="lg:col-span-7 relative overflow-hidden bg-white border-l-2 border-[#1d4ed8] min-h-[400px]">
+        {/* Top/Left: Dynamic Image Display (Visible on all sizes) */}
+        <div className="col-span-1 lg:col-span-7 relative overflow-hidden bg-white border-l-2 border-[#1d4ed8] h-[300px] lg:h-auto lg:min-h-[400px]">
           {steps.map((step) => (
             <div 
               key={step.id}
@@ -93,7 +93,7 @@ export default function TechnologyTimeline() {
         </div>
 
         {/* Right: Editorial Timeline */}
-        <div className="lg:col-span-5 flex flex-col justify-center">
+        <div className="lg:col-span-5 flex flex-col justify-center h-[500px] md:h-[550px] lg:h-[600px]">
           <div className="space-y-4">
             {steps.map((step) => (
               <div 
@@ -116,9 +116,6 @@ export default function TechnologyTimeline() {
                 <div 
                   className={`pl-14 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${activeStep === step.id ? 'max-h-[500px] opacity-100 mt-4' : 'max-h-0 opacity-0 mt-0'}`}
                 >
-                  <div className="block lg:hidden w-full h-48 mb-6 overflow-hidden rounded border border-gray-200">
-                    <img src={step.image} alt={step.title} className="w-full h-full object-cover opacity-90" />
-                  </div>
                   <p className="text-base text-gray-600 font-light leading-relaxed mb-6">
                     {step.description}
                   </p>
