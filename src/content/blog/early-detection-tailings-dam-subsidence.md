@@ -11,8 +11,6 @@ heroImage: "../../assets/blog_tailings_dam_hero.png"
 
 Tailings facilities can experience gradual settlement and deformation that may not be apparent through periodic ground inspections alone. Identifying emerging deformation early is critical for prioritising field inspections and maintaining confidence in the stability of dams and embankments.
 
-![Relevant Insight Illustration](/images/blog_detection_decision_inline.png)
-
 ## Our Approach
 
 InSpectiv Labs uses satellite-based InSAR to establish a high-resolution ground-motion baseline across the tailings facility and its surrounding environment. Persistent Scatterer analysis identifies stable measurement points and reveals spatial patterns of deformation over time.

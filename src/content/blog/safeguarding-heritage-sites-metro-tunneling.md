@@ -6,14 +6,12 @@ author: "InSpectiv Labs"
 industry: "application"
 readTime: "3–5 min read"
 draft: false
-heroImage: "../../assets/insights_hero_banner.png"
+heroImage: "../../assets/blog_heritage_metro_hero.png"
 ---
 
 Underground metro construction can alter the stress and groundwater conditions around existing structures. Historic and heritage buildings are particularly sensitive to even small levels of differential ground movement.
 
 Traditional monitoring provides highly localised measurements, while construction impacts can extend beyond individual monitoring points.
-
-![Relevant Insight Illustration](/images/insights_secondary.png)
 
 ## Our Approach
 

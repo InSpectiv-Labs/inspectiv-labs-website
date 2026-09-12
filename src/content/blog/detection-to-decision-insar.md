@@ -19,8 +19,6 @@ For organisations responsible for mines, infrastructure, energy assets or urban 
 This is where InSAR moves beyond remote sensing and becomes part of an asset-risk workflow.
 
 
-![Relevant Insight Illustration](/images/blog_detection_decision_inline.png)
-
 ## Step 1: Detect
 
 The first step is identifying areas where measurable surface deformation is occurring.

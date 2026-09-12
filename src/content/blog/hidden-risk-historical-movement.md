@@ -21,8 +21,6 @@ This raises an important question:
 Satellite-based InSAR makes that possible.
 
 
-![Relevant Insight Illustration](/images/blog_hidden_risk_inline.png)
-
 ## The value of looking backwards
 
 Modern Earth observation satellites have been collecting radar imagery repeatedly over the same regions for years.

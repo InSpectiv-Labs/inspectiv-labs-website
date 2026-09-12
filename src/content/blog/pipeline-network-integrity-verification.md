@@ -6,14 +6,12 @@ author: "InSpectiv Labs"
 industry: "application"
 readTime: "4–6 min read"
 draft: false
-heroImage: "../../assets/blog_beyond_monitoring_hero.png"
+heroImage: "../../assets/blog_pipeline_hero.png"
 ---
 
 Long-distance pipelines cross diverse terrain, including unstable slopes, floodplains, agricultural areas and settlement zones. Ground movement along a pipeline corridor can potentially affect buried infrastructure long before visible surface damage becomes apparent.
 
 Monitoring an extensive network using field surveys alone can be challenging and resource-intensive.
-
-![Relevant Insight Illustration](/images/blog_detection_decision_inline.png)
 
 ## Our Approach
 

@@ -20,8 +20,6 @@ These methods remain important. But they can be difficult to scale across large 
 Satellite-based Interferometric Synthetic Aperture Radar (InSAR) is changing how organisations approach this problem by making it possible to monitor ground deformation across large areas remotely and repeatedly.
 
 
-![Relevant Insight Illustration](/images/blog_ground_deformation_inline.png)
-
 ## What is ground deformation?
 
 Ground deformation refers to changes in the position or shape of the Earth’s surface over time.

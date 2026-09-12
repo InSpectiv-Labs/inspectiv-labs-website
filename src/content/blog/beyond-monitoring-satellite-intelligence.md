@@ -20,8 +20,6 @@ For organisations managing large infrastructure networks, detecting these change
 Satellite-based monitoring offers a way to observe ground behaviour at scale.
 
 
-![Relevant Insight Illustration](/images/blog_beyond_monitoring_inline.png)
-
 ## Infrastructure is more than a single asset
 
 A bridge, tunnel or pipeline rarely exists in isolation.
