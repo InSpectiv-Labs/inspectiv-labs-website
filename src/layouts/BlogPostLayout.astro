@@ -22,62 +22,62 @@ const { title, description, date, author, heroImage, industry, readTime } = Astr
 >
   <article class="bg-gray-50 min-h-screen pb-24">
     
-    <header class="pt-24 md:pt-32 lg:pt-40 pb-16 bg-[#000f2c] text-white">
-      <div class="max-w-[800px] mx-auto px-4">
-        
-        {industry && (
-          <div class="mb-8">
-            <span class="px-3 py-1 bg-[#1d4ed8] text-white text-[11px] font-bold uppercase tracking-wider">
-              {industry}
-            </span>
-          </div>
-        )}
-        
-        <h1 class="text-3xl md:text-4xl md:text-5xl font-light mb-8 leading-tight tracking-wide">
-          {title}
-        </h1>
-        
-        <div class="flex items-center gap-6 text-gray-400 text-sm font-light">
-          {author && (
-            <div class="flex items-center gap-2">
-              <div class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center text-white font-semibold text-xs">
-                {author.charAt(0)}
-              </div>
-              <span class="text-gray-200">{author}</span>
+        <header class="relative pt-32 lg:pt-48 pb-16 lg:pb-24 border-b border-gray-200 flex flex-col justify-end min-h-[45vh]">
+      {/* Cover Image Background */}
+      {heroImage ? (
+        <div class="absolute inset-0 z-0 bg-[#000f2c]">
+          <Image 
+            src={heroImage} 
+            alt={title} 
+            class="w-full h-full object-cover opacity-40 mix-blend-luminosity"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#000f2c] to-transparent opacity-90"></div>
+        </div>
+      ) : (
+        <div class="absolute inset-0 bg-[#000f2c] z-0"></div>
+      )}
+
+      <div class="relative z-10 max-w-[80vw] mx-auto px-4 lg:px-8 w-full pb-16 lg:pb-24">
+        <div class="max-w-4xl">
+          {industry && (
+            <div class="mb-8">
+              <span class="px-3 py-1 border border-cyan-500/50 text-cyan-400 text-[11px] font-bold uppercase tracking-widest">
+                {industry}
+              </span>
             </div>
           )}
-          <time class="flex items-center gap-2">
-            <i class="bx bx-calendar text-[16px]"></i>
-            {date.toLocaleDateString('en-US', {
-              month: 'long',
-              day: 'numeric',
-              year: 'numeric'
-            })}
-          </time>
-          {readTime && (
-            <span class="flex items-center gap-2">
-              <i class="bx bx-time-five text-[16px]"></i>
-              {readTime}
-            </span>
-          )}
+          
+          <h1 class="text-3xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight tracking-wide text-white">
+            {title}
+          </h1>
+          
+          <div class="flex flex-wrap items-center gap-6 text-gray-400 text-sm font-light">
+            {author && (
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-cyan-900/50 border border-cyan-800 flex items-center justify-center text-cyan-400 font-semibold text-xs">
+                  {author.charAt(0)}
+                </div>
+                <span class="text-gray-200">{author}</span>
+              </div>
+            )}
+
+            {readTime && (
+              <>
+                <div class="w-1 h-1 rounded-full bg-gray-600 hidden md:block"></div>
+                <span class="flex items-center gap-2 uppercase tracking-wider text-xs font-semibold">
+                  <i class="bx bx-time-five text-[16px]"></i>
+                  {readTime}
+                </span>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </header>
 
-    {heroImage && (
-      <div class="max-w-[1000px] mx-auto px-4 -mt-10 mb-8 md:mb-12 lg:mb-16 relative z-10">
-        <div class="aspect-video w-full overflow-hidden shadow-lg border border-gray-200 bg-white">
-          <Image 
-            src={heroImage} 
-            alt={title} 
-            class="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-    )}
-    
-    <div class="max-w-[1000px] mx-auto px-4">
-      <div class="prose prose-lg prose-slate max-w-none 
+    <div class="max-w-[80vw] mx-auto px-4 relative z-20 -mt-20 lg:-mt-28 mb-24">
+      <div class="bg-white border border-gray-200 shadow-sm p-8 md:p-12 lg:p-16">
+        <div class="prose prose-lg prose-slate mx-auto max-w-none 
                   prose-headings:text-[#000f2c] prose-headings:font-light 
                   prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 
                   prose-h3:text-2xl prose-h3:mt-8 
@@ -87,6 +87,7 @@ const { title, description, date, author, heroImage, industry, readTime } = Astr
         <slot />
       </div>
       
+      </div>
       <div class="mt-16 pt-8 border-t border-gray-200 flex items-center justify-between">
         <a href="/blog" class="text-[#1d4ed8] text-sm font-bold uppercase tracking-wider hover:text-[#000f2c] transition-colors flex items-center gap-2">
           <span class="text-lg md:text-xl leading-none rotate-180">›</span> Back to Insights

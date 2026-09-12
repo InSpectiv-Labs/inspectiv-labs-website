@@ -6,6 +6,7 @@ author: "InSpectiv Labs"
 industry: "general"
 readTime: "5–7 min read"
 draft: false
+heroImage: "../../assets/blog_beyond_monitoring_hero.png"
 ---
 
 Infrastructure is built on the assumption that the ground beneath it will behave predictably.
@@ -17,6 +18,9 @@ Natural geological processes, excavation, construction, groundwater variation, m
 For organisations managing large infrastructure networks, detecting these changes across an entire asset portfolio can be challenging.
 
 Satellite-based monitoring offers a way to observe ground behaviour at scale.
+
+
+![Relevant Insight Illustration](/images/blog_beyond_monitoring_inline.png)
 
 ## Infrastructure is more than a single asset
 

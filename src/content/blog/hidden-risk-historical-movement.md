@@ -6,6 +6,7 @@ author: "InSpectiv Labs"
 industry: "general"
 readTime: "5–7 min read"
 draft: false
+heroImage: "../../assets/blog_hidden_risk_hero.png"
 ---
 
 When evaluating an asset, most assessments focus on its current condition.
@@ -18,6 +19,9 @@ This raises an important question:
 **What if we could look back in time?**
 
 Satellite-based InSAR makes that possible.
+
+
+![Relevant Insight Illustration](/images/blog_hidden_risk_inline.png)
 
 ## The value of looking backwards
 

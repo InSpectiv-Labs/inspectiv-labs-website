@@ -6,6 +6,7 @@ author: "InSpectiv Labs"
 industry: "general"
 readTime: "5–7 min read"
 draft: false
+heroImage: "../../assets/blog_ground_deformation_hero.png"
 ---
 
 Ground movement is rarely visible when it begins.
@@ -17,6 +18,9 @@ Traditionally, identifying these changes has depended heavily on field surveys a
 These methods remain important. But they can be difficult to scale across large or geographically dispersed assets.
 
 Satellite-based Interferometric Synthetic Aperture Radar (InSAR) is changing how organisations approach this problem by making it possible to monitor ground deformation across large areas remotely and repeatedly.
+
+
+![Relevant Insight Illustration](/images/blog_ground_deformation_inline.png)
 
 ## What is ground deformation?
 

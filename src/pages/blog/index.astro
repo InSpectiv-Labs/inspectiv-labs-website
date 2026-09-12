@@ -55,18 +55,8 @@ const posts = (await getCollection('blog'))
             
             <div class="p-8 flex flex-col flex-grow">
               <div class="flex items-center gap-2 text-xs text-gray-500 mb-3 font-semibold tracking-wide">
-                <time>
-                  {post.data.publishDate.toLocaleDateString('en-US', {
-                    month: 'short',
-                    day: 'numeric',
-                    year: 'numeric'
-                  })}
-                </time>
                 {post.data.readTime && (
-                  <>
-                    <span>&bull;</span>
-                    <span>{post.data.readTime}</span>
-                  </>
+                  <span>{post.data.readTime}</span>
                 )}
               </div>
               <h2 class="text-lg md:text-xl font-semibold text-[#000f2c] mb-4 leading-snug group-hover:text-[#1d4ed8] transition-colors">

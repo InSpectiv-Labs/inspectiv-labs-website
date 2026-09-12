@@ -6,6 +6,7 @@ author: "InSpectiv Labs"
 industry: "general"
 readTime: "5–7 min read"
 draft: false
+heroImage: "../../assets/blog_detection_decision_hero.png"
 ---
 
 A satellite can collect enormous amounts of information.
@@ -16,6 +17,9 @@ For organisations responsible for mines, infrastructure, energy assets or urban 
 **How do we turn satellite observations into something we can actually act on?**
 
 This is where InSAR moves beyond remote sensing and becomes part of an asset-risk workflow.
+
+
+![Relevant Insight Illustration](/images/blog_detection_decision_inline.png)
 
 ## Step 1: Detect
 
