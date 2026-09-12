@@ -1,6 +1,5 @@
 ---
 import { Image } from 'astro:assets';
-import headerImage from '../assets/header.png';
 ---
 
 <footer class="relative bg-[#000f2c] text-white pt-20 pb-10 w-full overflow-hidden border-t border-white/10 shadow-2xl">
@@ -15,7 +14,7 @@ import headerImage from '../assets/header.png';
       <!-- Brand & Tagline (Left Column) -->
       <div class="lg:col-span-3 flex flex-col items-start">
         <a href="/" class="inline-block mb-6">
-          <Image src={headerImage} alt="InSpectiv Labs" class="h-24 w-auto object-contain" />
+          <img src="/images/header_logo_light.png" alt="InSpectiv Labs" class="h-24 w-auto object-contain" />
         </a>
         <p class="text-sm font-light leading-relaxed text-gray-400 max-w-sm mb-8">
           Transforming raw satellite radar data into actionable, millimeter-accurate ground deformation intelligence for the world's most demanding sectors.

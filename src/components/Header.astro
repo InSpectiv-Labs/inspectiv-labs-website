@@ -1,7 +1,6 @@
 ---
 import MobileNav from './react/MobileNav.tsx';
 import { Image } from 'astro:assets';
-import headerImage from '../assets/header.png';
 
 export interface Props {
   forceSolid?: boolean;
@@ -59,7 +58,7 @@ const navLinks = [
     
     {/* Transparent Header Logo */}
     <a href="/" class="flex items-center gap-2 lg:gap-4 shrink-0">
-      <Image src={headerImage} alt="InSpectiv Labs" class="h-8 md:h-10 lg:h-12 xl:h-20 w-auto object-contain drop-shadow-md" />
+      <img src="/images/header_logo_light.png" alt="InSpectiv Labs" class="h-8 md:h-10 lg:h-12 xl:h-20 w-auto object-contain drop-shadow-md" />
     </a>
 
     {/* Desktop Navigation */}
@@ -109,7 +108,7 @@ const navLinks = [
     
     {/* Solid Header Logo */}
     <a href="/" class="flex items-center gap-2 lg:gap-4 shrink-0">
-      <Image src={headerImage} alt="InSpectiv Labs" class="h-8 md:h-10 lg:h-10 xl:h-20 w-auto object-contain" />
+      <img src="/images/header_logo_light.png" alt="InSpectiv Labs" class="h-8 md:h-10 lg:h-10 xl:h-20 w-auto object-contain" />
     </a>
 
     {/* Desktop Navigation */}
