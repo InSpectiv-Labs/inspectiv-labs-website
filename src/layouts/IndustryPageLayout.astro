@@ -46,7 +46,7 @@ const {
     {
       image && (
         <div class="absolute inset-0 opacity-30">
-          <img src={image} class="w-full h-full object-cover" />
+          <img loading="lazy" src={image} class="w-full h-full object-cover" />
         </div>
       )
     }
@@ -80,7 +80,7 @@ const {
             <div class="relative group h-full">
               <div class="absolute -inset-4 bg-gradient-to-r from-gray-100 to-blue-50 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-700"></div>
               <div class="relative bg-white p-6 rounded-2xl shadow-sm border border-gray-100/50 flex flex-col items-center group-hover:-translate-y-1 transition-transform duration-500 h-full justify-center">
-                <img
+                <img loading="lazy"
                   src={image}
                   alt="Site Context"
                   class="w-full h-auto max-h-[250px] object-contain rounded-lg drop-shadow-sm"
@@ -95,12 +95,12 @@ const {
           )
         }
         {
-          (insarImage || "/images/deformation_map.jpeg") && (
+          (insarImage || "/images/deformation_map.webp") && (
             <div class="relative group h-full">
               <div class="absolute -inset-4 bg-gradient-to-r from-blue-100 to-cyan-100 rounded-2xl blur-xl opacity-0 group-hover:opacity-50 transition duration-700"></div>
               <div class="relative bg-white p-6 rounded-2xl shadow-sm border border-gray-100/50 flex flex-col items-center group-hover:-translate-y-1 transition-transform duration-500 h-full justify-center">
-                <img
-                  src={insarImage || "/images/deformation_map.jpeg"}
+                <img loading="lazy"
+                  src={insarImage || "/images/deformation_map.webp"}
                   alt="InSAR Analysis"
                   class="w-full h-auto max-h-[250px] object-contain rounded-lg drop-shadow-sm"
                 />
@@ -115,12 +115,12 @@ const {
           )
         }
         {
-          (graphImage || "/images/time_series_analysis.jpeg") && (
+          (graphImage || "/images/time_series_analysis.webp") && (
             <div class="relative group h-full">
               <div class="absolute -inset-4 bg-gradient-to-r from-cyan-100 to-blue-100 rounded-2xl blur-xl opacity-0 group-hover:opacity-50 transition duration-700"></div>
               <div class="relative bg-white p-6 rounded-2xl shadow-sm border border-gray-100/50 flex flex-col items-center group-hover:-translate-y-1 transition-transform duration-500 h-full justify-center">
-                <img
-                  src={graphImage || "/images/time_series_analysis.jpeg"}
+                <img loading="lazy"
+                  src={graphImage || "/images/time_series_analysis.webp"}
                   alt="Deformation Tracking"
                   class="w-full h-auto max-h-[250px] object-contain rounded-lg drop-shadow-sm"
                 />

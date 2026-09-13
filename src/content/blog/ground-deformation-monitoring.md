@@ -6,7 +6,7 @@ author: "InSpectiv Labs"
 industry: "general"
 readTime: "5–7 min read"
 draft: false
-heroImage: "../../assets/blog_ground_deformation_hero.png"
+heroImage: "../../assets/blog_ground_deformation_hero.webp"
 ---
 
 Ground movement is rarely visible when it begins.

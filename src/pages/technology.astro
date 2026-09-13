@@ -6,12 +6,10 @@ import DataPipeline from '../components/react/DataPipeline';
 import MonitoringGrid from '../components/react/MonitoringGrid';
 ---
 
-<BaseLayout title="Our Technology | InSpectiv Labs" description="Advanced InSAR processing and AI/ML analytics for millimeter-level ground deformation intelligence.">
-  
-  {/* 1. Enhanced Hero Section */}
+<BaseLayout title="Our Technology | InSAR & Predictive Analytics | InSpectiv" description="Discover how InSpectiv Labs leverages Sentinel-1 satellite radar and advanced machine learning algorithms to map millimeter-scale ground deformation.">
   <section class="relative pt-24 md:pt-32 lg:pt-40 pb-16 md:pb-24 lg:pb-32 bg-[#000f2c] text-white">
     <div class="absolute inset-0 opacity-30">
-      <img src="/images/insar_satellite_scan.png" alt="Technology" class="w-full h-full object-cover" />
+      <img loading="eager" decoding="async" src="/images/insar_satellite_scan.webp" alt="Technology" class="w-full h-full object-cover" />
     </div>
     <div class="relative z-10 max-w-[90vw] mx-auto px-6 text-center">
       <h1 class="text-3xl md:text-4xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight tracking-wide">
@@ -22,8 +20,6 @@ import MonitoringGrid from '../components/react/MonitoringGrid';
       </p>
     </div>
   </section>
-
-  {/* 2. Technology Timeline Section */}
   <section class="py-16 md:py-24 lg:py-32 bg-white relative overflow-hidden">
     <div class="max-w-[90vw] mx-auto px-6 relative z-10">
       <div class="mb-12 md:mb-16 lg:mb-24 md:pl-12 border-l-2 border-gray-200">
@@ -32,32 +28,22 @@ import MonitoringGrid from '../components/react/MonitoringGrid';
           InSpectiv Labs converts satellite radar data into millimeter-level ground deformation intelligence through an advanced end-to-end InSAR workflow.
         </p>
       </div>
-      <TechnologyTimeline client:load />
+      <TechnologyTimeline client:visible />
     </div>
   </section>
-
-  {/* 3. Technology Stack */}
   <section class="bg-gray-50 relative overflow-hidden py-12">
     <div class="relative z-10">
       <TechStackGrid client:visible />
     </div>
   </section>
-
-  {/* 4. Data Pipeline */}
   <section class="bg-gray-50 relative overflow-hidden border-t border-b border-gray-200">
     <DataPipeline client:visible />
   </section>
-
-  {/* 5. What We Monitor */}
   <section class="bg-white relative overflow-hidden py-12">
     <MonitoringGrid client:visible />
   </section>
-
-  {/* 6. Why It Matters & Data Sources */}
   <section class="bg-gray-50 text-gray-900 py-16 md:py-24 lg:py-32 border-t border-gray-200">
     <div class="max-w-[90vw] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16">
-      
-      {/* Why It Matters */}
       <div class="md:pl-12 border-l-2 border-gray-200">
         <h3 class="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 md:mb-8 lg:mb-12 tracking-tight text-[#1d4ed8]">Why It Matters</h3>
         <div class="space-y-8">
@@ -84,8 +70,6 @@ import MonitoringGrid from '../components/react/MonitoringGrid';
           </div>
         </div>
       </div>
-
-      {/* Data Sources */}
       <div class="bg-white p-10 rounded-2xl border border-gray-200 shadow-sm">
         <h3 class="text-2xl md:text-3xl lg:text-4xl font-semibold mb-8 tracking-tight text-gray-900">Data Sources</h3>
         <div class="flex items-center gap-6 mb-10">

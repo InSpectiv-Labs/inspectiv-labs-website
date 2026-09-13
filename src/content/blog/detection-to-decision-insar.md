@@ -6,7 +6,7 @@ author: "InSpectiv Labs"
 industry: "general"
 readTime: "5–7 min read"
 draft: false
-heroImage: "../../assets/blog_detection_decision_hero.png"
+heroImage: "../../assets/blog_detection_decision_hero.webp"
 ---
 
 A satellite can collect enormous amounts of information.

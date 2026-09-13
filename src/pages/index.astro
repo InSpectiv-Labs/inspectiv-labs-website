@@ -12,9 +12,27 @@ const latestPosts = (await getCollection('blog'))
 
 const featuredPost = latestPosts[0];
 const secondaryPosts = latestPosts.slice(1);
+
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "InSpectiv Labs",
+  "url": "https://inspectivlabs.com",
+  "logo": "https://inspectivlabs.com/images/header_logo_light.png",
+  "description": "InSpectiv Labs delivers millimeter-precise InSAR ground deformation monitoring and predictive analytics for mining, infrastructure, and insurance sectors.",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91-9594520193",
+    "contactType": "customer service"
+  }
+};
 ---
 
-<BaseLayout title="InSpectiv Labs | Risk Intelligence Platform">
+<BaseLayout 
+  title="InSpectiv Labs | InSAR & Ground Deformation Monitoring" 
+  description="InSpectiv Labs delivers millimeter-precise InSAR ground deformation monitoring and predictive analytics for mining, infrastructure, and insurance sectors."
+  structuredData={orgSchema}
+>
   <section class="relative h-screen w-full">
     <HeroCarousel client:load />
   </section>
@@ -134,8 +152,8 @@ const secondaryPosts = latestPosts.slice(1);
           class="flex flex-col group bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-left overflow-hidden"
         >
           <div class="w-full h-48 overflow-hidden relative">
-            <img
-              src="/images/industry_mining.png"
+            <img loading="lazy"
+              src="/images/industry_mining.webp"
               alt="Mining Operations"
               class="w-full h-full object-cover brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700"
             />
@@ -191,8 +209,8 @@ const secondaryPosts = latestPosts.slice(1);
           class="flex flex-col group bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-left overflow-hidden"
         >
           <div class="w-full h-48 overflow-hidden relative">
-            <img
-              src="/images/industry_infrastructure.png"
+            <img loading="lazy"
+              src="/images/industry_infrastructure.webp"
               alt="Infrastructure & Construction"
               class="w-full h-full object-cover brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700"
             />
@@ -248,8 +266,8 @@ const secondaryPosts = latestPosts.slice(1);
           class="flex flex-col group bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-left overflow-hidden"
         >
           <div class="w-full h-48 overflow-hidden relative">
-            <img
-              src="/images/industry_energy.png"
+            <img loading="lazy"
+              src="/images/industry_energy.webp"
               alt="Oil, Gas & Energy"
               class="w-full h-full object-cover brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700"
             />
@@ -305,8 +323,8 @@ const secondaryPosts = latestPosts.slice(1);
           class="flex flex-col group bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-left overflow-hidden"
         >
           <div class="w-full h-48 overflow-hidden relative">
-            <img
-              src="/images/industry_urban.png"
+            <img loading="lazy"
+              src="/images/industry_urban.webp"
               alt="Urban Development & Smart Cities"
               class="w-full h-full object-cover brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700"
             />
@@ -381,8 +399,6 @@ const secondaryPosts = latestPosts.slice(1);
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-        <!-- Solution 1: Asset Owners & Operators -->
         <div
           class="flex flex-col bg-white border border-gray-100 p-8 lg:p-10 rounded-2xl hover:border-blue-200 hover:shadow-lg transition-all duration-300 group"
         >
@@ -416,8 +432,6 @@ const secondaryPosts = latestPosts.slice(1);
             Learn More <i class="bx bx-right-arrow-alt text-base md:text-lg"></i>
           </a>
         </div>
-
-        <!-- Solution 2: Engineering & Geotechnical Consultants -->
         <div
           class="flex flex-col bg-white border border-gray-100 p-8 lg:p-10 rounded-2xl hover:border-blue-200 hover:shadow-lg transition-all duration-300 group"
         >
@@ -464,8 +478,6 @@ const secondaryPosts = latestPosts.slice(1);
             Learn More <i class="bx bx-right-arrow-alt text-base md:text-lg"></i>
           </a>
         </div>
-
-        <!-- Solution 3: Financial Institutions & Lenders -->
         <div
           class="flex flex-col bg-white border border-gray-100 p-8 lg:p-10 rounded-2xl hover:border-blue-200 hover:shadow-lg transition-all duration-300 group"
         >
@@ -519,8 +531,6 @@ const secondaryPosts = latestPosts.slice(1);
             Learn More <i class="bx bx-right-arrow-alt text-base md:text-lg"></i>
           </a>
         </div>
-
-        <!-- Solution 4: Insurance & Risk Professionals -->
         <div
           class="flex flex-col bg-white border border-gray-100 p-8 lg:p-10 rounded-2xl hover:border-blue-200 hover:shadow-lg transition-all duration-300 group"
         >
@@ -566,9 +576,6 @@ const secondaryPosts = latestPosts.slice(1);
       </div>
     </div>
   </section>
-
-
-  <!-- Services Section -->
   <section
     id="services"
     class="py-12 md:py-16 bg-slate-100 border-b border-gray-200"
@@ -589,7 +596,6 @@ const secondaryPosts = latestPosts.slice(1);
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mt-10">
-        <!-- Service 1: Historical Analysis -->
         <div
           class="bg-white border border-gray-200 rounded-xl overflow-hidden group hover:shadow-lg hover:border-[#1d4ed8]/30 transition-all duration-300 flex flex-col h-full"
         >
@@ -598,8 +604,8 @@ const secondaryPosts = latestPosts.slice(1);
               class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"
             >
             </div>
-            <img
-              src="/images/historical_analysis.png"
+            <img loading="lazy"
+              src="/images/historical_analysis.webp"
               alt="Historical Analysis"
               class="w-full h-full object-cover brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700"
             />
@@ -645,8 +651,6 @@ const secondaryPosts = latestPosts.slice(1);
             </a>
           </div>
         </div>
-
-        <!-- Service 2: Monitoring -->
         <div
           class="bg-white border border-gray-200 rounded-xl overflow-hidden group hover:shadow-lg hover:border-[#1d4ed8]/30 transition-all duration-300 flex flex-col h-full"
         >
@@ -655,8 +659,8 @@ const secondaryPosts = latestPosts.slice(1);
               class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"
             >
             </div>
-            <img
-              src="/images/continuous_monitoring_mockup.png"
+            <img loading="lazy"
+              src="/images/continuous_monitoring_mockup.webp"
               alt="Continuous Monitoring"
               class="w-full h-full object-cover brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700"
             />
@@ -705,8 +709,6 @@ const secondaryPosts = latestPosts.slice(1);
       </div>
     </div>
   </section>
-
-  <!-- Case Studies Section -->
   <section
     id="case-studies"
     class="py-8 md:py-12 lg:py-16 md:py-24 bg-slate-50 border-b border-gray-200"
@@ -733,7 +735,7 @@ const secondaryPosts = latestPosts.slice(1);
             class="bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col"
           >
             <div class="h-48 overflow-hidden relative">
-              <img
+              <img loading="lazy"
                 src={study.cardImage}
                 alt={study.cardTitle}
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -788,9 +790,9 @@ const secondaryPosts = latestPosts.slice(1);
           <div
             class="lg:col-span-7 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col"
           >
-            <a href={`/blog/${featuredPost.id}`} class="block h-[250px] sm:h-[350px] relative overflow-hidden shrink-0">
+            <a href={`/blog/${featuredPost.id}`} aria-label={featuredPost.data.title} class="block h-[250px] sm:h-[350px] relative overflow-hidden shrink-0">
               <img
-                src={featuredPost.data.heroImage ? featuredPost.data.heroImage.src : "/images/insights_hero_banner.png"}
+                src={featuredPost.data.heroImage ? featuredPost.data.heroImage.src : "/images/insights_hero_banner.webp"}
                 alt={featuredPost.data.title}
                 class="object-cover w-full h-full brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700 ease-out"
               />
@@ -838,10 +840,11 @@ const secondaryPosts = latestPosts.slice(1);
               >
                 <a
                   href={`/blog/${post.id}`}
+                  aria-label={post.data.title}
                   class="block h-48 sm:h-auto sm:w-2/5 relative overflow-hidden shrink-0"
                 >
                   <img
-                    src={post.data.heroImage ? post.data.heroImage.src : "/images/insights_secondary.png"}
+                    src={post.data.heroImage ? post.data.heroImage.src : "/images/insights_secondary.webp"}
                     alt={post.data.title}
                     class="object-cover w-full h-full brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700 ease-out"
                   />

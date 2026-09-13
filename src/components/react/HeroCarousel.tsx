@@ -2,17 +2,17 @@ import React, { useState, useEffect } from 'react';
 
 const slides = [
   {
-    image: '/images/insar_satellite_scan.png',
+    image: '/images/insar_satellite_scan.webp',
     title: 'Precision Inspection & Risk Intelligence for Industry',
     subtitle: 'Ground-truth risk intelligence mapped, verified, and automated'
   },
   {
-    image: '/images/earth_bg.png',
+    image: '/images/earth_bg.webp',
     title: 'Monitor Critical Infrastructure With Confidence',
     subtitle: 'Millimeter-scale displacement monitoring for dams, slopes, and civil engineering'
   },
   {
-    image: '/images/infrastructure_monitoring.png',
+    image: '/images/infrastructure_monitoring.webp',
     title: 'Global Asset Protection & Financial De-Risking',
     subtitle: 'Independent verification for massive capital projects and port facilities'
   }
@@ -46,7 +46,7 @@ export default function HeroCarousel() {
             index === currentSlide ? 'opacity-100 z-0' : 'opacity-0 pointer-events-none'
           }`}
         >
-          <img
+          <img loading="lazy"
             src={slide.image}
             alt={slide.title}
             className="w-full h-full object-cover"

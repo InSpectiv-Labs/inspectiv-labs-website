@@ -6,42 +6,41 @@ const steps = [
     title: "Satellite Data Acquisition",
     description: "We acquire high-resolution C-band SAR radar data from Sentinel-1 satellites, providing all-weather, day & night imaging with frequent revisit times.",
     icon: "bx-globe",
-    image: "/images/satellite_hero.jpg"
+    image: "/images/satellite_hero.webp"
   },
   {
     id: 2,
     title: "InSAR Processing",
     description: "Advanced algorithms detect phase changes between multiple radar images over time. We isolate the true deformation signal from atmospheric noise.",
     icon: "bx-layer",
-    image: "/images/insar_interferogram.jpg"
+    image: "/images/insar_interferogram.webp"
   },
   {
     id: 3,
     title: "Deformation Analysis",
     description: "Using advanced MintPy workflows and time-series analysis, we convert phase differences into exact, millimeter-level ground deformation maps.",
     icon: "bx-network-chart",
-    image: "/images/deformation.png"
+    image: "/images/deformation.webp"
   },
   {
     id: 4,
     title: "Risk Alerts & Reporting",
     description: "Machine learning models identify anomalies and early warning signals. Automated alerts highlight critical areas of subsidence or instability.",
     icon: "bx-radar",
-    image: "/images/time_series.jpg"
+    image: "/images/time_series.webp"
   },
   {
     id: 5,
     title: "Informed Decisions",
     description: "Turn complex data into decision-ready insights. Our actionable intelligence protects critical assets, ensures safety, and optimizes operations.",
     icon: "bx-check-shield",
-    image: "/images/real_world_impact.jpg"
+    image: "/images/real_world_impact.webp"
   }
 ];
 
 export default function TechnologyTimeline() {
   const [activeStep, setActiveStep] = useState(1);
   const [progress, setProgress] = useState(0);
-
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -64,21 +63,15 @@ export default function TechnologyTimeline() {
 
   return (
     <div className="w-full max-w-[90vw] mx-auto min-h-[750px] lg:min-h-0">
-      
 
-      
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
-        
-        {/* Top/Left: Dynamic Image Display (Visible on all sizes) */}
         <div className="col-span-1 lg:col-span-7 relative overflow-hidden bg-white border-l-2 border-[#1d4ed8] h-[300px] lg:h-auto lg:min-h-[400px]">
           {steps.map((step) => (
             <div 
               key={step.id}
               className={`absolute inset-0 transition-opacity duration-700 ${activeStep === step.id ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
             >
-              <img src={step.image} alt={step.title} className="w-full h-full object-cover opacity-90" />
-              
-              {/* Technical Overlay */}
+              <img loading="lazy" src={step.image} alt={step.title} className="w-full h-full object-cover opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent"></div>
               
               <div className={`absolute bottom-8 left-8 right-8 transition-transform duration-500 delay-150 ${activeStep === step.id ? 'translate-y-0' : 'translate-y-4'}`}>
@@ -91,8 +84,6 @@ export default function TechnologyTimeline() {
             </div>
           ))}
         </div>
-
-        {/* Right: Editorial Timeline */}
         <div className="lg:col-span-5 flex flex-col justify-center h-[500px] md:h-[550px] lg:h-[600px]">
           <div className="space-y-4">
             {steps.map((step) => (
@@ -119,8 +110,6 @@ export default function TechnologyTimeline() {
                   <p className="text-base text-gray-600 font-light leading-relaxed mb-6">
                     {step.description}
                   </p>
-                  
-                  {/* Progress Line */}
                   {activeStep === step.id && (
                     <div className="h-[1px] w-full bg-gray-200 relative">
                       <div 

@@ -14,16 +14,36 @@ interface Props {
 
 const { title, description, date, author, heroImage, industry, readTime } = Astro.props;
 
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "image": heroImage ? new URL(heroImage.src, Astro.site || Astro.url) : undefined,
+  "datePublished": date.toISOString(),
+  "author": {
+    "@type": "Person",
+    "name": author || "InSpectiv Labs Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "InSpectiv Labs",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://inspectivlabs.com/images/header_logo_light.png"
+    }
+  }
+};
 ---
 <BaseLayout 
-  title={title}
+  title={`${title} | InSpectiv Labs Insights`}
   description={description}
   ogImage={heroImage?.src}
+  structuredData={articleSchema}
 >
   <article class="bg-gray-50 min-h-screen pb-24">
     
         <header class="relative pt-32 lg:pt-48 pb-16 lg:pb-24 border-b border-gray-200 flex flex-col justify-end min-h-[45vh]">
-      {/* Cover Image Background */}
       {heroImage ? (
         <div class="absolute inset-0 z-0 bg-[#000f2c]">
           <Image 

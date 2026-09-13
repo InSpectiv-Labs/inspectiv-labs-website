@@ -1,6 +1,7 @@
 ---
 import MobileNav from './react/MobileNav.tsx';
 import { Image } from 'astro:assets';
+import headerLogo from '../assets/header_logo_light.png';
 
 export interface Props {
   forceSolid?: boolean;
@@ -50,18 +51,12 @@ const navLinks = [
   { label: 'INSIGHTS', href: '/blog' }
 ];
 ---
-
-{/* 1. Transparent Header (Shows on Carousel) */}
 {!forceSolid && (
 <header class="absolute top-0 left-0 right-0 bg-transparent w-full z-40">
   <div class="max-w-full lg:max-w-[95vw] xl:max-w-[90vw] mx-auto px-4 lg:px-4 xl:px-6 h-20 lg:h-24 xl:h-32 flex items-center justify-between gap-2 lg:gap-4">
-    
-    {/* Transparent Header Logo */}
-    <a href="/" class="flex items-center gap-2 lg:gap-4 shrink-0">
-      <img src="/images/header_logo_light.png" alt="InSpectiv Labs" class="h-10 md:h-12 lg:h-16 xl:h-20 w-auto object-contain drop-shadow-md" />
+    <a href="/" aria-label="Home" class="flex items-center gap-2 lg:gap-4 shrink-0">
+      <Image loading="eager" decoding="async" src={headerLogo} alt="InSpectiv Labs" class="h-10 md:h-12 lg:h-16 xl:h-20 w-auto object-contain drop-shadow-md" />
     </a>
-
-    {/* Desktop Navigation */}
     <nav class="hidden md:flex items-center gap-3 md:gap-4 lg:gap-6 xl:gap-8 relative shrink-0">
       {navLinks.map(link => (
         link.children ? (
@@ -93,25 +88,17 @@ const navLinks = [
         <div class="absolute inset-0 w-full h-full bg-cyan-500 transform -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-300 ease-out z-0"></div>
       </a>
     </nav>
-
-    {/* Mobile Toggle */}
     <div class="md:hidden text-white shrink-0">
-       <MobileNav client:load links={navLinks} />
+       <MobileNav client:idle links={navLinks} />
     </div>
   </div>
 </header>
 )}
-
-{/* 2. Solid Fixed Header (Slides down on scroll) */}
 <header id="main-header" data-force-solid={forceSolid.toString()} class={`fixed top-0 left-0 right-0 bg-[#000f2c] w-full z-50 transition-transform duration-300 shadow-md ${forceSolid ? 'translate-y-0' : 'transform -translate-y-full'}`}>
   <div class="max-w-full lg:max-w-[95vw] xl:max-w-[90vw] mx-auto px-4 lg:px-4 xl:px-6 h-20 lg:h-24 flex items-center justify-between gap-2 lg:gap-4">
-    
-    {/* Solid Header Logo */}
-    <a href="/" class="flex items-center gap-2 lg:gap-4 shrink-0">
-      <img src="/images/header_logo_light.png" alt="InSpectiv Labs" class="h-10 md:h-12 lg:h-16 xl:h-20 w-auto object-contain" />
+    <a href="/" aria-label="Home" class="flex items-center gap-2 lg:gap-4 shrink-0">
+      <Image loading="eager" decoding="async" src={headerLogo} alt="InSpectiv Labs" class="h-10 md:h-12 lg:h-16 xl:h-20 w-auto object-contain" />
     </a>
-
-    {/* Desktop Navigation */}
     <nav class="hidden md:flex items-center gap-3 md:gap-4 lg:gap-6 xl:gap-8 relative shrink-0">
       {navLinks.map(link => (
         link.children ? (
@@ -143,73 +130,59 @@ const navLinks = [
         <div class="absolute inset-0 w-full h-full bg-[#0f2952] transform -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-300 ease-out z-0"></div>
       </a>
     </nav>
-
-    {/* Mobile Toggle */}
     <div class="md:hidden text-white shrink-0">
-       <MobileNav client:load links={navLinks} />
+       <MobileNav client:idle links={navLinks} />
     </div>
 
   </div>
 </header>
 
 <script>
-  // Show header only after scrolling past the first window height (hero section)
   window.addEventListener('scroll', () => {
     const header = document.getElementById('main-header');
     if (header?.getAttribute('data-force-solid') === 'true') return;
     
     if (window.scrollY > window.innerHeight - 100) {
-      header?.classList.remove('-translate-y-full');
+      header?.classList.remove('transform', '-translate-y-full');
       header?.classList.add('translate-y-0');
     } else {
-      header?.classList.add('-translate-y-full');
+      header?.classList.add('transform', '-translate-y-full');
       header?.classList.remove('translate-y-0');
     }
   });
 
-  // Dropdown click functionality
-  document.addEventListener('DOMContentLoaded', () => {
-    const dropdowns = document.querySelectorAll('.dropdown-container');
-    
-    dropdowns.forEach(container => {
-      const button = container.querySelector('.dropdown-button');
-      const menu = container.querySelector('.dropdown-menu');
-      const chevron = container.querySelector('.chevron');
+  const dropdownButtons = document.querySelectorAll('.dropdown-button');
+  
+  dropdownButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const menu = button.nextElementSibling;
+      const chevron = button.querySelector('.chevron');
+      const isExpanded = menu?.classList.contains('opacity-100');
       
-      button?.addEventListener('click', (e) => {
-        e.stopPropagation(); 
-        
-        // Close all other dropdowns
-        dropdowns.forEach(other => {
-          if (other !== container) {
-            other.querySelector('.dropdown-menu')?.classList.remove('opacity-100', 'visible', 'translate-y-0');
-            other.querySelector('.dropdown-menu')?.classList.add('opacity-0', 'invisible', 'translate-y-4');
-            other.querySelector('.chevron')?.classList.remove('rotate-180');
-          }
-        });
-
-        // Toggle current dropdown
-        menu?.classList.toggle('opacity-0');
-        menu?.classList.toggle('invisible');
-        menu?.classList.toggle('translate-y-4');
-        
-        menu?.classList.toggle('opacity-100');
-        menu?.classList.toggle('visible');
-        menu?.classList.toggle('translate-y-0');
-        
-        chevron?.classList.toggle('rotate-180');
+      document.querySelectorAll('.dropdown-menu').forEach(m => {
+        m.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        m.classList.add('opacity-0', 'invisible', 'translate-y-4');
       });
+      document.querySelectorAll('.chevron').forEach(c => {
+        c.classList.remove('rotate-180');
+      });
+
+      if (!isExpanded) {
+        menu?.classList.remove('opacity-0', 'invisible', 'translate-y-4');
+        menu?.classList.add('opacity-100', 'visible', 'translate-y-0');
+        chevron?.classList.add('rotate-180');
+      }
     });
+  });
 
-    // Close on outside click
-    document.addEventListener('click', () => {
-      dropdowns.forEach(container => {
-        const menu = container.querySelector('.dropdown-menu');
-        const chevron = container.querySelector('.chevron');
-        menu?.classList.remove('opacity-100', 'visible', 'translate-y-0');
-        menu?.classList.add('opacity-0', 'invisible', 'translate-y-4');
-        chevron?.classList.remove('rotate-180');
-      });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown-menu').forEach(m => {
+      m.classList.remove('opacity-100', 'visible', 'translate-y-0');
+      m.classList.add('opacity-0', 'invisible', 'translate-y-4');
+    });
+    document.querySelectorAll('.chevron').forEach(c => {
+      c.classList.remove('rotate-180');
     });
   });
 </script>

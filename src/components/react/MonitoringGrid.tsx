@@ -6,7 +6,7 @@ const monitoringDomains = [
     title: "SLOPES & HIGHWALLS",
     description: "Detect slope instability and potential failures.",
     icon: "bx-target-lock",
-    image: "/images/industry_mining.png",
+    image: "/images/industry_mining.webp",
     className: "md:col-span-1 lg:col-span-3"
   },
   {
@@ -14,7 +14,7 @@ const monitoringDomains = [
     title: "TAILINGS STORAGE FACILITIES",
     description: "Monitor tailings dam movement, seepage and structural integrity.",
     icon: "bx-water",
-    image: "/images/industry_energy.png",
+    image: "/images/industry_energy.webp",
     className: "md:col-span-1 lg:col-span-3"
   },
   {
@@ -22,7 +22,7 @@ const monitoringDomains = [
     title: "WASTE DUMPS & STOCKPILES",
     description: "Track movement and settlement over time.",
     icon: "bx-cart",
-    image: "/images/hero_bg.png",
+    image: "/images/hero_bg.webp",
     className: "md:col-span-1 lg:col-span-2"
   },
   {
@@ -30,7 +30,7 @@ const monitoringDomains = [
     title: "INFRASTRUCTURE & ASSETS",
     description: "Monitor critical infrastructure and linear assets.",
     icon: "bx-buildings",
-    image: "/images/infrastructure_monitoring.png",
+    image: "/images/infrastructure_monitoring.webp",
     className: "md:col-span-1 lg:col-span-2"
   },
   {
@@ -38,7 +38,7 @@ const monitoringDomains = [
     title: "LARGE AREA SURVEILLANCE",
     description: "Wide area monitoring for regional risk assessment.",
     icon: "bx-cloud-drizzle",
-    image: "/images/world_map.png",
+    image: "/images/world_map.webp",
     className: "md:col-span-2 lg:col-span-2"
   }
 ];
@@ -59,17 +59,12 @@ export default function MonitoringGrid() {
             key={domain.id} 
             className={`group relative overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm ${domain.className}`}
           >
-            {/* Background Image */}
-            <img 
+            <img loading="lazy" 
               src={domain.image} 
               alt={domain.title} 
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-100" 
             />
-            
-            {/* Flat Neutral Overlay instead of gradient */}
             <div className="absolute inset-0 bg-gray-900/40 group-hover:bg-gray-900/60 transition-colors duration-500"></div>
-
-            {/* Content */}
             <div className="absolute inset-0 p-8 flex flex-col justify-end z-10">
               <div className="transform transition-transform duration-500 group-hover:-translate-y-2">
                 <div className="flex items-center gap-3 mb-3">

@@ -6,8 +6,6 @@ export interface CaseStudy {
   cardSubtitle?: string;
   cardDescription: string;
   cardImage: string;
-  
-  // Full page content
   pageTitle?: string;
   pageSubtitle?: string;
   executiveSummary?: string;
@@ -41,7 +39,7 @@ export const caseStudies: CaseStudy[] = [
     cardTitle: "Predictive Slope Failure Analysis",
     cardSubtitle: "Retrospective InSAR Analysis of an Active Open-Cast Pit Wall Failure",
     cardDescription: "Following a major structural collapse at an open-cast quarry, InSpectiv Labs conducted a retrospective 12-month InSAR analysis. The radar data revealed widespread ground instability across the terrain, with localized high-velocity red hotspots developing months before physical failure occurred.",
-    cardImage: "/images/case_study_1.jpeg",
+    cardImage: "/images/case_study_1.webp",
     
     pageTitle: "Predictive Slope Failure Analysis",
     pageSubtitle: "Retrospective Sentinel-1 InSAR Evaluation of an Active Open-Cast Pit Wall Collapse",
@@ -54,7 +52,7 @@ export const caseStudies: CaseStudy[] = [
       analyticalFocus: "Mapping deformation trends, velocity changes, and high-risk spatial clustering along active pit slopes."
     },
     imagePlaceholder: {
-      src: "/images/case_study_1.jpeg",
+      src: "/images/case_study_1.webp",
       caption: "Figure 1. SBAS InSAR Mean LOS Velocity map showing widespread terrain instability across the site, with concentrated high-velocity red failure hotspots along the active quarry wall crest prior to collapse."
     },
     technicalFindings: [
@@ -91,7 +89,7 @@ export const caseStudies: CaseStudy[] = [
     cardTitle: "Mine Deformation Baseline Assessment",
     cardSubtitle: "12-Month InSAR Ground Stability Assessment Over Active Mining Lease",
     cardDescription: "InSpectiv Labs executed a 12-month ground stability assessment over an active open-cast mine using Sentinel-1 SBAS InSAR. The study successfully flagged high-risk active subsidence (-10 to -16 mm/yr) adjacent to active pit faces while verifying overall lease stability.",
-    cardImage: "/images/case_study_2.jpeg",
+    cardImage: "/images/case_study_2.webp",
     pageTitle: "Mine Lease Deformation Baseline Assessment",
     pageSubtitle: "12-Month Sentinel-1 SBAS InSAR Monitoring over an Active Open-Cast Mining Operation",
     executiveSummary: "InSpectiv Labs completed a 12-month satellite-based ground deformation assessment over an active open-cast mining lease using Sentinel-1 SAR data processed with the SBAS InSAR technique. The assessment mapped overall lease stability, successfully pinpointed localized subsidence zones (-10 to -16 mm/yr) adjacent to active excavation, and differentiated mine-induced movement from off-site groundwater fluctuations.",
@@ -103,7 +101,7 @@ export const caseStudies: CaseStudy[] = [
       analyticalFocus: "12-Month Continuous Assessment Window."
     },
     imagePlaceholder: {
-      src: "/images/case_study_2.jpeg",
+      src: "/images/case_study_2.webp",
       caption: "Figure 1. Average Line-of-Sight (LOS) ground velocity derived from Sentinel-1 SBAS InSAR processing, highlighting active high-risk deformation zones inside the lease boundary."
     },
     technicalFindings: [

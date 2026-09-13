@@ -3,8 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout 
-  title="Historical Analysis | InSpectiv Labs"
-  description="Access years of archived satellite radar data to establish a comprehensive baseline of ground movement."
+  title="Historical Ground Deformation Analysis | InSpectiv Labs"
+  description="Analyze years of historical InSAR data to identify long-term settlement trends and ground risks before breaking ground on new infrastructure projects."
 >
   <section class="pt-24 md:pt-32 lg:pt-40 pb-12 md:pb-16 lg:pb-20 bg-[#000f2c] text-white text-center">
     <div class="max-w-[1000px] mx-auto px-4">
@@ -18,8 +18,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section class="py-12 md:py-16 lg:py-24 bg-gray-50 min-h-[70vh] flex items-center">
     <div class="max-w-[90vw] mx-auto px-6">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        
-        {/* Text Content */}
         <div class="flex flex-col">
           <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#000f2c] mb-6">Historical Analysis</h2>
           <p class="text-gray-600 text-base md:text-lg font-light leading-relaxed mb-10">
@@ -50,12 +48,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </li>
           </ul>
         </div>
-
-        {/* Image Content */}
         <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-100 group">
           <div class="absolute inset-0 bg-cyan-900/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
-          <img 
-            src="/images/historical_analysis.png" 
+          <img loading="lazy" 
+            src="/images/historical_analysis.webp" 
             alt="Historical Analysis InSAR Data" 
             class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out" 
           />

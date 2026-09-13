@@ -13,8 +13,6 @@ interface MobileNavProps {
 export default function MobileNav({ links }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [openDropdowns, setOpenDropdowns] = useState<{ [key: string]: boolean }>({});
-
-  // Prevent scrolling when menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -49,8 +47,6 @@ export default function MobileNav({ links }: MobileNavProps) {
           )}
         </div>
       </button>
-
-      {/* Mobile Menu Overlay with Glassmorphism */}
       <div 
         className={`fixed left-0 top-[96px] w-full h-[calc(100vh-96px)] z-[60] bg-[#000f2c]/90 backdrop-blur-xl overflow-y-auto transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
           isOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 -translate-y-8 invisible'

@@ -3,10 +3,6 @@ import { getCollection, render } from 'astro:content';
 import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
 
 export const prerender = true;
-
-// NOTE FOR FUTURE SCALABILITY: 
-// If moving to a Headless CMS, you would replace `getCollection` here with a CMS fetch 
-// to dynamically build routes for every slug in your CMS backend.
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map(post => ({

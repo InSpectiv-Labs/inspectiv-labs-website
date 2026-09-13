@@ -6,7 +6,7 @@ author: "InSpectiv Labs"
 industry: "application"
 readTime: "4–6 min read"
 draft: false
-heroImage: "../../assets/blog_tailings_dam_hero.png"
+heroImage: "../../assets/blog_tailings_dam_hero.webp"
 ---
 
 Tailings facilities can experience gradual settlement and deformation that may not be apparent through periodic ground inspections alone. Identifying emerging deformation early is critical for prioritising field inspections and maintaining confidence in the stability of dams and embankments.

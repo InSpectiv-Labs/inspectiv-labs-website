@@ -6,7 +6,7 @@ author: "InSpectiv Labs"
 industry: "application"
 readTime: "4–6 min read"
 draft: false
-heroImage: "../../assets/blog_pipeline_hero.png"
+heroImage: "../../assets/blog_pipeline_hero.webp"
 ---
 
 Long-distance pipelines cross diverse terrain, including unstable slopes, floodplains, agricultural areas and settlement zones. Ground movement along a pipeline corridor can potentially affect buried infrastructure long before visible surface damage becomes apparent.

@@ -5,31 +5,31 @@ const pipelineSteps = [
     id: 1,
     title: "RAW SAR IMAGE",
     subtitle: "Sentinel-1 radar acquisition",
-    image: "/images/satellite_hero.png"
+    image: "/images/satellite_hero.webp"
   },
   {
     id: 2,
     title: "INTERFEROGRAM",
     subtitle: "Phase difference between images",
-    image: "/images/deformation_map.jpeg"
+    image: "/images/deformation_map.webp"
   },
   {
     id: 3,
     title: "UNWRAPPED PHASE",
     subtitle: "Corrected phase (unwrapped)",
-    image: "/images/deformation.png"
+    image: "/images/deformation.webp"
   },
   {
     id: 4,
     title: "TIME-SERIES DEFORMATION",
     subtitle: "Millimeter-level deformation over time",
-    image: "/images/time_series_analysis.jpeg"
+    image: "/images/time_series_analysis.webp"
   },
   {
     id: 5,
     title: "RISK & INSIGHT",
     subtitle: "Identify unstable zones and enable action",
-    image: "/images/real_world_impact.png"
+    image: "/images/real_world_impact.webp"
   }
 ];
 
@@ -46,27 +46,20 @@ export default function DataPipeline() {
         {pipelineSteps.map((step, index) => (
           <React.Fragment key={step.id}>
             <div className="flex flex-col items-center group w-full lg:flex-1 min-w-0 relative">
-              
-              {/* Desktop Connector Line (Absolute) */}
               {index < pipelineSteps.length - 1 && (
                 <div className="hidden lg:block absolute top-[3rem] xl:top-[4rem] 2xl:top-[5rem] left-[50%] w-full h-[2px] bg-gray-200 z-0">
                   <div className="absolute right-[3.5rem] xl:right-[4.5rem] 2xl:right-[5.5rem] top-1/2 -translate-y-1/2 w-3 h-3 border-t-2 border-r-2 border-gray-300 rotate-45"></div>
                 </div>
               )}
-              
-              {/* Image Container */}
               <div className="relative w-40 h-40 md:w-48 md:h-48 lg:w-24 lg:h-24 xl:w-32 xl:h-32 2xl:w-40 2xl:h-40 shrink-0 rounded-full border-4 border-white shadow-xl overflow-hidden mb-4 lg:mb-6 group-hover:scale-105 group-hover:shadow-2xl transition-all duration-500 z-10 bg-white">
-                <img 
+                <img loading="lazy" 
                   src={step.image} 
                   alt={step.title} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                 />
                 <div className="absolute inset-0 bg-gray-900/10 transition-colors duration-500"></div>
-                
 
               </div>
-
-              {/* Text Content */}
               <div className="text-center px-2 md:px-4">
                 <h4 className="text-sm md:text-base lg:text-xs xl:text-sm 2xl:text-base font-bold text-gray-900 tracking-wide mb-2">
                   {step.title}
@@ -76,8 +69,6 @@ export default function DataPipeline() {
                 </p>
               </div>
             </div>
-
-            {/* Mobile Connector Arrow */}
             {index < pipelineSteps.length - 1 && (
               <div className="lg:hidden text-[#1d4ed8]/30 my-2 w-full flex justify-center">
                 <i className="bx bx-chevron-down text-3xl"></i>

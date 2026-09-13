@@ -9,25 +9,36 @@ interface Props {
   description?: string;
   ogImage?: string;
   forceSolidHeader?: boolean;
+  structuredData?: any;
 }
 
-const { title = 'InSpectiv Labs', description = 'A B2B service company targeting insurance companies, financial lenders, geotech consultants, and mining companies.', ogImage, forceSolidHeader = false } = Astro.props;
+const { title = 'InSpectiv Labs', description = 'A B2B service company targeting insurance companies, financial lenders, geotech consultants, and mining companies.', ogImage, forceSolidHeader = false, structuredData } = Astro.props;
 ---
 <!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
-    <SEO title={title} description={description} ogImage={ogImage} />
+    <SEO title={title} description={description} ogImage={ogImage} structuredData={structuredData} />
     
-    <!-- Google Fonts -->
+    <!-- Preload Critical Fonts (Performance Hardening) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" />
+    <link rel="preload" href="https://fonts.cdnfonts.com/css/proxima-nova-2" as="style" />
+    <link rel="preload" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" as="style" />
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Proxima Nova -->
     <link href="https://fonts.cdnfonts.com/css/proxima-nova-2" rel="stylesheet">
-    
-    <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- Google Analytics 4 Placeholder -->
+    <!-- TODO: Wrap with cookie consent logic if deploying to EU/UK -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+    <!-- <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script> -->
   </head>
   <body class="flex flex-col min-h-screen">
     <Header forceSolid={forceSolidHeader} />
