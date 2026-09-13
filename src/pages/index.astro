@@ -784,7 +784,7 @@ const orgSchema = {
       </p>
 
       <div
-        class="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full max-w-6xl mx-auto mb-8 md:mb-12 lg:mb-16 text-left"
+        class="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full mx-auto mb-8 md:mb-12 lg:mb-16 text-left"
       >
         {featuredPost && (
           <div
@@ -803,14 +803,6 @@ const orgSchema = {
                   class="text-sm font-semibold text-[#1d4ed8] uppercase tracking-wider"
                   >{featuredPost.data.industry || 'Insight'}</span
                 >
-                <span class="w-1 h-1 rounded-full bg-gray-300"></span>
-                <p class="text-gray-500 text-sm font-light">{featuredPost.data.publishDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
-                {featuredPost.data.readTime && (
-                  <>
-                    <span class="w-1 h-1 rounded-full bg-gray-300"></span>
-                    <p class="text-gray-500 text-sm font-light">{featuredPost.data.readTime}</p>
-                  </>
-                )}
               </div>
               <h3
                 class="text-xl md:text-2xl sm:text-3xl font-bold text-[#000f2c] mb-4 group-hover:text-[#1d4ed8] transition-colors leading-tight"
@@ -855,14 +847,15 @@ const orgSchema = {
                       class="text-[10px] font-semibold text-[#1d4ed8] uppercase tracking-wider"
                       >{post.data.industry || 'Insight'}</span
                     >
-                    <span class="w-1 h-1 rounded-full bg-gray-300"></span>
-                    <p class="text-gray-500 text-[10px] font-light">{post.data.publishDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
                   </div>
                   <h3
                     class="text-base md:text-lg font-bold text-[#000f2c] mb-3 group-hover:text-[#1d4ed8] transition-colors leading-snug"
                   >
                     <a href={`/blog/${post.id}`}>{post.data.title}</a>
                   </h3>
+                  <p class="text-gray-600 text-sm font-light leading-relaxed mb-4 flex-grow line-clamp-2">
+                    {post.data.description}
+                  </p>
                   <a
                     href={`/blog/${post.id}`}
                     class="inline-flex items-center gap-1 text-xs font-semibold text-gray-500 hover:text-[#1d4ed8] uppercase tracking-wider group-hover:translate-x-1 transition-all mt-auto w-max"
