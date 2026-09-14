@@ -23,14 +23,27 @@ const latestPosts = (await getCollection('blog'))
   .slice(0, 3);
 
 
-const orgSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "InSpectiv Labs",
-  "url": "https://inspectivlabs.com",
-  "logo": "https://inspectivlabs.com/images/header_logo_light.png",
-  "description": "InSpectiv Labs delivers millimeter-precise InSAR ground deformation monitoring and predictive analytics for mining, infrastructure, and insurance sectors."
-};
+const orgSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "InSpectiv Labs",
+    "url": "https://inspectivlabs.com",
+    "logo": "https://inspectivlabs.com/images/header_logo_light.png",
+    "description": "InSpectiv Labs delivers millimeter-precise InSAR ground deformation monitoring and predictive analytics for mining, infrastructure, and insurance sectors."
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "InSpectiv Labs",
+    "url": "https://inspectivlabs.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://inspectivlabs.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+];
 ---
 
 <BaseLayout 
