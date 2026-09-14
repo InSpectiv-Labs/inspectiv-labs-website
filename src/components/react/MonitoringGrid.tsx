@@ -1,12 +1,18 @@
 import React from 'react';
 
+import miningImg from '../../assets/industry_mining.webp';
+import energyImg from '../../assets/industry_energy.webp';
+import heroBgImg from '../../assets/hero_bg.webp';
+import infraImg from '../../assets/infrastructure_monitoring.webp';
+import worldMapImg from '../../assets/world_map.webp';
+
 const monitoringDomains = [
   {
     id: 1,
     title: "SLOPES & HIGHWALLS",
     description: "Detect slope instability and potential failures.",
     icon: "bx-target-lock",
-    image: "/images/industry_mining.webp",
+    image: miningImg.src,
     className: "md:col-span-1 lg:col-span-3"
   },
   {
@@ -14,7 +20,7 @@ const monitoringDomains = [
     title: "TAILINGS STORAGE FACILITIES",
     description: "Monitor tailings dam movement, seepage and structural integrity.",
     icon: "bx-water",
-    image: "/images/industry_energy.webp",
+    image: energyImg.src,
     className: "md:col-span-1 lg:col-span-3"
   },
   {
@@ -22,7 +28,7 @@ const monitoringDomains = [
     title: "WASTE DUMPS & STOCKPILES",
     description: "Track movement and settlement over time.",
     icon: "bx-cart",
-    image: "/images/hero_bg.webp",
+    image: heroBgImg.src,
     className: "md:col-span-1 lg:col-span-2"
   },
   {
@@ -30,7 +36,7 @@ const monitoringDomains = [
     title: "INFRASTRUCTURE & ASSETS",
     description: "Monitor critical infrastructure and linear assets.",
     icon: "bx-buildings",
-    image: "/images/infrastructure_monitoring.webp",
+    image: infraImg.src,
     className: "md:col-span-1 lg:col-span-2"
   },
   {
@@ -38,7 +44,7 @@ const monitoringDomains = [
     title: "LARGE AREA SURVEILLANCE",
     description: "Wide area monitoring for regional risk assessment.",
     icon: "bx-cloud-drizzle",
-    image: "/images/world_map.webp",
+    image: worldMapImg.src,
     className: "md:col-span-2 lg:col-span-2"
   }
 ];

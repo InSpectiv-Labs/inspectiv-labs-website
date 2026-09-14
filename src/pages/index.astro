@@ -4,7 +4,13 @@ import HeroCarousel from "../components/react/HeroCarousel.tsx";
 import NetworkMap from "../components/NetworkMap.tsx";
 import { caseStudies } from "../data/caseStudies";
 import { getCollection } from 'astro:content';
-
+import { Image } from 'astro:assets';
+import miningImg from '../assets/industry_mining.webp';
+import infraImg from '../assets/industry_infrastructure.webp';
+import energyImg from '../assets/industry_energy.webp';
+import urbanImg from '../assets/industry_urban.webp';
+import historyImg from '../assets/historical_analysis.webp';
+import continuousImg from '../assets/continuous_monitoring_mockup.webp';
 const latestPosts = (await getCollection('blog'))
   .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
@@ -145,8 +151,8 @@ const orgSchema = {
           class="flex flex-col group bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-left overflow-hidden"
         >
           <div class="w-full h-48 overflow-hidden relative">
-            <img loading="lazy"
-              src="/images/industry_mining.webp"
+            <Image loading="lazy"
+              src={miningImg}
               alt="Mining Operations"
               class="w-full h-full object-cover brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700"
             />
@@ -202,8 +208,8 @@ const orgSchema = {
           class="flex flex-col group bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-left overflow-hidden"
         >
           <div class="w-full h-48 overflow-hidden relative">
-            <img loading="lazy"
-              src="/images/industry_infrastructure.webp"
+            <Image loading="lazy"
+              src={infraImg}
               alt="Infrastructure & Construction"
               class="w-full h-full object-cover brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700"
             />
@@ -259,8 +265,8 @@ const orgSchema = {
           class="flex flex-col group bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-left overflow-hidden"
         >
           <div class="w-full h-48 overflow-hidden relative">
-            <img loading="lazy"
-              src="/images/industry_energy.webp"
+            <Image loading="lazy"
+              src={energyImg}
               alt="Oil, Gas & Energy"
               class="w-full h-full object-cover brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700"
             />
@@ -316,8 +322,8 @@ const orgSchema = {
           class="flex flex-col group bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-left overflow-hidden"
         >
           <div class="w-full h-48 overflow-hidden relative">
-            <img loading="lazy"
-              src="/images/industry_urban.webp"
+            <Image loading="lazy"
+              src={urbanImg}
               alt="Urban Development & Smart Cities"
               class="w-full h-full object-cover brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700"
             />
@@ -597,8 +603,8 @@ const orgSchema = {
               class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"
             >
             </div>
-            <img loading="lazy"
-              src="/images/historical_analysis.webp"
+            <Image loading="lazy"
+              src={historyImg}
               alt="Historical Analysis"
               class="w-full h-full object-cover brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700"
             />
@@ -652,8 +658,8 @@ const orgSchema = {
               class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"
             >
             </div>
-            <img loading="lazy"
-              src="/images/continuous_monitoring_mockup.webp"
+            <Image loading="lazy"
+              src={continuousImg}
               alt="Continuous Monitoring"
               class="w-full h-full object-cover brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700"
             />
@@ -883,7 +889,7 @@ const orgSchema = {
       <div
         class="w-full md:w-1/2 h-[300px] md:h-[400px] relative flex justify-center md:justify-end items-center"
       >
-        <NetworkMap client:only="react" />
+        <NetworkMap client:visible />
       </div>
     </div>
   </section>

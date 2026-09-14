@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from 'react';
 
+import scanImg from '../../assets/insar_satellite_scan.webp';
+import earthImg from '../../assets/earth_bg.webp';
+import infraImg from '../../assets/infrastructure_monitoring.webp';
+
 const slides = [
   {
-    image: '/images/insar_satellite_scan.webp',
+    image: scanImg.src,
     title: 'Precision Inspection & Risk Intelligence for Industry',
     subtitle: 'Ground-truth risk intelligence mapped, verified, and automated'
   },
   {
-    image: '/images/earth_bg.webp',
+    image: earthImg.src,
     title: 'Monitor Critical Infrastructure With Confidence',
     subtitle: 'Millimeter-scale displacement monitoring for dams, slopes, and civil engineering'
   },
   {
-    image: '/images/infrastructure_monitoring.webp',
+    image: infraImg.src,
     title: 'Global Asset Protection & Financial De-Risking',
     subtitle: 'Independent verification for massive capital projects and port facilities'
   }

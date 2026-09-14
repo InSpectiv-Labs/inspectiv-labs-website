@@ -4,12 +4,14 @@ import TechnologyTimeline from '../components/react/TechnologyTimeline';
 import TechStackGrid from '../components/react/TechStackGrid';
 import DataPipeline from '../components/react/DataPipeline';
 import MonitoringGrid from '../components/react/MonitoringGrid';
+import { Image } from 'astro:assets';
+import scanImg from '../assets/insar_satellite_scan.webp';
 ---
 
 <BaseLayout title="Our Technology | InSAR & Predictive Analytics | InSpectiv" description="Discover how InSpectiv Labs leverages Sentinel-1 satellite radar and advanced machine learning algorithms to map millimeter-scale ground deformation.">
   <section class="relative pt-24 md:pt-32 lg:pt-40 pb-16 md:pb-24 lg:pb-32 bg-[#000f2c] text-white">
     <div class="absolute inset-0 opacity-30">
-      <img loading="eager" decoding="async" src="/images/insar_satellite_scan.webp" alt="Technology" class="w-full h-full object-cover" />
+      <Image loading="eager" decoding="async" src={scanImg} alt="Technology" class="w-full h-full object-cover" />
     </div>
     <div class="relative z-10 max-w-[90vw] mx-auto px-6 text-center">
       <h1 class="text-3xl md:text-4xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight tracking-wide">
