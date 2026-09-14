@@ -6,7 +6,7 @@ author: "InSpectiv Labs"
 industry: "general"
 readTime: "5–7 min read"
 draft: false
-heroImage: "../../assets/blog_beyond_monitoring_hero.webp"
+heroImage: "../../assets/insight-beyond-hero.webp"
 ---
 
 Infrastructure is built on the assumption that the ground beneath it will behave predictably.

@@ -6,7 +6,7 @@ author: "InSpectiv Labs"
 industry: "general"
 readTime: "5–7 min read"
 draft: false
-heroImage: "../../assets/blog_hidden_risk_hero.webp"
+heroImage: "../../assets/insight-risk-hero.webp"
 ---
 
 When evaluating an asset, most assessments focus on its current condition.

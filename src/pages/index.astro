@@ -5,14 +5,14 @@ import NetworkMap from "../components/NetworkMap.tsx";
 import { caseStudies } from "../data/caseStudies";
 import { getCollection } from 'astro:content';
 import { Image, getImage } from 'astro:assets';
-import miningImg from '../assets/industry_mining.webp';
-import infraImg from '../assets/industry_infrastructure.webp';
-import energyImg from '../assets/industry_energy.webp';
-import urbanImg from '../assets/industry_urban.webp';
-import historyImg from '../assets/historical_analysis.webp';
-import continuousImg from '../assets/continuous_monitoring_mockup.webp';
-import scanImg from '../assets/insar_satellite_scan.webp';
-import earthImg from '../assets/earth_bg.webp';
+import miningImg from '../assets/ind-mining.webp';
+import infraImg from '../assets/ind-infra.webp';
+import energyImg from '../assets/ind-energy.webp';
+import urbanImg from '../assets/ind-urban.webp';
+import historyImg from '../assets/srv-history.webp';
+import continuousImg from '../assets/srv-monitor.webp';
+import scanImg from '../assets/scan-sat.webp';
+import earthImg from '../assets/bg-earth.webp';
 
 const scanOpt = await getImage({ src: scanImg, format: 'webp', width: 1280 });
 const earthOpt = await getImage({ src: earthImg, format: 'webp', width: 1280 });
@@ -30,7 +30,7 @@ const orgSchema = {
       "@type": "Organization",
       "name": "InSpectiv Labs",
       "url": "https://inspectivlabs.com",
-      "logo": "https://inspectivlabs.com/images/header_logo_light.png",
+      "logo": "https://inspectivlabs.com/images/logo.png",
       "description": "InSpectiv Labs delivers millimeter-precise InSAR ground deformation monitoring and predictive analytics for mining, infrastructure, and insurance sectors."
     },
     {
@@ -839,7 +839,7 @@ const orgSchema = {
                 />
               ) : (
                 <img
-                  src="/images/insights_hero_banner.webp"
+                  src="/images/bg-insights.webp"
                   alt={post.data.title}
                   class="object-cover w-full h-full brightness-75 group-hover:brightness-110 opacity-90 group-hover:opacity-100 transition-all duration-700 ease-out"
                 />
