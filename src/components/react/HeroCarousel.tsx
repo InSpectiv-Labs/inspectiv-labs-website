@@ -45,7 +45,9 @@ export default function HeroCarousel({ images }: { images: string[] }) {
             index === currentSlide ? 'opacity-100 z-0' : 'opacity-0 pointer-events-none'
           }`}
         >
-          <img loading="lazy"
+          <img
+            loading={index === 0 ? 'eager' : 'lazy'}
+            fetchPriority={index === 0 ? 'high' : 'low'}
             src={slide.image}
             alt={slide.title}
             className="w-full h-full object-cover"
