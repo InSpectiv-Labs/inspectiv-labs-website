@@ -1,28 +1,23 @@
 import React, { useState, useEffect } from 'react';
 
-import scanImg from '../../assets/insar_satellite_scan.webp';
-import earthImg from '../../assets/earth_bg.webp';
-import infraImg from '../../assets/infrastructure_monitoring.webp';
-
-const slides = [
-  {
-    image: scanImg.src,
-    title: 'Precision Inspection & Risk Intelligence for Industry',
-    subtitle: 'Ground-truth risk intelligence mapped, verified, and automated'
-  },
-  {
-    image: earthImg.src,
-    title: 'Monitor Critical Infrastructure With Confidence',
-    subtitle: 'Millimeter-scale displacement monitoring for dams, slopes, and civil engineering'
-  },
-  {
-    image: infraImg.src,
-    title: 'Global Asset Protection & Financial De-Risking',
-    subtitle: 'Independent verification for massive capital projects and port facilities'
-  }
-];
-
-export default function HeroCarousel() {
+export default function HeroCarousel({ images }: { images: string[] }) {
+  const slides = [
+    {
+      image: images[0] || '',
+      title: 'Precision Inspection & Risk Intelligence for Industry',
+      subtitle: 'Ground-truth risk intelligence mapped, verified, and automated'
+    },
+    {
+      image: images[1] || '',
+      title: 'Monitor Critical Infrastructure With Confidence',
+      subtitle: 'Millimeter-scale displacement monitoring for dams, slopes, and civil engineering'
+    },
+    {
+      image: images[2] || '',
+      title: 'Global Asset Protection & Financial De-Risking',
+      subtitle: 'Independent verification for massive capital projects and port facilities'
+    }
+  ];
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {

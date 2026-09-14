@@ -4,8 +4,19 @@ import TechnologyTimeline from '../components/react/TechnologyTimeline';
 import TechStackGrid from '../components/react/TechStackGrid';
 import DataPipeline from '../components/react/DataPipeline';
 import MonitoringGrid from '../components/react/MonitoringGrid';
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import scanImg from '../assets/insar_satellite_scan.webp';
+import miningImg from '../assets/industry_mining.webp';
+import energyImg from '../assets/industry_energy.webp';
+import heroBgImg from '../assets/hero_bg.webp';
+import infraImg from '../assets/infrastructure_monitoring.webp';
+import worldMapImg from '../assets/world_map.webp';
+
+const miningOpt = await getImage({ src: miningImg, format: 'webp', width: 800 });
+const energyOpt = await getImage({ src: energyImg, format: 'webp', width: 800 });
+const heroBgOpt = await getImage({ src: heroBgImg, format: 'webp', width: 800 });
+const infraOpt = await getImage({ src: infraImg, format: 'webp', width: 800 });
+const worldMapOpt = await getImage({ src: worldMapImg, format: 'webp', width: 800 });
 ---
 
 <BaseLayout title="Our Technology | InSAR & Predictive Analytics | InSpectiv" description="Discover how InSpectiv Labs leverages Sentinel-1 satellite radar and advanced machine learning algorithms to map millimeter-scale ground deformation.">
@@ -42,7 +53,7 @@ import scanImg from '../assets/insar_satellite_scan.webp';
     <DataPipeline client:visible />
   </section>
   <section class="bg-white relative overflow-hidden py-12">
-    <MonitoringGrid client:visible />
+    <MonitoringGrid images={[miningOpt.src, energyOpt.src, heroBgOpt.src, infraOpt.src, worldMapOpt.src]} client:visible />
   </section>
   <section class="bg-gray-50 text-gray-900 py-16 md:py-24 lg:py-32 border-t border-gray-200">
     <div class="max-w-[90vw] mx-auto px-6">

@@ -1,55 +1,49 @@
 import React from 'react';
 
-import miningImg from '../../assets/industry_mining.webp';
-import energyImg from '../../assets/industry_energy.webp';
-import heroBgImg from '../../assets/hero_bg.webp';
-import infraImg from '../../assets/infrastructure_monitoring.webp';
-import worldMapImg from '../../assets/world_map.webp';
+export default function MonitoringGrid({ images }: { images: string[] }) {
+  const monitoringDomains = [
+    {
+      id: 1,
+      title: "SLOPES & HIGHWALLS",
+      description: "Detect slope instability and potential failures.",
+      icon: "bx-target-lock",
+      image: images[0] || '',
+      className: "md:col-span-1 lg:col-span-3"
+    },
+    {
+      id: 2,
+      title: "TAILINGS STORAGE FACILITIES",
+      description: "Monitor tailings dam movement, seepage and structural integrity.",
+      icon: "bx-water",
+      image: images[1] || '',
+      className: "md:col-span-1 lg:col-span-3"
+    },
+    {
+      id: 3,
+      title: "WASTE DUMPS & STOCKPILES",
+      description: "Track movement and settlement over time.",
+      icon: "bx-cart",
+      image: images[2] || '',
+      className: "md:col-span-1 lg:col-span-2"
+    },
+    {
+      id: 4,
+      title: "INFRASTRUCTURE & ASSETS",
+      description: "Monitor critical infrastructure and linear assets.",
+      icon: "bx-buildings",
+      image: images[3] || '',
+      className: "md:col-span-1 lg:col-span-2"
+    },
+    {
+      id: 5,
+      title: "LARGE AREA SURVEILLANCE",
+      description: "Wide area monitoring for regional risk assessment.",
+      icon: "bx-cloud-drizzle",
+      image: images[4] || '',
+      className: "md:col-span-2 lg:col-span-2"
+    }
+  ];
 
-const monitoringDomains = [
-  {
-    id: 1,
-    title: "SLOPES & HIGHWALLS",
-    description: "Detect slope instability and potential failures.",
-    icon: "bx-target-lock",
-    image: miningImg.src,
-    className: "md:col-span-1 lg:col-span-3"
-  },
-  {
-    id: 2,
-    title: "TAILINGS STORAGE FACILITIES",
-    description: "Monitor tailings dam movement, seepage and structural integrity.",
-    icon: "bx-water",
-    image: energyImg.src,
-    className: "md:col-span-1 lg:col-span-3"
-  },
-  {
-    id: 3,
-    title: "WASTE DUMPS & STOCKPILES",
-    description: "Track movement and settlement over time.",
-    icon: "bx-cart",
-    image: heroBgImg.src,
-    className: "md:col-span-1 lg:col-span-2"
-  },
-  {
-    id: 4,
-    title: "INFRASTRUCTURE & ASSETS",
-    description: "Monitor critical infrastructure and linear assets.",
-    icon: "bx-buildings",
-    image: infraImg.src,
-    className: "md:col-span-1 lg:col-span-2"
-  },
-  {
-    id: 5,
-    title: "LARGE AREA SURVEILLANCE",
-    description: "Wide area monitoring for regional risk assessment.",
-    icon: "bx-cloud-drizzle",
-    image: worldMapImg.src,
-    className: "md:col-span-2 lg:col-span-2"
-  }
-];
-
-export default function MonitoringGrid() {
   return (
     <div className="w-full max-w-[90vw] mx-auto px-6 py-24">
       <div className="mb-16 md:pl-12 border-l-2 border-[#1d4ed8]">
