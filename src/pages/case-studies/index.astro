@@ -1,6 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { caseStudies } from '../../data/caseStudies';
+import { supabase } from '../../lib/supabase';
+
+export const prerender = false;
+
+let caseStudies: any[] = [];
+try {
+  const { data } = await supabase.from('case_studies').select('*').order('created_at', { ascending: false });
+  if (data) caseStudies = data;
+} catch (e) {
+  console.error("Failed to fetch case studies");
+}
 ---
 <BaseLayout title="Case Studies | InSpectiv Labs" description="Explore how InSpectiv Labs' satellite monitoring technology delivers predictive insights and real-world impact across industries.">
   <section class="relative pt-32 lg:pt-48 pb-16 lg:pb-24 bg-[#000f2c] text-white overflow-hidden">
@@ -23,7 +33,7 @@ import { caseStudies } from '../../data/caseStudies';
           >
             <div class="h-48 overflow-hidden relative">
               <img loading="lazy"
-                src={study.cardImage}
+                src={study.cardImage_url || study.cardImage}
                 alt={study.cardTitle}
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />

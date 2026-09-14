@@ -1,21 +1,22 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { caseStudies, type CaseStudy } from '../../data/caseStudies';
+import { supabase } from '../../lib/supabase';
 
-export function getStaticPaths() {
-  return caseStudies
-    .filter(study => study.pageTitle) // Only build pages that have full content
-    .map(study => ({
-      params: { slug: study.slug },
-      props: { study },
-    }));
+export const prerender = false;
+
+const { slug } = Astro.params;
+
+let study: any = null;
+try {
+  const { data } = await supabase.from('case_studies').select('*').eq('slug', slug).single();
+  study = data;
+} catch (e) {
+  console.error(e);
 }
 
-interface Props {
-  study: CaseStudy;
+if (!study) {
+  return Astro.redirect('/404');
 }
-
-const { study } = Astro.props;
 ---
 <BaseLayout title={`${study.pageTitle} - Case Study | InSpectiv Labs`} description={study.executiveSummary}>
   <section class="relative pt-32 lg:pt-48 pb-16 lg:pb-24 bg-[#000f2c] text-white overflow-hidden">
@@ -114,7 +115,7 @@ const { study } = Astro.props;
                     </tr>
                   </thead>
                   <tbody class="divide-y divide-gray-100">
-                    {study.technicalFindings.map((finding) => (
+                    {study.technicalFindings && study.technicalFindings.map((finding: any) => (
                       <tr class="hover:bg-gray-50/50 transition-colors">
                         <td class="py-5 px-6 align-top">
                           <span class="inline-block px-3 py-1 bg-red-100 text-red-800 text-xs font-bold rounded-sm whitespace-nowrap">
@@ -148,7 +149,7 @@ const { study } = Astro.props;
                 </h3>
                 
                 <div class="space-y-6">
-                  {study.businessImpact.map((impact) => (
+                  {study.businessImpact && study.businessImpact.map((impact: any) => (
                     <div class="flex gap-4">
                       <div class="mt-1 flex-shrink-0">
                         <div class="w-1.5 h-1.5 rounded-full bg-cyan-400"></div>

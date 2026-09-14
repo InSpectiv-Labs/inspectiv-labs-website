@@ -1,10 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
-const posts = (await getCollection('blog'))
-  .filter((post) => !post.data.draft)
-  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+import { supabase } from '../../lib/supabase';
+
+export const prerender = false;
+
+let posts: any[] = [];
+try {
+  const { data } = await supabase.from('insights').select('*').order('publishDate', { ascending: false });
+  if (data) posts = data;
+} catch(e) {
+  console.error("Error fetching insights", e);
+}
 ---
 
 <BaseLayout 
@@ -27,11 +33,11 @@ const posts = (await getCollection('blog'))
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {posts.map((post) => (
           <article class="bg-white border border-gray-200 shadow-sm hover:shadow-lg transition-shadow flex flex-col group">
-            <a href={`/blog/${post.id}`} class="block aspect-video overflow-hidden bg-gray-100 relative">
-              {post.data.heroImage ? (
-                <Image 
-                  src={post.data.heroImage} 
-                  alt={post.data.title} 
+            <a href={`/insights/${post.slug}`} class="block aspect-video overflow-hidden bg-gray-100 relative">
+              {post.heroImage_url ? (
+                <img 
+                  src={post.heroImage_url} 
+                  alt={post.title} 
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               ) : (
@@ -39,27 +45,27 @@ const posts = (await getCollection('blog'))
                   <span class="text-gray-600 font-light">InSpectiv Labs</span>
                 </div>
               )}
-              {post.data.industry && (
+              {post.industry && (
                 <div class="absolute top-4 left-4 px-3 py-1 bg-[#1d4ed8] text-white text-[11px] font-bold uppercase tracking-wider">
-                  {post.data.industry}
+                  {post.industry}
                 </div>
               )}
             </a>
             
             <div class="p-8 flex flex-col flex-grow">
               <div class="flex items-center gap-2 text-xs text-gray-500 mb-3 font-semibold tracking-wide">
-                {post.data.readTime && (
-                  <span>{post.data.readTime}</span>
+                {post.readTime && (
+                  <span>{post.readTime}</span>
                 )}
               </div>
               <h2 class="text-lg md:text-xl font-semibold text-[#000f2c] mb-4 leading-snug group-hover:text-[#1d4ed8] transition-colors">
-                <a href={`/blog/${post.id}`}>{post.data.title}</a>
+                <a href={`/insights/${post.slug}`}>{post.title}</a>
               </h2>
               <p class="text-gray-600 text-sm font-light leading-relaxed mb-8 flex-grow">
-                {post.data.description}
+                {post.description}
               </p>
               
-              <a href={`/blog/${post.id}`} class="mt-auto text-[#1d4ed8] text-xs font-bold uppercase tracking-wider hover:text-[#000f2c] transition-colors flex items-center gap-1">
+              <a href={`/insights/${post.slug}`} class="mt-auto text-[#1d4ed8] text-xs font-bold uppercase tracking-wider hover:text-[#000f2c] transition-colors flex items-center gap-1">
                 Read Article <span class="text-base md:text-lg leading-none">›</span>
               </a>
             </div>

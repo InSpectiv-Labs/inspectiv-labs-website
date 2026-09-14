@@ -1,13 +1,12 @@
 ---
 import BaseLayout from './BaseLayout.astro';
-import { Image } from 'astro:assets';
 
 interface Props {
   title: string;
   description: string;
-  date: Date;
+  date: string;
   author?: string;
-  heroImage?: ImageMetadata;
+  heroImage?: string;
   industry?: string;
   readTime?: string;
 }
@@ -19,8 +18,8 @@ const articleSchema = {
   "@type": "Article",
   "headline": title,
   "description": description,
-  "image": heroImage ? new URL(heroImage.src, Astro.site || Astro.url) : undefined,
-  "datePublished": date.toISOString(),
+  "image": heroImage ? heroImage : undefined,
+  "datePublished": new Date(date).toISOString(),
   "author": {
     "@type": "Person",
     "name": author || "InSpectiv Labs Team"
@@ -38,7 +37,7 @@ const articleSchema = {
 <BaseLayout 
   title={`${title} | InSpectiv Labs Insights`}
   description={description}
-  ogImage={heroImage?.src}
+  ogImage={heroImage}
   structuredData={articleSchema}
 >
   <article class="bg-gray-50 min-h-screen pb-24">
@@ -46,7 +45,7 @@ const articleSchema = {
         <header class="relative pt-32 lg:pt-48 pb-16 lg:pb-24 border-b border-gray-200 flex flex-col justify-end min-h-[45vh]">
       {heroImage ? (
         <div class="absolute inset-0 z-0 bg-[#000f2c]">
-          <Image 
+          <img 
             src={heroImage} 
             alt={title} 
             class="w-full h-full object-cover opacity-40 mix-blend-luminosity"
@@ -109,7 +108,7 @@ const articleSchema = {
       
       </div>
       <div class="mt-16 pt-8 border-t border-gray-200 flex items-center justify-between">
-        <a href="/blog" class="text-[#1d4ed8] text-sm font-bold uppercase tracking-wider hover:text-[#000f2c] transition-colors flex items-center gap-2">
+        <a href="/insights" class="text-[#1d4ed8] text-sm font-bold uppercase tracking-wider hover:text-[#000f2c] transition-colors flex items-center gap-2">
           <span class="text-lg md:text-xl leading-none rotate-180">›</span> Back to Insights
         </a>
       </div>

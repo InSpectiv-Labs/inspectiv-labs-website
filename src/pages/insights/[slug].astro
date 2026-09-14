@@ -1,0 +1,35 @@
+---
+import { supabase } from '../../lib/supabase';
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { marked } from 'marked';
+
+export const prerender = false;
+
+const { slug } = Astro.params;
+
+let post: any = null;
+try {
+  const { data } = await supabase.from('insights').select('*').eq('slug', slug).single();
+  post = data;
+} catch (e) {
+  console.error(e);
+}
+
+if (!post) {
+  return Astro.redirect('/404');
+}
+
+const contentHtml = marked.parse(post.content || '');
+---
+
+<BlogPostLayout 
+  title={post.title} 
+  description={post.description}
+  date={post.publishDate}
+  author={post.author}
+  heroImage={post.heroImage_url}
+  industry={post.industry}
+  readTime={post.readTime}
+>
+  <article set:html={contentHtml}></article>
+</BlogPostLayout>

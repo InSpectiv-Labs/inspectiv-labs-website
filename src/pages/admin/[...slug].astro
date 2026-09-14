@@ -1,0 +1,17 @@
+---
+import AdminLayout from '../../layouts/AdminLayout.astro';
+import AdminApp from '../../components/admin/AdminApp';
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: undefined } },
+    { params: { slug: 'inquiries' } },
+    { params: { slug: 'insights' } },
+    { params: { slug: 'case-studies' } },
+  ];
+}
+---
+
+<AdminLayout title="Inspectiv Labs - Admin Dashboard">
+  <AdminApp client:only="react" />
+</AdminLayout>
