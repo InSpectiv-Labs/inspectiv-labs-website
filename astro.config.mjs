@@ -21,6 +21,9 @@ export default defineConfig({
     }),
   },
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    ssr: {
+      noExternal: ['@vercel/routing-utils']
+    }
   }
 });
