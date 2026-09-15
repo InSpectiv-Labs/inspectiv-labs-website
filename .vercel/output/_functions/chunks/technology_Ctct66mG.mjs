@@ -2,7 +2,7 @@ import { t as __exportAll } from "./rolldown-runtime_D7D4PA-g.mjs";
 import { r as $$Image, t as getImage } from "./_astro_assets_BDHaIWix.mjs";
 import { _ as maybeRenderHead, c as renderComponent, g as renderTemplate } from "./jsx-runtime_D93Y_ZqC.mjs";
 import { t as createComponent } from "./compiler_D6EN8nQM.mjs";
-import { t as $$BaseLayout } from "./BaseLayout_D0Thhi29.mjs";
+import { t as $$BaseLayout } from "./BaseLayout_CZewrqhW.mjs";
 import { n as ind_energy_default, r as ind_mining_default, t as scan_sat_default } from "./scan-sat_BpDx8hOH.mjs";
 import React, { useEffect, useState } from "react";
 import { jsx, jsxs } from "react/jsx-runtime";

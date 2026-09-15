@@ -1,7 +1,7 @@
 import { t as __exportAll } from "./rolldown-runtime_D7D4PA-g.mjs";
 import { c as renderComponent, g as renderTemplate } from "./jsx-runtime_D93Y_ZqC.mjs";
 import { t as createComponent } from "./compiler_D6EN8nQM.mjs";
-import { t as $$IndustryPageLayout } from "./IndustryPageLayout_KwgdKZt-.mjs";
+import { t as $$IndustryPageLayout } from "./IndustryPageLayout_kflOI8PQ.mjs";
 //#region src/pages/industries/infrastructure.astro
 var infrastructure_exports = /* @__PURE__ */ __exportAll({
 	default: () => $$Infrastructure,

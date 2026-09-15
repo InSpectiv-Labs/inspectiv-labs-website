@@ -1,7 +1,7 @@
 import { t as __exportAll } from "./rolldown-runtime_D7D4PA-g.mjs";
 import { _ as maybeRenderHead, c as renderComponent, g as renderTemplate, y as addAttribute } from "./jsx-runtime_D93Y_ZqC.mjs";
 import { t as createComponent } from "./compiler_D6EN8nQM.mjs";
-import { t as $$BaseLayout } from "./BaseLayout_D0Thhi29.mjs";
+import { t as $$BaseLayout } from "./BaseLayout_CZewrqhW.mjs";
 import { t as supabase } from "./supabase_CRd9FTIo.mjs";
 //#region src/pages/case-studies/index.astro
 var case_studies_exports = /* @__PURE__ */ __exportAll({
