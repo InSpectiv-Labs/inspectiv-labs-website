@@ -52,3 +52,6 @@ ing folder
 .hallmark/
 skills-lock.json
 .gemini/
+
+# Vercel
+.vercel/
