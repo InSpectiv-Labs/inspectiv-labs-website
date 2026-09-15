@@ -11,10 +11,7 @@ import vercel from '@astrojs/vercel';
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
-  outDir: './build',
-  adapter: vercel({
-    includeFiles: ['./node_modules/@vercel/routing-utils']
-  }),
+  adapter: vercel(),
   site: 'https://inspectivlabs.com',
   integrations: [react(), sitemap({ filter: (page) => !page.includes('/admin') }), mdx()],
   markdown: {
