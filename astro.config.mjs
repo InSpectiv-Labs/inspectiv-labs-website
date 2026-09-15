@@ -12,7 +12,9 @@ import vercel from '@astrojs/vercel';
 export default defineConfig({
   output: 'server',
   outDir: './build',
-  adapter: vercel(),
+  adapter: vercel({
+    includeFiles: ['./node_modules/@vercel/routing-utils']
+  }),
   site: 'https://inspectivlabs.com',
   integrations: [react(), sitemap({ filter: (page) => !page.includes('/admin') }), mdx()],
   markdown: {
