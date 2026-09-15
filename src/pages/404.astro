@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="404: Page Not Found | Inspectiv Labs" 
+  description="The page you are looking for does not exist."
+  forceSolidHeader={true}
+>
+  <div class="relative min-h-[75vh] flex flex-col md:flex-row items-center justify-between bg-[#000f2c] overflow-hidden">
+    
+    <div class="relative z-10 w-full md:w-1/2 px-8 py-20 lg:pl-24 max-w-3xl">
+      <h1 class="text-[6rem] lg:text-[8rem] font-bold text-white leading-none tracking-tight mb-4">
+        404
+      </h1>
+      
+      <h2 class="text-xl md:text-2xl font-medium text-gray-200 mb-6">
+        Page not found
+      </h2>
+      
+      <p class="text-gray-400 text-base mb-10 max-w-md">
+        The page you are looking for may have been moved, renamed, or no longer exists.
+      </p>
+      
+      <a 
+        href="/" 
+        class="inline-flex items-center justify-center px-6 py-3 bg-white hover:bg-gray-100 text-[#000f2c] font-medium text-sm rounded transition-colors duration-200"
+      >
+        Return to homepage
+      </a>
+    </div>
+
+    <div class="absolute inset-0 md:relative md:inset-auto md:w-1/2 h-full opacity-20 md:opacity-100 pointer-events-none md:pointer-events-auto">
+      <!-- Gradient masks to blend the image into the background seamlessly -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#000f2c] via-[#000f2c]/80 to-transparent z-10 hidden md:block"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#000f2c] via-transparent to-transparent z-10 md:hidden"></div>
+      <div class="absolute inset-0 bg-[#000f2c]/40 z-10"></div>
+      
+      <img 
+        src="/images/geotech_terrain_mesh.webp" 
+        alt="" 
+        role="presentation"
+        class="w-full h-full object-cover object-center grayscale mix-blend-luminosity opacity-80"
+      />
+    </div>
+
+  </div>
+</BaseLayout>
