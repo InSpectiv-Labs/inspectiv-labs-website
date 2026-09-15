@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../../lib/supabase';
 import type { Session } from '@supabase/supabase-js';
-import { LogOut, Inbox, FileText, LayoutDashboard, FileArchive } from 'lucide-react';
+import { LogOut, Inbox, FileText, LayoutDashboard, FileArchive, ChevronLeft, ChevronRight } from 'lucide-react';
 
 // We will implement these components next
 import InquiriesTab from './InquiriesTab';
@@ -11,6 +11,7 @@ import InsightsTab from './InsightsTab';
 export default function AdminApp() {
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [authError, setAuthError] = useState('');
@@ -118,43 +119,62 @@ export default function AdminApp() {
   }
 
   return (
-    <div className="flex h-screen text-slate-900 relative z-10">
-      {/* Sidebar */}
-      <div className="w-64 bg-[#00122e] border-r border-white/10 flex flex-col z-20">
-        <div className="p-6 border-b border-white/10 flex items-center gap-3">
-          <img src="/images/logo.png" alt="InSpectiv Labs" className="h-12 w-auto object-contain" />
-          <span className="text-xs font-bold text-gray-500 tracking-widest uppercase">Admin</span>
+    <div className="flex flex-col lg:flex-row h-screen text-slate-900 relative z-10">
+      {/* Sidebar / Top Nav */}
+      <div className={`w-full ${isSidebarOpen ? 'lg:w-64' : 'lg:w-20'} transition-all duration-300 bg-[#00122e] lg:border-r border-white/10 flex flex-col z-20 flex-shrink-0`}>
+        <div className={`p-4 lg:p-6 border-b border-white/10 flex items-center justify-between gap-3 relative`}>
+          <div className="flex items-center gap-3 overflow-hidden whitespace-nowrap">
+            <img src="/images/logo.png" alt="InSpectiv Labs" className={`h-8 w-auto object-contain ${!isSidebarOpen ? 'lg:hidden' : ''}`} />
+            <img src="/favicon.png" alt="InSpectiv Labs" className={`hidden h-8 w-8 object-contain ${!isSidebarOpen ? 'lg:block' : ''}`} />
+            <span className={`text-xs font-bold text-gray-500 tracking-widest uppercase hidden md:inline ${!isSidebarOpen ? 'lg:hidden' : ''}`}>Admin</span>
+          </div>
+          
+          {/* Toggle Button for Desktop */}
+          <button 
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)} 
+            className="hidden lg:flex absolute -right-3 top-1/2 -translate-y-1/2 bg-[#000f2c] border border-white/10 text-cyan-400 p-1 rounded-full hover:bg-cyan-900/30 transition-colors z-50"
+          >
+            {isSidebarOpen ? <ChevronLeft className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
+          </button>
+
+          <button onClick={handleLogout} className="lg:hidden text-gray-500 hover:text-red-400 p-2">
+            <LogOut className="w-5 h-5" />
+          </button>
         </div>
-        <nav className="flex-1 p-4 space-y-1">
+        <nav className="flex lg:flex-col p-2 lg:p-0 gap-1 lg:space-y-0 overflow-x-auto whitespace-nowrap scrollbar-hide">
           <button
             onClick={() => navigateTo('inquiries')}
-            className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm font-semibold tracking-wide transition-colors ${activeTab === 'inquiries' ? 'bg-cyan-600/15 text-cyan-400 border-l-2 border-cyan-400' : 'text-gray-400 hover:text-white hover:bg-white/5 border-l-2 border-transparent'}`}
+            className={`flex-1 lg:w-full flex items-center ${isSidebarOpen ? 'justify-center lg:justify-start lg:gap-3 lg:px-6 lg:py-4' : 'justify-center gap-2 lg:gap-0 px-4 py-3 lg:py-6'} text-sm font-semibold tracking-wide transition-colors ${activeTab === 'inquiries' ? 'bg-cyan-600/15 text-cyan-400 lg:border-l-2 border-b-2 lg:border-b-0 border-cyan-400' : 'text-gray-400 hover:text-white hover:bg-white/5 lg:border-l-2 border-b-2 lg:border-b-0 border-transparent'}`}
+            title={!isSidebarOpen ? "Inquiries" : ""}
           >
-            <Inbox className="w-4 h-4" />
-            Inquiries
+            <Inbox className={`w-4 h-4 ${!isSidebarOpen ? 'lg:w-6 lg:h-6' : 'lg:w-5 lg:h-5'}`} />
+            <span className={`${!isSidebarOpen ? 'lg:hidden' : ''}`}>Inquiries</span>
           </button>
           <button
             onClick={() => navigateTo('case-studies')}
-            className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm font-semibold tracking-wide transition-colors ${activeTab === 'case-studies' ? 'bg-cyan-600/15 text-cyan-400 border-l-2 border-cyan-400' : 'text-gray-400 hover:text-white hover:bg-white/5 border-l-2 border-transparent'}`}
+            className={`flex-1 lg:w-full flex items-center ${isSidebarOpen ? 'justify-center lg:justify-start lg:gap-3 lg:px-6 lg:py-4' : 'justify-center gap-2 lg:gap-0 px-4 py-3 lg:py-6'} text-sm font-semibold tracking-wide transition-colors ${activeTab === 'case-studies' ? 'bg-cyan-600/15 text-cyan-400 lg:border-l-2 border-b-2 lg:border-b-0 border-cyan-400' : 'text-gray-400 hover:text-white hover:bg-white/5 lg:border-l-2 border-b-2 lg:border-b-0 border-transparent'}`}
+            title={!isSidebarOpen ? "Case Studies" : ""}
           >
-            <FileArchive className="w-4 h-4" />
-            Case Studies
+            <FileArchive className={`w-4 h-4 ${!isSidebarOpen ? 'lg:w-6 lg:h-6' : 'lg:w-5 lg:h-5'}`} />
+            <span className={`${!isSidebarOpen ? 'lg:hidden' : ''}`}>Case Studies</span>
           </button>
           <button
             onClick={() => navigateTo('insights')}
-            className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm font-semibold tracking-wide transition-colors ${activeTab === 'insights' ? 'bg-cyan-600/15 text-cyan-400 border-l-2 border-cyan-400' : 'text-gray-400 hover:text-white hover:bg-white/5 border-l-2 border-transparent'}`}
+            className={`flex-1 lg:w-full flex items-center ${isSidebarOpen ? 'justify-center lg:justify-start lg:gap-3 lg:px-6 lg:py-4' : 'justify-center gap-2 lg:gap-0 px-4 py-3 lg:py-6'} text-sm font-semibold tracking-wide transition-colors ${activeTab === 'insights' ? 'bg-cyan-600/15 text-cyan-400 lg:border-l-2 border-b-2 lg:border-b-0 border-cyan-400' : 'text-gray-400 hover:text-white hover:bg-white/5 lg:border-l-2 border-b-2 lg:border-b-0 border-transparent'}`}
+            title={!isSidebarOpen ? "Insights" : ""}
           >
-            <FileText className="w-4 h-4" />
-            Insights
+            <FileText className={`w-4 h-4 ${!isSidebarOpen ? 'lg:w-6 lg:h-6' : 'lg:w-5 lg:h-5'}`} />
+            <span className={`${!isSidebarOpen ? 'lg:hidden' : ''}`}>Insights</span>
           </button>
         </nav>
-        <div className="p-4 border-t border-white/10">
+        <div className={`hidden lg:flex ${isSidebarOpen ? 'p-4' : 'p-4 justify-center'} border-t border-white/10 mt-auto`}>
           <button
             onClick={handleLogout}
-            className="w-full flex items-center gap-3 px-4 py-2.5 text-sm font-semibold text-gray-500 hover:text-red-400 hover:bg-red-500/10 transition-colors"
+            className={`flex items-center ${isSidebarOpen ? 'w-full gap-3 px-4 py-2.5 rounded-none' : 'justify-center p-3 rounded-lg'} text-sm font-semibold text-gray-500 hover:text-red-400 hover:bg-red-500/10 transition-colors`}
+            title={!isSidebarOpen ? "Logout" : ""}
           >
-            <LogOut className="w-4 h-4" />
-            Logout
+            <LogOut className={`${!isSidebarOpen ? 'w-6 h-6' : 'w-5 h-5'}`} />
+            {isSidebarOpen && <span>Logout</span>}
           </button>
         </div>
       </div>
@@ -162,13 +182,13 @@ export default function AdminApp() {
       {/* Main Content */}
       <div className="flex-1 overflow-auto bg-white relative">
         <header className="bg-[#000f2c] border-b border-white/10 sticky top-0 z-10">
-          <div className="px-10 py-6">
-            <h2 className="text-2xl font-bold text-white capitalize tracking-wide">
+          <div className="px-6 md:px-10 py-4 md:py-6">
+            <h2 className="text-xl md:text-2xl font-bold text-white capitalize tracking-wide">
               {activeTab.replace('-', ' ')}
             </h2>
           </div>
         </header>
-        <main className="p-10 relative z-0">
+        <main className="p-4 md:p-6 lg:p-10 relative z-0">
           {activeTab === 'inquiries' && <InquiriesTab />}
           {activeTab === 'case-studies' && <CaseStudiesTab />}
           {activeTab === 'insights' && <InsightsTab />}

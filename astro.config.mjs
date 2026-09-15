@@ -5,6 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 import { remarkReadingTime } from './src/utils/remark-reading-time.mjs';
+import { unified } from '@astrojs/markdown-remark';
 import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
@@ -12,9 +13,11 @@ export default defineConfig({
   output: 'server',
   adapter: vercel(),
   site: 'https://inspectivlabs.com',
-  integrations: [react(), sitemap(), mdx()],
+  integrations: [react(), sitemap({ filter: (page) => !page.includes('/admin') }), mdx()],
   markdown: {
-    remarkPlugins: [remarkReadingTime],
+    processor: unified({
+      remarkPlugins: [remarkReadingTime],
+    }),
   },
   vite: {
     plugins: [tailwindcss()]

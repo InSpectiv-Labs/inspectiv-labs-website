@@ -101,9 +101,9 @@ export default function InsightsTab() {
 
   if (isEditing) {
     return (
-      <div className="flex bg-gray-50 h-[85vh] mb-12 shadow-sm border border-slate-200 overflow-hidden">
+      <div className="flex flex-col lg:flex-row bg-gray-50 h-auto lg:h-[85vh] mb-12 shadow-sm border border-slate-200 overflow-y-auto lg:overflow-hidden">
         {/* Left Side: Editor */}
-        <div className="w-1/2 p-8 overflow-y-auto bg-white border-r border-slate-200 relative z-10">
+        <div className="w-full lg:w-[40%] lg:overflow-y-auto bg-white p-6 md:p-10 border-b lg:border-b-0 lg:border-r border-gray-200 relative z-10">
           <h3 className="text-2xl font-bold text-slate-900 mb-6 tracking-wide">{currentInsight.id ? 'Edit Insight' : 'New Insight'}</h3>
           <form onSubmit={handleSave} className="space-y-6">
             <div className="grid grid-cols-2 gap-6">
@@ -162,7 +162,7 @@ export default function InsightsTab() {
         </div>
 
         {/* Right Side: Exact Live Preview */}
-        <div className="w-1/2 overflow-y-auto bg-gray-50 relative">
+        <div className="w-full lg:w-[60%] lg:overflow-y-auto bg-gray-50 relative min-h-[50vh]">
           <div className="sticky top-0 z-50 bg-[#000f2c] text-white text-xs font-bold uppercase tracking-widest px-4 py-2 flex items-center justify-between border-b border-white/10 shadow-lg">
             <span>Live Preview</span>
             <span className="text-cyan-400">Desktop View</span>
@@ -239,7 +239,7 @@ export default function InsightsTab() {
         </button>
       </div>
       
-      <div className="bg-white border border-slate-200 shadow-sm overflow-hidden">
+      <div className="bg-white border border-slate-200 shadow-sm overflow-x-auto">
         <table className="min-w-full divide-y divide-slate-200">
           <thead className="bg-slate-50">
             <tr>

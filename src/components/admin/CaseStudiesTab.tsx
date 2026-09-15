@@ -174,9 +174,11 @@ export default function CaseStudiesTab() {
 
   if (isEditing) {
     return (
-      <div className="bg-white p-8 border border-slate-200 shadow-sm overflow-hidden mb-12">
-        <h3 className="text-2xl font-bold text-slate-900 mb-6 tracking-wide">{currentCaseStudy.id ? 'Edit Case Study' : 'New Case Study'}</h3>
-        <form onSubmit={handleSave} className="space-y-6">
+      <div className="flex flex-col lg:flex-row h-auto lg:h-[calc(100vh-6rem)] overflow-y-auto lg:overflow-hidden -m-4 md:-m-6 lg:-m-10">
+        {/* Left Side: Editor */}
+        <div className="w-full lg:w-[40%] lg:overflow-y-auto p-4 md:p-6 lg:p-10 border-b lg:border-b-0 lg:border-r border-gray-200">
+          <h3 className="text-2xl font-bold text-slate-900 mb-6 tracking-wide">{currentCaseStudy.id ? 'Edit Case Study' : 'New Case Study'}</h3>
+          <form onSubmit={handleSave} className="space-y-6">
           <div className="grid grid-cols-2 gap-6">
             {renderInput('Card Title', currentCaseStudy.cardTitle, v => setCurrentCaseStudy({...currentCaseStudy, cardTitle: v}), true)}
             {renderInput('Slug (URL)', currentCaseStudy.slug, v => setCurrentCaseStudy({...currentCaseStudy, slug: v}), true)}
@@ -286,7 +288,7 @@ export default function CaseStudiesTab() {
             )}
           </div>
           
-          <div className="flex gap-4 pt-8 mt-8 border-t border-slate-200">
+          <div className="flex gap-4 pt-6 border-t border-slate-200 sticky bottom-0 bg-white pb-2 z-20 mt-8">
             <button type="submit" disabled={uploading} className="bg-slate-900 text-white font-bold uppercase tracking-widest text-sm px-6 py-3 hover:bg-slate-800 transition-colors disabled:opacity-50">
               {uploading ? 'Processing...' : 'Save Case Study'}
             </button>
@@ -295,6 +297,151 @@ export default function CaseStudiesTab() {
             </button>
           </div>
         </form>
+        </div>
+
+        {/* Right Side: Exact Live Preview */}
+        <div className="w-full lg:w-[60%] lg:overflow-y-auto bg-gray-50 relative min-h-[50vh]">
+          <div className="sticky top-0 z-50 bg-[#000f2c] text-white text-xs font-bold uppercase tracking-widest px-4 py-2 flex items-center justify-between border-b border-white/10 shadow-lg">
+            <span>Live Preview</span>
+            <span className="text-cyan-400">Desktop View</span>
+          </div>
+          
+          <div className="preview-container relative bg-slate-50 min-h-screen">
+            {/* HERO SECTION */}
+            <section className="relative pt-16 pb-12 bg-[#000f2c] text-white overflow-hidden min-h-[35vh] flex flex-col justify-end">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-cyan-500 rounded-[100%] blur-[120px] opacity-10 pointer-events-none"></div>
+              <div className="relative z-10 px-8">
+                <h1 className="text-3xl font-light mb-4 tracking-wide leading-tight">{currentCaseStudy.pageTitle || 'Page Title Placeholder'}</h1>
+                <p className="text-sm text-gray-300 font-light leading-relaxed">
+                  {currentCaseStudy.pageSubtitle || 'Page subtitle goes here. It provides a brief summary.'}
+                </p>
+              </div>
+            </section>
+
+            {/* MAIN CONTENT */}
+            <section className="py-12">
+              <div className="px-8">
+                <div className="flex flex-col gap-8">
+                  {/* Left Column in Preview */}
+                  <div className="w-full space-y-12">
+                    {currentCaseStudy.executiveSummary && (
+                      <div>
+                        <h2 className="text-2xl font-semibold text-[#000f2c] mb-4 tracking-tight relative pb-4">
+                          Executive Summary
+                          <span className="absolute bottom-0 left-0 w-12 h-1 bg-cyan-500 rounded-full"></span>
+                        </h2>
+                        <p className="text-sm text-gray-600 font-light leading-relaxed text-justify">{currentCaseStudy.executiveSummary}</p>
+                      </div>
+                    )}
+
+                    {currentCaseStudy.challenge && (
+                      <div>
+                        <h2 className="text-2xl font-semibold text-[#000f2c] mb-4 tracking-tight relative pb-4">
+                          The Challenge
+                          <span className="absolute bottom-0 left-0 w-12 h-1 bg-cyan-500 rounded-full"></span>
+                        </h2>
+                        <p className="text-sm text-gray-600 font-light leading-relaxed text-justify">{currentCaseStudy.challenge}</p>
+                      </div>
+                    )}
+
+                    {(currentCaseStudy.methodology?.dataEngine || currentCaseStudy.methodology?.processingTechnique) && (
+                      <div>
+                        <h2 className="text-2xl font-semibold text-[#000f2c] mb-4 tracking-tight relative pb-4">
+                          InSpectiv Labs Solution & Methodology
+                          <span className="absolute bottom-0 left-0 w-12 h-1 bg-cyan-500 rounded-full"></span>
+                        </h2>
+                        <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm space-y-4">
+                          {currentCaseStudy.methodology.dataEngine && (
+                            <div className="flex flex-col md:flex-row gap-2">
+                              <div className="md:w-1/3"><h3 className="text-[11px] font-bold text-cyan-700 uppercase tracking-wider">Data Engine</h3></div>
+                              <div className="md:w-2/3 text-xs text-gray-700 font-light">{currentCaseStudy.methodology.dataEngine}</div>
+                            </div>
+                          )}
+                          <div className="h-px bg-gray-100 w-full"></div>
+                          {currentCaseStudy.methodology.processingTechnique && (
+                            <div className="flex flex-col md:flex-row gap-2">
+                              <div className="md:w-1/3"><h3 className="text-[11px] font-bold text-cyan-700 uppercase tracking-wider">Processing Technique</h3></div>
+                              <div className="md:w-2/3 text-xs text-gray-700 font-light">{currentCaseStudy.methodology.processingTechnique}</div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+
+                    {(currentCaseStudy.imagePlaceholder?.src) && (
+                      <div className="my-8">
+                        <figure className="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm p-4">
+                          <img src={currentCaseStudy.imagePlaceholder.src} alt="Preview" className="w-full h-auto rounded-lg" />
+                          <figcaption className="mt-2 text-xs text-gray-500 font-light italic leading-relaxed text-center">
+                            {currentCaseStudy.imagePlaceholder.caption}
+                          </figcaption>
+                        </figure>
+                      </div>
+                    )}
+
+                    {currentCaseStudy.technicalFindings && currentCaseStudy.technicalFindings.length > 0 && (
+                      <div>
+                        <h2 className="text-2xl font-semibold text-[#000f2c] mb-4 tracking-tight relative pb-4">
+                          Key Technical Findings
+                          <span className="absolute bottom-0 left-0 w-12 h-1 bg-cyan-500 rounded-full"></span>
+                        </h2>
+                        <div className="overflow-x-auto">
+                          <table className="w-full bg-white border border-gray-100 shadow-sm rounded-xl overflow-hidden text-xs">
+                            <thead className="bg-gray-50 border-b border-gray-100">
+                              <tr>
+                                <th className="text-left py-3 px-4 font-bold text-gray-900">Zone Classification</th>
+                                <th className="text-left py-3 px-4 font-bold text-gray-900">Observed Signal</th>
+                                <th className="text-left py-3 px-4 font-bold text-gray-900">Interpretation</th>
+                              </tr>
+                            </thead>
+                            <tbody className="divide-y divide-gray-100">
+                              {currentCaseStudy.technicalFindings.map((finding: any, i: number) => (
+                                <tr key={i} className="hover:bg-gray-50/50">
+                                  <td className="py-3 px-4 align-top">
+                                    <span className="inline-block px-2 py-1 bg-red-100 text-red-800 text-[10px] font-bold rounded-sm whitespace-nowrap">
+                                      {finding.zoneClassification || 'Zone X'}
+                                    </span>
+                                  </td>
+                                  <td className="py-3 px-4 text-gray-600 font-light align-top">{finding.observedSignal}</td>
+                                  <td className="py-3 px-4 text-gray-600 font-light align-top">{finding.interpretation}</td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Sidebar in Preview */}
+                  <div className="w-full">
+                    {currentCaseStudy.businessImpact && currentCaseStudy.businessImpact.length > 0 && (
+                      <div className="bg-[#000f2c] text-white p-6 rounded-xl shadow-lg relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-24 h-24 bg-[#1d4ed8] opacity-20 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
+                        <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
+                          <i className="bx bx-trending-up text-[#1d4ed8] text-xl"></i>
+                          Business Impact
+                        </h3>
+                        <div className="space-y-4">
+                          {currentCaseStudy.businessImpact.map((impact: any, i: number) => (
+                            <div key={i} className="flex gap-3">
+                              <div className="mt-1 flex-shrink-0"><div className="w-1.5 h-1.5 rounded-full bg-cyan-400"></div></div>
+                              <div>
+                                <h4 className="font-bold text-xs text-gray-100 mb-1">{impact.title || 'Impact Title'}</h4>
+                                <p className="text-[11px] text-gray-400 font-light leading-relaxed">{impact.description}</p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
       </div>
     );
   }
