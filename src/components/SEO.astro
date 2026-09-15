@@ -8,10 +8,55 @@ interface Props {
 
 const { title, description, ogImage = '/og-image.png', structuredData } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://inspectivlabs.com');
+
+// Auto-generate BreadcrumbList schema for all pages
+const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+let currentPath = '';
+const breadcrumbs = pathSegments.map((segment, index) => {
+  currentPath += `/${segment}`;
+  return {
+    "@type": "ListItem",
+    "position": index + 2,
+    "name": segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' '),
+    "item": `https://inspectivlabs.com${currentPath}`
+  };
+});
+
+const defaultBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://inspectivlabs.com/"
+    },
+    ...breadcrumbs
+  ]
+};
+
+// If a page passes its own structured data array, append the breadcrumbs. If it's an object, wrap it in a graph.
+let combinedSchema = structuredData;
+if (structuredData) {
+  if (Array.isArray(structuredData)) {
+    combinedSchema = [...structuredData, defaultBreadcrumbSchema];
+  } else if (structuredData['@graph']) {
+    combinedSchema['@graph'].push(defaultBreadcrumbSchema);
+  } else {
+    combinedSchema = {
+      "@context": "https://schema.org",
+      "@graph": [structuredData, defaultBreadcrumbSchema]
+    };
+  }
+} else if (pathSegments.length > 0) {
+  combinedSchema = defaultBreadcrumbSchema;
+}
+
 ---
 <meta charset="utf-8" />
-{structuredData && (
-  <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+{combinedSchema && (
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(combinedSchema)} />
 )}
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/png" href="/favicon.png" />

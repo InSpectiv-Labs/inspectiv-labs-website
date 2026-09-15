@@ -17,8 +17,28 @@ try {
 if (!study) {
   return Astro.redirect('/404');
 }
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": study.pageTitle,
+  "description": study.executiveSummary,
+  "image": study.cardImage,
+  "author": {
+    "@type": "Organization",
+    "name": "InSpectiv Labs"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "InSpectiv Labs",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://inspectivlabs.com/images/logo.png"
+    }
+  }
+};
 ---
-<BaseLayout title={`${study.pageTitle} - Case Study | InSpectiv Labs`} description={study.executiveSummary}>
+<BaseLayout title={`${study.pageTitle} - Case Study | InSpectiv Labs`} description={study.executiveSummary} structuredData={articleSchema}>
   <section class="relative pt-32 lg:pt-48 pb-16 lg:pb-24 bg-[#000f2c] text-white overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-cyan-500 rounded-[100%] blur-[120px] opacity-10 pointer-events-none"></div>
     
