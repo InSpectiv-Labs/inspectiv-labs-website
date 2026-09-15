@@ -124,6 +124,15 @@ export default function CaseStudiesTab() {
       businessImpact = currentCaseStudy.businessImpact || null;
     }
 
+    // Auto-fill imagePlaceholder.src with uploaded image URL if not manually set
+    if (imageUrl && imagePlaceholder) {
+      if (!imagePlaceholder.src) {
+        imagePlaceholder = { ...imagePlaceholder, src: imageUrl };
+      }
+    } else if (imageUrl && !imagePlaceholder) {
+      imagePlaceholder = { src: imageUrl, caption: '' };
+    }
+
     const payload = { 
       ...currentCaseStudy, 
       cardImage_url: imageUrl,
